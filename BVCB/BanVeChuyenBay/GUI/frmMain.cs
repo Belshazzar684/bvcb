@@ -15,6 +15,8 @@ namespace BanVeChuyenBay
     {
         static public string TenDangNhap;
         static public string MaNhanVien;
+        public static string TienTe;
+        public static double TiGia;
 
         public static DevComponents.DotNetBar.TabControl  m_Tab;
         public frmMain()
@@ -83,6 +85,9 @@ namespace BanVeChuyenBay
             }
 
             XuLyQuyenHan();
+
+            TienTe = "VND";
+            TiGia = 1;
         }
 
         #region Su ly Bật Tắt
@@ -493,6 +498,22 @@ namespace BanVeChuyenBay
         private void btnSaoLuuDL_Click(object sender, EventArgs e)
         {
             new frmSaoLuuPhucHoi().Show();
+        }
+
+        ///sự kiện click btnChangeCurrency
+        ///chức năng: hiển thị frmThayDoiTienTe
+        ///mô tả:
+        private void btnChangeCurrency_Click(object sender, EventArgs e)
+        {
+            new frmThayDoiTienTe().ShowDialog();
+        }
+
+        ///sự kiện click btnTDTienTe
+        ///chức năng: hiển thị frmThayDoiTienTe
+        ///mô tả:
+        private void btnTDTienTe_Click(object sender, EventArgs e)
+        {
+            new frmThayDoiTienTe().ShowDialog();
         }
 
     }

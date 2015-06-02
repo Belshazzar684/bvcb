@@ -104,8 +104,8 @@ namespace BanVeChuyenBay.GUI
             DataRow[] rows = DSHangVe.Select("MaHangVe='" + cbHangVe.Text + "'");
             txtHangVe.Text = rows[0].ItemArray[(int)Support.BLL.Support.IDHangVe.TenHangVe].ToString();
 
-            double giatien = (double)DonGia * Convert.ToDouble(rows[0].ItemArray[(int)Support.BLL.Support.IDHangVe.TiLeDonGia]);
-            txtGiaTien.Text = giatien.ToString();
+            double giatien = Math.Round((double)DonGia * Convert.ToDouble(rows[0].ItemArray[(int)Support.BLL.Support.IDHangVe.TiLeDonGia]) / frmMain.TiGia,1);
+            txtGiaTien.Text = giatien.ToString() + frmMain.TienTe;
         }
 
         void setTextTinhTrangVe()

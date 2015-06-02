@@ -254,6 +254,12 @@
     <Compile Include="GUI\frmThayDoiQD3.Designer.cs">
       <DependentUpon>frmThayDoiQD3.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmThayDoiTienTe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThayDoiTienTe.Designer.cs">
+      <DependentUpon>frmThayDoiTienTe.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmThemHangVe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +397,9 @@
     <EmbeddedResource Include="GUI\frmThayDoiQD3.resx">
       <DependentUpon>frmThayDoiQD3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThayDoiTienTe.resx">
+      <DependentUpon>frmThayDoiTienTe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmThemHangVe.resx">
       <DependentUpon>frmThemHangVe.cs</DependentUpon>
     </EmbeddedResource>
@@ -456,12 +465,19 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\VNFlag.png" />
     <None Include="Resources\default-girl-icon.png" />
     <None Include="Resources\recycle-icon.png" />
     <None Include="Resources\calendar-icon %281%29.png" />
     <None Include="Resources\nhavien.png" />
+    <None Include="Resources\ChinaFlag.png" />
+    <Content Include="Resources\currency.jpg" />
+    <None Include="Resources\EUFlag.jpg" />
+    <None Include="Resources\JapanFlag.png" />
+    <None Include="Resources\RussianFlag.png" />
     <Content Include="Resources\saigon-nhatrang-danang-hoian-hue-hanoi-319984314.jpg" />
     <Content Include="Resources\thiet_ke_web_ve_may_bay_1.jpg" />
+    <None Include="Resources\USFlag.jpg" />
     <Content Include="Resources\VIetnam--Airlines.jpg" />
     <None Include="Resources\Save-icon.png" />
     <None Include="Resources\Zoom-icon.png" />
