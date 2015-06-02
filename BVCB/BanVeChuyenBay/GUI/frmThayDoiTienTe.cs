@@ -84,6 +84,11 @@ namespace BanVeChuyenBay.GUI
         private void cbCurrency_SelectedIndexChanged(object sender, EventArgs e)
         {
             rate = GetRate(cbCurrency.Text.Substring(0, 3));
+            if (rate == -1)
+            {
+                cbCurrency.SelectedIndex = 0;
+                return;
+            }
             txtRate.Text = rate.ToString();
         }
 
@@ -92,6 +97,9 @@ namespace BanVeChuyenBay.GUI
             this.Close();
         }
 
+        //sự kiện click của btnDoi
+        //chức năng: Luu lại sự thay đổi
+        //mô tả:
         private void btDoi_Click(object sender, EventArgs e)
         {
             frmMain.TienTe = cbCurrency.Text.Substring(0,3);
