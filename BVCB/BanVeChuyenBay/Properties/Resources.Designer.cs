@@ -481,6 +481,37 @@ namespace BanVeChuyenBay.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CREATE PROCEDURE [dbo].[DELETE_BAOCAODOANHTHUCHUYENBAY]
+        ///(
+        ///@MaChuyenBay varchar(10)
+        ///)
+        ///AS
+        ///BEGIN
+        ///	IF(EXISTS (SELECT * FROM BAOCAODOANHTHUCHUYENBAY A WHERE A.MaChuyenBay = @MaChuyenBay))
+        ///	BEGIN
+        ///	DELETE FROM BAOCAODOANHTHUCHUYENBAY
+        ///	WHERE MaChuyenBay = @MaChuyenBay
+        ///	END 
+        ///END
+        ///
+        ///GO
+        ////****** Object:  StoredProcedure [dbo].[DELETE_BAOCAODOANHTHUNAM]    Script Date: 22/05/2015 15:25:37 ******/
+        ///SET ANSI_NULLS ON
+        ///GO
+        ///SET QUOTED_IDENTIFIER ON
+        ///GO
+        ///
+        ///CREATE PROCEDURE [dbo].[DELETE_BAOCAODOANHTHUNAM]
+        ///(
+        ///@Na [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string script {
+            get {
+                return ResourceManager.GetString("script", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap thiet_ke_web_ve_may_bay_1 {

@@ -180,12 +180,12 @@ namespace BanVeChuyenBay.SqlHelper
                     DriveInfo driveInfo = new DriveInfo(folderPath);
                     if (driveInfo != null && String.Compare(driveInfo.Name, folderPath, true) == 0)
                     {
-                        newDataPhysicalName = folderPath + databaseName + "_Data.mdf";
+                        newDataPhysicalName = folderPath + databaseName + ".mdf";
                         newLogPhysicalName = folderPath + databaseName + "_Log.ldf";
                     }
                     else
                     {
-                        newDataPhysicalName = folderPath + "\\" + databaseName + "_Data.mdf";
+                        newDataPhysicalName = folderPath + "\\" + databaseName + ".mdf";
                         newLogPhysicalName = folderPath + "\\" + databaseName + "_Log.ldf";
                     }
 

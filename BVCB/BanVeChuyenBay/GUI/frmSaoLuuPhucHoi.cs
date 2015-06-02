@@ -217,5 +217,27 @@ namespace BanVeChuyenBay.GUI
                 }
             }
         }
+
+        ///sự kiện nhập ở textbox txtTenCSDLMoi
+        ///chức năng: phục hồi dữ liệu từ file được chọn
+        ///mô tả:
+        private void txtTenCsdlMoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                int keyCode = (int)e.KeyChar;
+                if ((keyCode >= 48 && keyCode <= 57)
+                    || (keyCode >= 65 && keyCode <= 90)
+                    || (keyCode >= 97 && keyCode <= 122)
+                    || (keyCode == 8))
+                    e.Handled = false;
+                else
+                    e.Handled = true;
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message);
+            }
+        }
     }
 }

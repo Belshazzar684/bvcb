@@ -471,6 +471,7 @@
     <None Include="Resources\calendar-icon %281%29.png" />
     <None Include="Resources\nhavien.png" />
     <None Include="Resources\ChinaFlag.png" />
+    <None Include="DataBase\script.sql" />
     <Content Include="Resources\currency.jpg" />
     <None Include="Resources\EUFlag.jpg" />
     <None Include="Resources\JapanFlag.png" />
