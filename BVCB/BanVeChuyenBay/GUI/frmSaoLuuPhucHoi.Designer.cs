@@ -72,7 +72,7 @@
             this.btnSaoLuu.Name = "btnSaoLuu";
             this.btnSaoLuu.Size = new System.Drawing.Size(100, 30);
             this.btnSaoLuu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSaoLuu.TabIndex = 5;
+            this.btnSaoLuu.TabIndex = 3;
             this.btnSaoLuu.Text = "Sao Lưu";
             this.btnSaoLuu.Click += new System.EventHandler(this.btnSaoLuu_Click);
             // 
@@ -84,7 +84,7 @@
             this.btnDuongDanLuu.Name = "btnDuongDanLuu";
             this.btnDuongDanLuu.Size = new System.Drawing.Size(23, 23);
             this.btnDuongDanLuu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnDuongDanLuu.TabIndex = 4;
+            this.btnDuongDanLuu.TabIndex = 2;
             this.btnDuongDanLuu.Text = "...";
             this.btnDuongDanLuu.Click += new System.EventHandler(this.btnDuongDanLuu_Click);
             // 
@@ -98,7 +98,7 @@
             this.lblLuuTai.Location = new System.Drawing.Point(10, 50);
             this.lblLuuTai.Name = "lblLuuTai";
             this.lblLuuTai.Size = new System.Drawing.Size(116, 23);
-            this.lblLuuTai.TabIndex = 3;
+            this.lblLuuTai.TabIndex = 0;
             this.lblLuuTai.Text = "Lưu Tại: ...";
             // 
             // txtDuongDanLuu
@@ -116,7 +116,7 @@
             this.txtDuongDanLuu.PreventEnterBeep = true;
             this.txtDuongDanLuu.ReadOnly = true;
             this.txtDuongDanLuu.Size = new System.Drawing.Size(250, 24);
-            this.txtDuongDanLuu.TabIndex = 2;
+            this.txtDuongDanLuu.TabIndex = 0;
             // 
             // lblCsdlSaoLuu
             // 
@@ -128,7 +128,7 @@
             this.lblCsdlSaoLuu.Location = new System.Drawing.Point(10, 10);
             this.lblCsdlSaoLuu.Name = "lblCsdlSaoLuu";
             this.lblCsdlSaoLuu.Size = new System.Drawing.Size(116, 23);
-            this.lblCsdlSaoLuu.TabIndex = 1;
+            this.lblCsdlSaoLuu.TabIndex = 0;
             this.lblCsdlSaoLuu.Text = "Cơ Sở Dữ Liệu:";
             // 
             // txtCsdlSaoLuu
@@ -179,7 +179,7 @@
             this.rbtnPhucHoi.Name = "rbtnPhucHoi";
             this.rbtnPhucHoi.Size = new System.Drawing.Size(145, 23);
             this.rbtnPhucHoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.rbtnPhucHoi.TabIndex = 2;
+            this.rbtnPhucHoi.TabIndex = 4;
             this.rbtnPhucHoi.Text = "Phục Hồi Dữ Liệu";
             this.rbtnPhucHoi.CheckedChanged += new System.EventHandler(this.rbtnPhucHoi_CheckedChanged);
             // 
@@ -196,7 +196,7 @@
             this.pnlPhucHoi.Location = new System.Drawing.Point(12, 209);
             this.pnlPhucHoi.Name = "pnlPhucHoi";
             this.pnlPhucHoi.Size = new System.Drawing.Size(560, 130);
-            this.pnlPhucHoi.TabIndex = 3;
+            this.pnlPhucHoi.TabIndex = 0;
             // 
             // btnPhucHoi
             // 
@@ -207,7 +207,7 @@
             this.btnPhucHoi.Name = "btnPhucHoi";
             this.btnPhucHoi.Size = new System.Drawing.Size(100, 30);
             this.btnPhucHoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnPhucHoi.TabIndex = 5;
+            this.btnPhucHoi.TabIndex = 7;
             this.btnPhucHoi.Text = "Phục Hồi";
             this.btnPhucHoi.Click += new System.EventHandler(this.btnPhucHoi_Click);
             // 
@@ -219,7 +219,7 @@
             this.btnDuongDanPhucHoi.Name = "btnDuongDanPhucHoi";
             this.btnDuongDanPhucHoi.Size = new System.Drawing.Size(23, 23);
             this.btnDuongDanPhucHoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnDuongDanPhucHoi.TabIndex = 4;
+            this.btnDuongDanPhucHoi.TabIndex = 6;
             this.btnDuongDanPhucHoi.Text = "...";
             this.btnDuongDanPhucHoi.Click += new System.EventHandler(this.btnDuongDanPhucHoi_Click);
             // 
@@ -233,7 +233,7 @@
             this.lblPhucHoiTu.Location = new System.Drawing.Point(10, 50);
             this.lblPhucHoiTu.Name = "lblPhucHoiTu";
             this.lblPhucHoiTu.Size = new System.Drawing.Size(116, 23);
-            this.lblPhucHoiTu.TabIndex = 3;
+            this.lblPhucHoiTu.TabIndex = 0;
             this.lblPhucHoiTu.Text = "Phục Hồi Từ: ...";
             // 
             // txtDuongDanPhucHoi
@@ -251,7 +251,7 @@
             this.txtDuongDanPhucHoi.PreventEnterBeep = true;
             this.txtDuongDanPhucHoi.ReadOnly = true;
             this.txtDuongDanPhucHoi.Size = new System.Drawing.Size(250, 24);
-            this.txtDuongDanPhucHoi.TabIndex = 2;
+            this.txtDuongDanPhucHoi.TabIndex = 0;
             // 
             // lblTenCsdlMoi
             // 
@@ -263,7 +263,7 @@
             this.lblTenCsdlMoi.Location = new System.Drawing.Point(10, 10);
             this.lblTenCsdlMoi.Name = "lblTenCsdlMoi";
             this.lblTenCsdlMoi.Size = new System.Drawing.Size(116, 23);
-            this.lblTenCsdlMoi.TabIndex = 1;
+            this.lblTenCsdlMoi.TabIndex = 0;
             this.lblTenCsdlMoi.Text = "Tên CSDL Mới:";
             // 
             // txtTenCsdlMoi
@@ -277,10 +277,12 @@
             this.txtTenCsdlMoi.ButtonCustom2.Tooltip = "";
             this.txtTenCsdlMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenCsdlMoi.Location = new System.Drawing.Point(132, 7);
+            this.txtTenCsdlMoi.MaxLength = 20;
             this.txtTenCsdlMoi.Name = "txtTenCsdlMoi";
             this.txtTenCsdlMoi.PreventEnterBeep = true;
             this.txtTenCsdlMoi.Size = new System.Drawing.Size(250, 24);
-            this.txtTenCsdlMoi.TabIndex = 0;
+            this.txtTenCsdlMoi.TabIndex = 5;
+            this.txtTenCsdlMoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenCsdlMoi_KeyPress);
             // 
             // btnClose
             // 
@@ -291,7 +293,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 30);
             this.btnClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClose.TabIndex = 6;
+            this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Đóng";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -307,6 +309,7 @@
             this.Controls.Add(this.rbtnSaoLuu);
             this.Controls.Add(this.pnlSaoLuu);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmSaoLuuPhucHoi";
             this.Text = "Sao Lưu - Phục Hồi dữ liệu";
             this.Load += new System.EventHandler(this.frmSaoLuuPhucHoi_Load);
