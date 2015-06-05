@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using BanVeChuyenBay.SqlHelper;
 
 namespace BanVeChuyenBay.DAL
 {
@@ -136,6 +137,34 @@ namespace BanVeChuyenBay.DAL
             cm.Parameters.AddWithValue("@ThoiGianBay", ThoiGianBay);
             cm.Parameters.AddWithValue("@GiaVe", DonGia);
             return cm.ExecuteNonQuery();
+        }
+
+        ///Hàm tìm kiếm lịch chuyến bay
+        ///chức năng: tìm kiếm theo các điều kiện được chọn
+        ///mô tả: gọi stored procedure thực hiện tìm kiếm
+        public DataTable SearchLichChuyenBay(string maChuyenBay, string maSanBayDi, string maSanBayDen,
+            DateTime? ngayKhoiHanhMin, DateTime? ngayKhoiHanhMax, double? giaVeMin, double? giaVeMax, bool? tinhTrangGheTrong)
+        {
+            string spName = "[dbo].[SELECT_TRACUUCHUYENBAY]";
+            List<SqlParameter> sqlParams = new List<SqlParameter>();
+            SqlParameter sqlprMaChuyenBay = new SqlParameter("@MaChuyenBay", SqlDbType.VarChar, 10) { Value = maChuyenBay };
+            SqlParameter sqlprMaSBDi = new SqlParameter("@MaSanBayDi", SqlDbType.VarChar, 10) { Value = maSanBayDi };
+            SqlParameter sqlprMaSBDen = new SqlParameter("@MaSanBayDen", SqlDbType.VarChar, 10) { Value = maSanBayDen };
+            SqlParameter sqlprNgayKhoiHanhMin = new SqlParameter("@NgayKhoiHanhMin", SqlDbType.DateTime) { Value = ngayKhoiHanhMin };
+            SqlParameter sqlprNgayKhoiHanhMax = new SqlParameter("@NgayKhoiHanhMax", SqlDbType.DateTime) { Value = ngayKhoiHanhMax };
+            SqlParameter sqlprGiaVeMin = new SqlParameter("@GiaVeMin", SqlDbType.Money) { Value = giaVeMin };
+            SqlParameter sqlprGiaVeMax = new SqlParameter("@GiaVeMax", SqlDbType.Money) { Value = giaVeMax };
+            SqlParameter sqlprTrinhTrangGhe = new SqlParameter("@TinhTrangGheTrong", SqlDbType.Bit) { Value = tinhTrangGheTrong };
+
+            sqlParams.Add(sqlprMaChuyenBay);
+            sqlParams.Add(sqlprMaSBDi);
+            sqlParams.Add(sqlprMaSBDen);
+            sqlParams.Add(sqlprNgayKhoiHanhMin);
+            sqlParams.Add(sqlprNgayKhoiHanhMax);
+            sqlParams.Add(sqlprGiaVeMin);
+            sqlParams.Add(sqlprGiaVeMax);
+            sqlParams.Add(sqlprTrinhTrangGhe);
+            return DatabaseManager.DbConnection.ExecuteStoredProcedure(spName, sqlParams.ToArray());
         }
     }
 }
