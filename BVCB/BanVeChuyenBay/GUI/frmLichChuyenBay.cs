@@ -59,6 +59,7 @@ namespace BanVeChuyenBay.GUI
 
             dataGridView2.Rows[0].Cells[0].Value = "";
             dataGridView2.Rows[0].Cells[1].Value = "";
+
         }
 
         private void loadSoHangVe()
@@ -483,6 +484,51 @@ namespace BanVeChuyenBay.GUI
         {
             frmThemTuyenBay form = new frmThemTuyenBay();
             form.Show();
+        }
+
+
+        //sự kiện CellValueChanged của datagridview2
+        //chức năng: Kiem tra khong cho chọn sân bay trùng
+        //mô tả:
+        private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex != -1 && e.ColumnIndex ==0)
+            {
+                //combobox column ở vị trí cell 0
+                DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)dataGridView2.Rows[e.RowIndex].Cells[0];
+                if (cell.Value != null)
+                {
+                    if (!String.IsNullOrEmpty(cell.Value.ToString()))
+                    {
+                        for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                        {
+                            if (i != e.RowIndex)
+                            {
+                                if (cell.Value.ToString() == dataGridView2.Rows[i].Cells[0].Value.ToString())
+                                {
+                                    MessageBox.Show("Sân bay trung gian không được trùng", "Error");
+                                    cell.Value = null;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //Event để fire event sang cellValueChanged ngay khi sau chọn chứ ko phải khi rời khỏi cell đó
+        private void dataGridView2_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (this.dataGridView2.IsCurrentCellDirty)
+            {
+                // This fires the cell value changed handler below
+                dataGridView2.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
         }
     }
 }

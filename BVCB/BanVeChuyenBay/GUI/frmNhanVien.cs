@@ -222,6 +222,8 @@ namespace BanVeChuyenBay.GUI
         {
             reset();
             Gan_click();
+            //Fix bug 1.7.1, 1.7.2 - gán lại flag
+            KiemTraThem = false;
         }
         public void reset()
         {

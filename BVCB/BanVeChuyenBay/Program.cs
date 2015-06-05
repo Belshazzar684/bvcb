@@ -39,7 +39,10 @@ namespace BanVeChuyenBay
             if (!DatabaseManager.IsConnected)
                 Application.Run(new ConnectionProperties());
             if (DatabaseManager.IsConnected)
+            {
+                DatabaseManager.DbConnection.SqlConn.Open();
                 Application.Run(new frmMain());
+            }
         }
     }
 }
