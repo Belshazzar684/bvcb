@@ -25,7 +25,7 @@ namespace BanVeChuyenBay.BLL
             return lcb.SelectAllLichChuyenBay();
         }
 
-         public static DataTable SelectTraCuuWithDateTime(DateTime tuNgay, DateTime denNgay)
+        public static DataTable SelectTraCuuWithDateTime(DateTime tuNgay, DateTime denNgay)
         {
             return lcb.SelectTraCuuWithDateTime(tuNgay, denNgay);
         }
@@ -33,8 +33,6 @@ namespace BanVeChuyenBay.BLL
         {
             return lcb.InsertLichChuyenBay(MaChuyenBay, MaTuyenBay, KhoiHanh, ThoiGianBay, DonGia);
         }
-
-        
 
         public static DataTable SelectAllLichChuyenBayNotPlane()
         {
@@ -59,6 +57,16 @@ namespace BanVeChuyenBay.BLL
         static public int UpdateLichChuyenBay(string MaChuyenBay, string MaTuyenBay, DateTime KhoiHanh, int ThoiGianBay, int DonGia)
         {
             return lcb.UpdateLichChuyenBay(MaChuyenBay, MaTuyenBay, KhoiHanh, ThoiGianBay, DonGia);
+        }
+
+        ///Hàm tìm kiếm lịch chuyến bay
+        ///chức năng: tìm kiếm theo các điều kiện được chọn
+        ///mô tả: gọi đến hàm SearchLichChuyenBay của lớp DAL_LichChuyenBay
+        public static DataTable SearchLichChuyenBay(string maChuyenBay, string maSanBayDi, string maSanBayDen,
+            DateTime? ngayKhoiHanhMin, DateTime? ngayKhoiHanhMax, double? giaVeMin, double? giaVeMax, bool? tinhTrangGheTrong)
+        {
+            return lcb.SearchLichChuyenBay(maChuyenBay, maSanBayDi, maSanBayDen, ngayKhoiHanhMin,
+                ngayKhoiHanhMax, giaVeMin, giaVeMax, tinhTrangGheTrong);
         }
     }
 }
