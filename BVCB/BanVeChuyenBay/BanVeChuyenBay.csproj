@@ -75,6 +75,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>F:\Installer\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -94,6 +97,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -152,6 +156,12 @@
     <Compile Include="GUI\frmBCDoanhThuThang.designer.cs">
       <DependentUpon>frmBCDoanhThuThang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmChiTietKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChiTietKhachHang.Designer.cs">
+      <DependentUpon>frmChiTietKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +173,12 @@
     </Compile>
     <Compile Include="GUI\frmDanhSachPhieuDatCho.Designer.cs">
       <DependentUpon>frmDanhSachPhieuDatCho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyDiaDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyDiaDiem.Designer.cs">
+      <DependentUpon>frmQuanLyDiaDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -206,6 +222,18 @@
     <Compile Include="GUI\frmQuanLyChuyenBay.Designer.cs">
       <DependentUpon>frmQuanLyChuyenBay.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmQuanLyHangHangKhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyHangHangKhong.Designer.cs">
+      <DependentUpon>frmQuanLyHangHangKhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyKhachHang.Designer.cs">
+      <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmQuanLySanBay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,11 +258,23 @@
     <Compile Include="GUI\frmSuaChuyenBay.Designer.cs">
       <DependentUpon>frmSuaChuyenBay.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmSuaHangHangKhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmSuaHangHangKhong.Designer.cs">
+      <DependentUpon>frmSuaHangHangKhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmSuaSanBay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmSuaSanBay.Designer.cs">
       <DependentUpon>frmSuaSanBay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTaoTaiKhoan.Designer.cs">
+      <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmThayDoiQD1.cs">
       <SubType>Form</SubType>
@@ -259,6 +299,12 @@
     </Compile>
     <Compile Include="GUI\frmThayDoiTienTe.Designer.cs">
       <DependentUpon>frmThayDoiTienTe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmThemHangHangKhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThemHangHangKhong.Designer.cs">
+      <DependentUpon>frmThemHangHangKhong.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmThemHangVe.cs">
       <SubType>Form</SubType>
@@ -295,6 +341,12 @@
     </Compile>
     <Compile Include="GUI\frmVeChuyenBay.Designer.cs">
       <DependentUpon>frmVeChuyenBay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmXemThongTinVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmXemThongTinVe.Designer.cs">
+      <DependentUpon>frmXemThongTinVe.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmXoaChuyenBay.cs">
       <SubType>Form</SubType>
@@ -346,11 +398,17 @@
     <EmbeddedResource Include="GUI\frmBCDoanhThuThang.resx">
       <DependentUpon>frmBCDoanhThuThang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmChiTietKhachHang.resx">
+      <DependentUpon>frmChiTietKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDanhSachPhieuDatCho.resx">
       <DependentUpon>frmDanhSachPhieuDatCho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQuanLyDiaDiem.resx">
+      <DependentUpon>frmQuanLyDiaDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
@@ -373,6 +431,12 @@
     <EmbeddedResource Include="GUI\frmQuanLyChuyenBay.resx">
       <DependentUpon>frmQuanLyChuyenBay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQuanLyHangHangKhong.resx">
+      <DependentUpon>frmQuanLyHangHangKhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQuanLyKhachHang.resx">
+      <DependentUpon>frmQuanLyKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLySanBay.resx">
       <DependentUpon>frmQuanLySanBay.cs</DependentUpon>
     </EmbeddedResource>
@@ -385,8 +449,14 @@
     <EmbeddedResource Include="GUI\frmSuaChuyenBay.resx">
       <DependentUpon>frmSuaChuyenBay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmSuaHangHangKhong.resx">
+      <DependentUpon>frmSuaHangHangKhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmSuaSanBay.resx">
       <DependentUpon>frmSuaSanBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTaoTaiKhoan.resx">
+      <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmThayDoiQD1.resx">
       <DependentUpon>frmThayDoiQD1.cs</DependentUpon>
@@ -399,6 +469,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmThayDoiTienTe.resx">
       <DependentUpon>frmThayDoiTienTe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThemHangHangKhong.resx">
+      <DependentUpon>frmThemHangHangKhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmThemHangVe.resx">
       <DependentUpon>frmThemHangVe.cs</DependentUpon>
@@ -417,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmVeChuyenBay.resx">
       <DependentUpon>frmVeChuyenBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmXemThongTinVe.resx">
+      <DependentUpon>frmXemThongTinVe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmXoaChuyenBay.resx">
       <DependentUpon>frmXoaChuyenBay.cs</DependentUpon>
@@ -476,7 +552,10 @@
     <None Include="Resources\EUFlag.jpg" />
     <None Include="Resources\JapanFlag.png" />
     <None Include="Resources\RussianFlag.png" />
+    <None Include="Resources\diadiem.jpg" />
+    <None Include="Resources\customer_acct_mgt.jpg" />
     <Content Include="Resources\saigon-nhatrang-danang-hoian-hue-hanoi-319984314.jpg" />
+    <None Include="Resources\SingleView.jpg" />
     <Content Include="Resources\thiet_ke_web_ve_may_bay_1.jpg" />
     <None Include="Resources\USFlag.jpg" />
     <Content Include="Resources\VIetnam--Airlines.jpg" />

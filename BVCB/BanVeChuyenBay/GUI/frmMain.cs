@@ -516,5 +516,41 @@ namespace BanVeChuyenBay
             new frmThayDoiTienTe().ShowDialog();
         }
 
+        ///sự kiện click btnKhachHang
+        ///chức năng: hiển thị frmQuanLyKhachHang
+        ///mô tả:
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Quản Lý Khách Hàng") == false)
+            {
+                frmQuanLyKhachHang form = new frmQuanLyKhachHang();
+                AddTabControl(form, "Quản Lý Khách Hàng");
+            }
+        }
+
+        ///sự kiện click btnHangHangKhong
+        ///chức năng: hiển thị frmQuanLyHangHangKhong
+        ///mô tả:
+        private void btnHangHangKhong_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Quản Lý Hãng Hàng Không") == false)
+            {
+                frmQuanLyHangHangKhong form = new frmQuanLyHangHangKhong();
+                AddTabControl(form, "Quản Lý Hãng Hàng Không");
+            }
+        }
+
+        ///sự kiện click btnVeDat
+        ///chức năng: hiển thị frmXemThongTinVe
+        ///mô tả:
+        private void btnVeDat_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Thông Tin Vé Đặt") == false)
+            {
+                frmXemThongTinVe form = new frmXemThongTinVe();
+                AddTabControl(form, "Thông Tin Vé Đặt");
+            }
+        }
+
     }
 }

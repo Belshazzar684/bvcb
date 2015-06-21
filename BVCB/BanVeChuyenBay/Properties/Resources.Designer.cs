@@ -243,6 +243,16 @@ namespace BanVeChuyenBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap customer {
+            get {
+                object obj = ResourceManager.GetObject("customer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap default_girl_icon {
             get {
                 object obj = ResourceManager.GetObject("default-girl-icon", resourceCulture);
@@ -266,6 +276,16 @@ namespace BanVeChuyenBay.Properties {
         internal static System.Drawing.Bitmap default_red1 {
             get {
                 object obj = ResourceManager.GetObject("default-red1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap detail {
+            get {
+                object obj = ResourceManager.GetObject("detail", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -426,6 +446,16 @@ namespace BanVeChuyenBay.Properties {
         internal static System.Drawing.Bitmap Pencil_icon {
             get {
                 object obj = ResourceManager.GetObject("Pencil-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap place {
+            get {
+                object obj = ResourceManager.GetObject("place", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

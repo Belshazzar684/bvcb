@@ -1,6 +1,6 @@
 ﻿namespace BanVeChuyenBay.GUI
 {
-    partial class frmQuanLySanBay
+    partial class frmQuanLyHangHangKhong
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLySanBay));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyHangHangKhong));
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaSanBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.TenSanBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.TongChuyenBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.SoChuyenHienTai = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btSua = new DevComponents.DotNetBar.ButtonX();
             this.btThoat = new DevComponents.DotNetBar.ButtonX();
@@ -41,17 +45,56 @@
             this.btXoa = new DevComponents.DotNetBar.ButtonX();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MaSanBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.TenSanBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.QuocgIa = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.ThanhPho = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSanBay,
+            this.TenSanBay,
+            this.TongChuyenBay,
+            this.SoChuyenHienTai});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(596, 348);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // MaSanBay
+            // 
+            this.MaSanBay.HeaderText = "Mã hãng";
+            this.MaSanBay.Name = "MaSanBay";
+            // 
+            // TenSanBay
+            // 
+            this.TenSanBay.FillWeight = 250F;
+            this.TenSanBay.HeaderText = "Tên hãng";
+            this.TenSanBay.Name = "TenSanBay";
+            this.TenSanBay.Width = 180;
+            // 
+            // TongChuyenBay
+            // 
+            this.TongChuyenBay.HeaderText = "Tổng chuyến bay";
+            this.TongChuyenBay.Name = "TongChuyenBay";
+            this.TongChuyenBay.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TongChuyenBay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TongChuyenBay.Width = 150;
+            // 
+            // SoChuyenHienTai
+            // 
+            this.SoChuyenHienTai.HeaderText = "Số chuyến hiện tại";
+            this.SoChuyenHienTai.Name = "SoChuyenHienTai";
+            this.SoChuyenHienTai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SoChuyenHienTai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.SoChuyenHienTai.Width = 150;
             // 
             // panelEx1
             // 
@@ -70,7 +113,7 @@
             this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
-            this.panelEx1.TabIndex = 0;
+            this.panelEx1.TabIndex = 1;
             // 
             // panelEx2
             // 
@@ -102,7 +145,7 @@
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Location = new System.Drawing.Point(51, 103);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(539, 369);
+            this.groupPanel1.Size = new System.Drawing.Size(602, 369);
             // 
             // 
             // 
@@ -132,22 +175,7 @@
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 91;
-            this.groupPanel1.Text = "Thông tin các sân bay";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaSanBay,
-            this.TenSanBay,
-            this.QuocgIa,
-            this.ThanhPho});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(533, 348);
-            this.dataGridView1.TabIndex = 0;
+            this.groupPanel1.Text = "Thông tin các hãng hàng không";
             // 
             // groupPanel2
             // 
@@ -159,7 +187,7 @@
             this.groupPanel2.Controls.Add(this.btThem);
             this.groupPanel2.Controls.Add(this.btXoa);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel2.Location = new System.Drawing.Point(596, 103);
+            this.groupPanel2.Location = new System.Drawing.Point(659, 103);
             this.groupPanel2.Name = "groupPanel2";
             this.groupPanel2.Size = new System.Drawing.Size(193, 369);
             // 
@@ -221,7 +249,6 @@
             this.btThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btThoat.TabIndex = 83;
             this.btThoat.Text = "Thoát";
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // buttonX1
             // 
@@ -236,7 +263,6 @@
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX1.TabIndex = 84;
             this.buttonX1.Text = "Cập nhật";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // btThem
             // 
@@ -266,7 +292,6 @@
             this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btXoa.TabIndex = 86;
             this.btXoa.Text = "Xóa";
-            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // reflectionLabel1
             // 
@@ -277,10 +302,10 @@
             this.reflectionLabel1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.reflectionLabel1.Location = new System.Drawing.Point(250, 31);
             this.reflectionLabel1.Name = "reflectionLabel1";
-            this.reflectionLabel1.Size = new System.Drawing.Size(317, 56);
+            this.reflectionLabel1.Size = new System.Drawing.Size(422, 56);
             this.reflectionLabel1.TabIndex = 85;
-            this.reflectionLabel1.Text = "<b><font size=\"+6\"><i></i><font color=\"#B02B2C\">QUẢN LÝ SÂN BAY</font></font></b>" +
-    "";
+            this.reflectionLabel1.Text = "<b><font size=\"+6\"><i></i><font color=\"#B02B2C\">QUẢN LÝ HÃNG HÀNG KHÔNG</font></f" +
+    "ont></b>";
             // 
             // PictureBox1
             // 
@@ -292,44 +317,18 @@
             this.PictureBox1.TabIndex = 52;
             this.PictureBox1.TabStop = false;
             // 
-            // MaSanBay
-            // 
-            this.MaSanBay.HeaderText = "Mã Sân Bay";
-            this.MaSanBay.Name = "MaSanBay";
-            // 
-            // TenSanBay
-            // 
-            this.TenSanBay.FillWeight = 250F;
-            this.TenSanBay.HeaderText = "Tên Sân Bay";
-            this.TenSanBay.Name = "TenSanBay";
-            this.TenSanBay.Width = 180;
-            // 
-            // QuocgIa
-            // 
-            this.QuocgIa.HeaderText = "Quốc Gia";
-            this.QuocgIa.Name = "QuocgIa";
-            this.QuocgIa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.QuocgIa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ThanhPho
-            // 
-            this.ThanhPho.HeaderText = "Thành Phố";
-            this.ThanhPho.Name = "ThanhPho";
-            this.ThanhPho.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ThanhPho.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // frmQuanLySanBay
+            // frmQuanLyHangHangKhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 498);
             this.Controls.Add(this.panelEx1);
-            this.Name = "frmQuanLySanBay";
-            this.Text = "Quản Lý Sân Bay";
+            this.Name = "frmQuanLyHangHangKhong";
+            this.Text = "frmQuanLyHangHangKhong";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelEx1.ResumeLayout(false);
             this.panelEx2.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -338,21 +337,21 @@
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dataGridView1;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
-        private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
-        internal System.Windows.Forms.PictureBox PictureBox1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.ButtonX btSua;
         private DevComponents.DotNetBar.ButtonX btThoat;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX btThem;
         private DevComponents.DotNetBar.ButtonX btXoa;
+        private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
+        internal System.Windows.Forms.PictureBox PictureBox1;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn MaSanBay;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn TenSanBay;
-        private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn QuocgIa;
-        private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn ThanhPho;
+        private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn TongChuyenBay;
+        private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn SoChuyenHienTai;
     }
 }
