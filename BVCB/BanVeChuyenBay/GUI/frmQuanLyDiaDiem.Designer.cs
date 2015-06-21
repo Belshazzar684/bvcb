@@ -32,14 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyDiaDiem));
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.txtTenSanBay = new System.Windows.Forms.TextBox();
-            this.txtMaSanBay = new System.Windows.Forms.TextBox();
+            this.txtThanhPho = new System.Windows.Forms.TextBox();
+            this.txtQuocGia = new System.Windows.Forms.TextBox();
             this.Label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.QuocGia = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.ThanhPho = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btSua = new DevComponents.DotNetBar.ButtonX();
             this.btThoat = new DevComponents.DotNetBar.ButtonX();
@@ -50,6 +48,9 @@
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.QuocGia = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.ThanhPho = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.MaDiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx2.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -87,8 +88,8 @@
             // 
             this.groupPanel3.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel3.Controls.Add(this.txtTenSanBay);
-            this.groupPanel3.Controls.Add(this.txtMaSanBay);
+            this.groupPanel3.Controls.Add(this.txtThanhPho);
+            this.groupPanel3.Controls.Add(this.txtQuocGia);
             this.groupPanel3.Controls.Add(this.Label3);
             this.groupPanel3.Controls.Add(this.Label2);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
@@ -126,23 +127,23 @@
             this.groupPanel3.TabIndex = 93;
             this.groupPanel3.Text = "Thông tin chi tiết";
             // 
-            // txtTenSanBay
+            // txtThanhPho
             // 
-            this.txtTenSanBay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenSanBay.ForeColor = System.Drawing.Color.Blue;
-            this.txtTenSanBay.Location = new System.Drawing.Point(172, 47);
-            this.txtTenSanBay.Name = "txtTenSanBay";
-            this.txtTenSanBay.Size = new System.Drawing.Size(344, 26);
-            this.txtTenSanBay.TabIndex = 42;
+            this.txtThanhPho.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtThanhPho.ForeColor = System.Drawing.Color.Blue;
+            this.txtThanhPho.Location = new System.Drawing.Point(172, 47);
+            this.txtThanhPho.Name = "txtThanhPho";
+            this.txtThanhPho.Size = new System.Drawing.Size(344, 26);
+            this.txtThanhPho.TabIndex = 42;
             // 
-            // txtMaSanBay
+            // txtQuocGia
             // 
-            this.txtMaSanBay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaSanBay.ForeColor = System.Drawing.Color.Blue;
-            this.txtMaSanBay.Location = new System.Drawing.Point(172, 7);
-            this.txtMaSanBay.Name = "txtMaSanBay";
-            this.txtMaSanBay.Size = new System.Drawing.Size(344, 26);
-            this.txtMaSanBay.TabIndex = 41;
+            this.txtQuocGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtQuocGia.ForeColor = System.Drawing.Color.Blue;
+            this.txtQuocGia.Location = new System.Drawing.Point(172, 7);
+            this.txtQuocGia.Name = "txtQuocGia";
+            this.txtQuocGia.Size = new System.Drawing.Size(344, 26);
+            this.txtQuocGia.TabIndex = 41;
             // 
             // Label3
             // 
@@ -204,29 +205,23 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.QuocGia,
-            this.ThanhPho});
+            this.ThanhPho,
+            this.MaDiaDiem});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(533, 245);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // QuocGia
-            // 
-            this.QuocGia.HeaderText = "Quốc Gia";
-            this.QuocGia.Name = "QuocGia";
-            this.QuocGia.Width = 200;
-            // 
-            // ThanhPho
-            // 
-            this.ThanhPho.FillWeight = 250F;
-            this.ThanhPho.HeaderText = "Thành Phố";
-            this.ThanhPho.Name = "ThanhPho";
-            this.ThanhPho.Width = 280;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // groupPanel2
             // 
@@ -285,6 +280,7 @@
             this.btSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btSua.TabIndex = 86;
             this.btSua.Text = "Sửa";
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btThoat
             // 
@@ -299,6 +295,7 @@
             this.btThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btThoat.TabIndex = 83;
             this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // buttonX1
             // 
@@ -327,6 +324,7 @@
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btThem.TabIndex = 86;
             this.btThem.Text = "Thêm";
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // btXoa
             // 
@@ -341,6 +339,7 @@
             this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btXoa.TabIndex = 86;
             this.btXoa.Text = "Xóa";
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // reflectionLabel1
             // 
@@ -385,6 +384,28 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 1;
             // 
+            // QuocGia
+            // 
+            this.QuocGia.HeaderText = "Quốc Gia";
+            this.QuocGia.Name = "QuocGia";
+            this.QuocGia.ReadOnly = true;
+            this.QuocGia.Width = 200;
+            // 
+            // ThanhPho
+            // 
+            this.ThanhPho.FillWeight = 250F;
+            this.ThanhPho.HeaderText = "Thành Phố";
+            this.ThanhPho.Name = "ThanhPho";
+            this.ThanhPho.ReadOnly = true;
+            this.ThanhPho.Width = 280;
+            // 
+            // MaDiaDiem
+            // 
+            this.MaDiaDiem.HeaderText = "Mã Địa Điểm";
+            this.MaDiaDiem.Name = "MaDiaDiem";
+            this.MaDiaDiem.ReadOnly = true;
+            this.MaDiaDiem.Visible = false;
+            // 
             // frmQuanLyDiaDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,7 +413,7 @@
             this.ClientSize = new System.Drawing.Size(825, 498);
             this.Controls.Add(this.panelEx1);
             this.Name = "frmQuanLyDiaDiem";
-            this.Text = "frmDiaDiem";
+            this.Text = "QUẢN LÝ ĐỊA ĐIỂM";
             this.panelEx2.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
             this.groupPanel3.PerformLayout();
@@ -422,12 +443,13 @@
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
         private System.Windows.Forms.BindingSource bindingSource1;
-        internal System.Windows.Forms.TextBox txtTenSanBay;
-        internal System.Windows.Forms.TextBox txtMaSanBay;
+        internal System.Windows.Forms.TextBox txtThanhPho;
+        internal System.Windows.Forms.TextBox txtQuocGia;
         internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label Label2;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn QuocGia;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn ThanhPho;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDiaDiem;
 
     }
 }

@@ -10,13 +10,14 @@ namespace BanVeChuyenBay.DAL
 {
     class DAL_SanBay : DAL_KetNoi
     {
-        public int InsertSanBay(String MaSanBay, String TenSanBay)
+        public int InsertSanBay(String MaSanBay, String TenSanBay, String MaDiaDiem)
         {
             SqlCommand cm = new SqlCommand("INSERT_SANBAY", connect());
             cm.CommandType = System.Data.CommandType.StoredProcedure;
 
             cm.Parameters.AddWithValue("@MaSanBay", MaSanBay);
             cm.Parameters.AddWithValue("@TenSanBay", TenSanBay);
+            cm.Parameters.AddWithValue("@MaDiaDiem", MaDiaDiem);
 
             return cm.ExecuteNonQuery();
         }
@@ -31,13 +32,14 @@ namespace BanVeChuyenBay.DAL
             return cm.ExecuteNonQuery();
         }
 
-        public int UpdateSanBayAt(String MaSanBay, String newTenSanBay)
+        public int UpdateSanBayAt(String MaSanBay, String newTenSanBay, String MaDiaDiem)
         {
             SqlCommand cm = new SqlCommand("UPDATE_SANBAY", connect());
             cm.CommandType = System.Data.CommandType.StoredProcedure;
 
             cm.Parameters.AddWithValue("@MaSanBay", MaSanBay);
             cm.Parameters.AddWithValue("@TenSanBay", newTenSanBay);
+            cm.Parameters.AddWithValue("@MaDiaDiem", MaDiaDiem);
 
             return cm.ExecuteNonQuery();
         }

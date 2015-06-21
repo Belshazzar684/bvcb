@@ -12,9 +12,9 @@ namespace BanVeChuyenBay.BLL
     {
         static DAL_SanBay sanbay = new DAL_SanBay();
 
-        public static int InsertSanBay(String MaSanBay, String TenSanBay)
+        public static int InsertSanBay(String MaSanBay, String TenSanBay, String MaDiaDiem)
         {
-            return sanbay.InsertSanBay(MaSanBay, TenSanBay);
+            return sanbay.InsertSanBay(MaSanBay, TenSanBay, MaDiaDiem);
         }
 
         public static int DeleteSanBayAt(String MaSanBay)
@@ -22,9 +22,9 @@ namespace BanVeChuyenBay.BLL
             return sanbay.DeleteSanBayAt(MaSanBay);
         }
 
-        public static int UpdateSanBayAt(String MaSanBay, String newTenSanBay)
+        public static int UpdateSanBayAt(String MaSanBay, String newTenSanBay, String MaDiaDiem)
         {
-            return sanbay.UpdateSanBayAt(MaSanBay, newTenSanBay);
+            return sanbay.UpdateSanBayAt(MaSanBay, newTenSanBay, MaDiaDiem);
         }
 
         public static DataTable SelectAllSanBay()

@@ -30,8 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemSanBay));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.cbThanhPho = new System.Windows.Forms.ComboBox();
+            this.cbQuocGia = new System.Windows.Forms.ComboBox();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnTaoMoi = new DevComponents.DotNetBar.ButtonX();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btThoat = new DevComponents.DotNetBar.ButtonX();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
@@ -39,10 +43,6 @@
             this.txtMaSanBay = new System.Windows.Forms.TextBox();
             this.Label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbQuocGia = new System.Windows.Forms.ComboBox();
-            this.cbThanhPho = new System.Windows.Forms.ComboBox();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +77,27 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
-            this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // cbThanhPho
+            // 
+            this.cbThanhPho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbThanhPho.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbThanhPho.FormattingEnabled = true;
+            this.cbThanhPho.Location = new System.Drawing.Point(216, 234);
+            this.cbThanhPho.Name = "cbThanhPho";
+            this.cbThanhPho.Size = new System.Drawing.Size(216, 27);
+            this.cbThanhPho.TabIndex = 95;
+            // 
+            // cbQuocGia
+            // 
+            this.cbQuocGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQuocGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbQuocGia.FormattingEnabled = true;
+            this.cbQuocGia.Location = new System.Drawing.Point(216, 194);
+            this.cbQuocGia.Name = "cbQuocGia";
+            this.cbQuocGia.Size = new System.Drawing.Size(216, 27);
+            this.cbQuocGia.TabIndex = 94;
+            this.cbQuocGia.SelectedIndexChanged += new System.EventHandler(this.cbQuocGia_SelectedIndexChanged);
             // 
             // btnThem
             // 
@@ -108,6 +128,24 @@
             this.btnTaoMoi.TabIndex = 90;
             this.btnTaoMoi.Text = "Tạo mới";
             this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(77, 237);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 23);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Thành Phố:";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(77, 197);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 23);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Quốc Gia:";
             // 
             // btThoat
             // 
@@ -183,44 +221,6 @@
             this.Label2.TabIndex = 35;
             this.Label2.Text = "Mã Sân Bay:";
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(77, 237);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 23);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Thành Phố:";
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(77, 197);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 23);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Quốc Gia:";
-            // 
-            // cbQuocGia
-            // 
-            this.cbQuocGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbQuocGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbQuocGia.FormattingEnabled = true;
-            this.cbQuocGia.Location = new System.Drawing.Point(216, 194);
-            this.cbQuocGia.Name = "cbQuocGia";
-            this.cbQuocGia.Size = new System.Drawing.Size(216, 27);
-            this.cbQuocGia.TabIndex = 94;
-            // 
-            // cbThanhPho
-            // 
-            this.cbThanhPho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbThanhPho.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbThanhPho.FormattingEnabled = true;
-            this.cbThanhPho.Location = new System.Drawing.Point(216, 234);
-            this.cbThanhPho.Name = "cbThanhPho";
-            this.cbThanhPho.Size = new System.Drawing.Size(216, 27);
-            this.cbThanhPho.TabIndex = 95;
-            // 
             // frmThemSanBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +232,7 @@
             this.Name = "frmThemSanBay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Sân Bay";
+            this.Load += new System.EventHandler(this.frmThemSanBay_Load);
             this.panelEx1.ResumeLayout(false);
             this.panelEx1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();

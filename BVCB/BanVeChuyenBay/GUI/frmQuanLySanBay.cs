@@ -24,10 +24,11 @@ namespace BanVeChuyenBay.GUI
             dataGridView1.Rows.Clear();
 
             DataTable dt = BLL.BLL_SanBay.SelectAllSanBay();
-
+            DataTable dtDiaDiem = new DataTable();
             foreach(DataRow row in dt.Rows)
             {
-                dataGridView1.Rows.Add(row.ItemArray[(int)Support.BLL.Support.IDSanBay.MaSanBay], row.ItemArray[(int)Support.BLL.Support.IDSanBay.TenSanBay]);
+                dtDiaDiem = BLL.BLL_DiaDiem.SelectDiaDiem(row.ItemArray[(int)Support.BLL.Support.IDSanBay.MaDiaDiem].ToString());
+                dataGridView1.Rows.Add(row.ItemArray[(int)Support.BLL.Support.IDSanBay.MaSanBay], row.ItemArray[(int)Support.BLL.Support.IDSanBay.TenSanBay], dtDiaDiem.Rows[0].ItemArray[(int)Support.BLL.Support.IDDiaDiem.QuocGia], dtDiaDiem.Rows[0].ItemArray[(int)Support.BLL.Support.IDDiaDiem.ThanhPho]);
             }
         }
 

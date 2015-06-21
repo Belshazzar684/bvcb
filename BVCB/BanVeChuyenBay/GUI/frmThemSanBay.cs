@@ -12,9 +12,16 @@ namespace BanVeChuyenBay.GUI
 {
     public partial class frmThemSanBay : Form
     {
+        DataTable dtDiaDiem = new DataTable();
+
         public frmThemSanBay()
         {
             InitializeComponent();
+        }
+
+        private void LoadDiaDiem()
+        {
+            dtDiaDiem = BLL.BLL_DiaDiem.SelectAllDiaDiem();
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -24,16 +31,24 @@ namespace BanVeChuyenBay.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaSanBay.Text.Equals("") || txtTenSanBay.Text.Equals(""))
+            if (txtMaSanBay.Text.Equals("") || txtTenSanBay.Text.Equals("") || cbQuocGia.SelectedIndex == -1 || cbThanhPho.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi");
                 return;
             }
 
-
             try
             {
-                BLL.BLL_SanBay.InsertSanBay(txtMaSanBay.Text, txtTenSanBay.Text);
+                String MaDiaDiem = null;
+                try
+                {
+                    MaDiaDiem = BLL.BLL_DiaDiem.SelectMaDiaDiemBy_QuocGia_ThanhPho(cbQuocGia.Text, cbThanhPho.Text).Rows[0].ItemArray[0].ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("Không tìm thấy địa điểm", "Lỗi");
+                }
+                BLL.BLL_SanBay.InsertSanBay(txtMaSanBay.Text, txtTenSanBay.Text, MaDiaDiem);
 
                 MessageBox.Show("Thêm thành công", "Thông báo");
             }
@@ -49,9 +64,34 @@ namespace BanVeChuyenBay.GUI
             txtTenSanBay.Text = "";
         }
 
-        private void panelEx1_Click(object sender, EventArgs e)
+        //Load form
+        private void frmThemSanBay_Load(object sender, EventArgs e)
         {
+            dtDiaDiem = BLL.BLL_DiaDiem.SelectAllDiaDiem();
 
+            //Trả lại danh sách quốc gia không trùng
+            DataView view = new DataView(dtDiaDiem);
+            DataTable distinctValues = new DataTable();
+            distinctValues = view.ToTable(true, "QuocGia");
+
+            foreach (DataRow row in distinctValues.Rows)
+            {
+                cbQuocGia.Items.Add(row.ItemArray[0]);
+            }
+        }
+
+        //Event chọn quốc gia
+        private void cbQuocGia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbQuocGia.SelectedIndex >= 0)
+            {
+                cbThanhPho.Items.Clear();
+                DataTable dt = BLL.BLL_DiaDiem.SelectThanhPhoBy_QuocGia(cbQuocGia.Text);
+                foreach (DataRow row in dt.Rows)
+                {
+                    cbThanhPho.Items.Add(row.ItemArray[0]);
+                }
+            }
         }
     }
 }

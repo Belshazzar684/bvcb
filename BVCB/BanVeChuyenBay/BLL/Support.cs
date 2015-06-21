@@ -30,7 +30,15 @@ namespace Support.BLL
         public enum IDSanBay
         {
             MaSanBay = 0,
-            TenSanBay = 1
+            TenSanBay = 1,
+            MaDiaDiem = 2
+        }
+
+        public enum IDDiaDiem
+        {
+            MaDiaDiem = 0,
+            QuocGia = 1,
+            ThanhPho = 2
         }
 
         public enum IDHangVe

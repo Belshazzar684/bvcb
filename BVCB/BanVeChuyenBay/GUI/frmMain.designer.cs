@@ -149,6 +149,7 @@
             this.btLichChuyenBay = new DevComponents.DotNetBar.ButtonItem();
             this.btVeChuyenBay = new DevComponents.DotNetBar.ButtonItem();
             this.btPhieuDatCho = new DevComponents.DotNetBar.ButtonItem();
+            this.btnVeDat = new DevComponents.DotNetBar.ButtonItem();
             this.rbpTraCuu = new DevComponents.DotNetBar.RibbonPanel();
             this.rbTraCuu = new DevComponents.DotNetBar.RibbonBar();
             this.btTraCuuChuyenBay = new DevComponents.DotNetBar.ButtonItem();
@@ -192,7 +193,7 @@
             this.galleryContainer14 = new DevComponents.DotNetBar.GalleryContainer();
             this.labelItem14 = new DevComponents.DotNetBar.LabelItem();
             this.btThemChuyenBay = new DevComponents.DotNetBar.ButtonItem();
-            this.btnVeDat = new DevComponents.DotNetBar.ButtonItem();
+            this.btnDiaDiem = new DevComponents.DotNetBar.ButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.bar1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -1775,10 +1776,11 @@
             this.btQLTuyenBay,
             this.btQLSanBay,
             this.btnKhachHang,
-            this.btnHangHangKhong});
+            this.btnHangHangKhong,
+            this.btnDiaDiem});
             this.ribbonBar5.Location = new System.Drawing.Point(512, 0);
             this.ribbonBar5.Name = "ribbonBar5";
-            this.ribbonBar5.Size = new System.Drawing.Size(556, 92);
+            this.ribbonBar5.Size = new System.Drawing.Size(662, 92);
             this.ribbonBar5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar5.TabIndex = 4;
             this.ribbonBar5.Text = "Quản lý";
@@ -1910,6 +1912,16 @@
             this.btPhieuDatCho.SubItemsExpandWidth = 14;
             this.btPhieuDatCho.Text = "Đặt vé";
             this.btPhieuDatCho.Click += new System.EventHandler(this.btPhieuDatCho_Click);
+            // 
+            // btnVeDat
+            // 
+            this.btnVeDat.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnVeDat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnVeDat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVeDat.Name = "btnVeDat";
+            this.btnVeDat.SubItemsExpandWidth = 14;
+            this.btnVeDat.Text = "Vé đặt";
+            this.btnVeDat.Click += new System.EventHandler(this.btnVeDat_Click);
             // 
             // rbpTraCuu
             // 
@@ -2611,15 +2623,15 @@
             this.btThemChuyenBay.SubItemsExpandWidth = 14;
             this.btThemChuyenBay.Text = "Thêm";
             // 
-            // btnVeDat
+            // btnDiaDiem
             // 
-            this.btnVeDat.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnVeDat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnVeDat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVeDat.Name = "btnVeDat";
-            this.btnVeDat.SubItemsExpandWidth = 14;
-            this.btnVeDat.Text = "Vé đặt";
-            this.btnVeDat.Click += new System.EventHandler(this.btnVeDat_Click);
+            this.btnDiaDiem.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnDiaDiem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDiaDiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDiaDiem.Name = "btnDiaDiem";
+            this.btnDiaDiem.SubItemsExpandWidth = 14;
+            this.btnDiaDiem.Text = "Địa điểm";
+            this.btnDiaDiem.Click += new System.EventHandler(this.btnDiaDiem_Click);
             // 
             // frmMain
             // 
@@ -2828,5 +2840,6 @@
         private DevComponents.DotNetBar.ButtonItem btnKhachHang;
         private DevComponents.DotNetBar.ButtonItem btnHangHangKhong;
         private DevComponents.DotNetBar.ButtonItem btnVeDat;
+        private DevComponents.DotNetBar.ButtonItem btnDiaDiem;
     }
 }

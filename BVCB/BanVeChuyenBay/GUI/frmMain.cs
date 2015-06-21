@@ -552,5 +552,14 @@ namespace BanVeChuyenBay
             }
         }
 
+        private void btnDiaDiem_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Quản Lý Địa Điểm") == false)
+            {
+                frmQuanLyDiaDiem form = new frmQuanLyDiaDiem();
+                AddTabControl(form, "Quản Lý Địa Điểm");
+            }
+        }
+
     }
 }
