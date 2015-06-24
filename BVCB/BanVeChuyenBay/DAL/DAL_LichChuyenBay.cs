@@ -145,26 +145,23 @@ namespace BanVeChuyenBay.DAL
         public DataTable SearchLichChuyenBay(string maChuyenBay, string maSanBayDi, string maSanBayDen,
             DateTime? ngayKhoiHanhMin, DateTime? ngayKhoiHanhMax, double? giaVeMin, double? giaVeMax, bool? tinhTrangGheTrong)
         {
-            string spName = "[dbo].[SELECT_TRACUUCHUYENBAY]";
-            List<SqlParameter> sqlParams = new List<SqlParameter>();
-            SqlParameter sqlprMaChuyenBay = new SqlParameter("@MaChuyenBay", SqlDbType.VarChar, 10) { Value = maChuyenBay };
-            SqlParameter sqlprMaSBDi = new SqlParameter("@MaSanBayDi", SqlDbType.VarChar, 10) { Value = maSanBayDi };
-            SqlParameter sqlprMaSBDen = new SqlParameter("@MaSanBayDen", SqlDbType.VarChar, 10) { Value = maSanBayDen };
-            SqlParameter sqlprNgayKhoiHanhMin = new SqlParameter("@NgayKhoiHanhMin", SqlDbType.DateTime) { Value = ngayKhoiHanhMin };
-            SqlParameter sqlprNgayKhoiHanhMax = new SqlParameter("@NgayKhoiHanhMax", SqlDbType.DateTime) { Value = ngayKhoiHanhMax };
-            SqlParameter sqlprGiaVeMin = new SqlParameter("@GiaVeMin", SqlDbType.Money) { Value = giaVeMin };
-            SqlParameter sqlprGiaVeMax = new SqlParameter("@GiaVeMax", SqlDbType.Money) { Value = giaVeMax };
-            SqlParameter sqlprTrinhTrangGhe = new SqlParameter("@TinhTrangGheTrong", SqlDbType.Bit) { Value = tinhTrangGheTrong };
+            SqlCommand cm = new SqlCommand("[dbo].[SELECT_TRACUUCHUYENBAY]", connect());
+            cm.CommandType = CommandType.StoredProcedure;
 
-            sqlParams.Add(sqlprMaChuyenBay);
-            sqlParams.Add(sqlprMaSBDi);
-            sqlParams.Add(sqlprMaSBDen);
-            sqlParams.Add(sqlprNgayKhoiHanhMin);
-            sqlParams.Add(sqlprNgayKhoiHanhMax);
-            sqlParams.Add(sqlprGiaVeMin);
-            sqlParams.Add(sqlprGiaVeMax);
-            sqlParams.Add(sqlprTrinhTrangGhe);
-            return DatabaseManager.DbConnection.ExecuteStoredProcedure(spName, sqlParams.ToArray());
+            cm.Parameters.AddWithValue("@MaChuyenBay", maChuyenBay);
+            cm.Parameters.AddWithValue("@MaSanBayDi", maSanBayDi);
+            cm.Parameters.AddWithValue("@MaSanBayDen", maSanBayDen);
+            cm.Parameters.AddWithValue("@NgayKhoiHanhMin", ngayKhoiHanhMin);
+            cm.Parameters.AddWithValue("@NgayKhoiHanhMax", ngayKhoiHanhMax);
+            cm.Parameters.AddWithValue("@GiaVeMin", giaVeMin);
+            cm.Parameters.AddWithValue("@GiaVeMax", giaVeMax);
+            cm.Parameters.AddWithValue("@TinhTrangGheTrong", tinhTrangGheTrong);
+
+            SqlDataAdapter data = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            data.Fill(dt);
+
+            return dt;
         }
     }
 }

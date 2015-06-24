@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BanVeChuyenBay.BLL;
+using BanVeChuyenBay.SqlHelper;
 
 namespace BanVeChuyenBay.GUI
 {
@@ -23,13 +24,13 @@ namespace BanVeChuyenBay.GUI
         private void btluu_Click(object sender, EventArgs e)
         {
            //Nhat - fix bug 1.1.1, 1.1.2
-            if (txtMatKhauMoi.Text == txtMatKhauXacNhan.Text && String.IsNullOrEmpty(txtMatKhauMoi.Text))
+            if (txtMatKhauMoi.Text == txtMatKhauXacNhan.Text && !String.IsNullOrEmpty(txtMatKhauMoi.Text))
             {
                 try
                 {
                     string id = ten;
                     string MatKhauMoi = txtMatKhauMoi.Text;
-                    BLL_NhanVien.UpdateMatKhau(id, MatKhauMoi);
+                    BLL_NhanVien.UpdateMatKhau(id, Utilities.Instance.MaHoa(MatKhauMoi));
                     MessageBox.Show("Thay đổi mật khẩu thành công");
                     this.DialogResult = DialogResult.Cancel;
                 }

@@ -391,6 +391,7 @@
     <Compile Include="SqlHelper\DatabaseManager.cs" />
     <Compile Include="SqlHelper\MyConnectionString.cs" />
     <Compile Include="SqlHelper\MyDatabaseConnection.cs" />
+    <Compile Include="SqlHelper\Utilities.cs" />
     <EmbeddedResource Include="GUI\ConnectionProperties.resx">
       <DependentUpon>ConnectionProperties.cs</DependentUpon>
     </EmbeddedResource>
