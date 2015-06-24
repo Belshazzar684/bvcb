@@ -131,6 +131,7 @@ namespace BanVeChuyenBay.GUI
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+                MessageBox.Show("Có lỗi xảy ra trong quá trình truy vấn dữ liệu", "Thông báo");
             }
         }
 

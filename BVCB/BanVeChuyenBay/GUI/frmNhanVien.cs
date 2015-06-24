@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BanVeChuyenBay.BLL;
+using BanVeChuyenBay.SqlHelper;
 
 namespace BanVeChuyenBay.GUI
 {
@@ -77,7 +78,8 @@ namespace BanVeChuyenBay.GUI
                     this.txtDiaChi.Text = r.Cells[2].Value.ToString();
                     this.txtDienThoai.Text = r.Cells[3].Value.ToString();
                     this.txtTenDangNhap.Text = r.Cells[4].Value.ToString();
-                    this.txtMatKhau.Text = r.Cells[5].Value.ToString();
+                    this.lblMatKhau.Text = "Mật Khẩu Mới";
+                    this.txtMatKhau.Text = "";
                     this.cbQuyenHan.Text = ConvertToStringQuyenHan(r);
                 }
                 else
@@ -87,6 +89,7 @@ namespace BanVeChuyenBay.GUI
                     this.txtDiaChi.Text = "";
                     this.txtDienThoai.Text = "";
                     this.txtTenDangNhap.Text = "";
+                    this.lblMatKhau.Text = "Mật Khẩu";
                     this.txtMatKhau.Text = "";
                     this.cbQuyenHan.Text = "Nhân Viên";
 
@@ -136,47 +139,52 @@ namespace BanVeChuyenBay.GUI
             try
             {
 
-                if (string.IsNullOrEmpty(txtTenNhanVien.Text))
-                {
-                    MessageBox.Show("Vui lòng nhập nhân viên");
-                    txtTenNhanVien.Focus();
-                }
-                else
-                {
-                    string MaNhanVien = txtMaNhanVien.Text;
-                    string TenNhanVien = txtTenNhanVien.Text;
-                    string DiaChi = txtDiaChi.Text;
-                    string DienThoai = txtDienThoai.Text;
-                    string MatKhau = txtMatKhau.Text;
-                    string TenDangNhap = txtTenDangNhap.Text;
-                    int QuyenHan = ConvertQuyenHan();
+                string MaNhanVien = txtMaNhanVien.Text;
+                string TenNhanVien = txtTenNhanVien.Text;
+                string DiaChi = txtDiaChi.Text;
+                string DienThoai = txtDienThoai.Text;
+                string MatKhau = txtMatKhau.Text;
+                string TenDangNhap = txtTenDangNhap.Text;
+                int QuyenHan = ConvertQuyenHan();
 
-
-                    if (KiemTraThem == true || dtNhanVien.RowCount == 0)//luu thêm
+                if (KiemTraThem == true || dtNhanVien.RowCount == 0)//luu thêm
+                {
+                    if (string.IsNullOrEmpty(MaNhanVien) || string.IsNullOrEmpty(TenNhanVien)
+                        || string.IsNullOrEmpty(TenDangNhap) || string.IsNullOrEmpty(MatKhau))
+                        MessageBox.Show("Vui lòng nhập đầy đủ mã nhân viên, tên nhân viên, tên đăng nhập, mật khẩu");
+                    else
                     {
-                        BLL_NhanVien.Insert(MaNhanVien, TenNhanVien, TenDangNhap, MatKhau, QuyenHan, DiaChi, DienThoai);
+                        BLL_NhanVien.Insert(MaNhanVien, TenNhanVien, TenDangNhap, Utilities.Instance.MaHoa(MatKhau), QuyenHan, DiaChi, DienThoai);
+                        MessageBox.Show("Tạo nhân viên thành công.");
                         if (dtNhanVien.RowCount > 0)
                         {
                             DataGridViewRow r = this.dtNhanVien.SelectedRows[0];
                             reset();
                             Gan_click();
                         }
-
-
                     }
-                    else//update 
-                    {                      
-                        BLL_NhanVien.Update(MaNhanVien, TenNhanVien, TenDangNhap, MatKhau, QuyenHan, DiaChi, DienThoai);
+                }
+                else//update 
+                {
+                    if (string.IsNullOrEmpty(MaNhanVien) || string.IsNullOrEmpty(TenNhanVien)
+                        || string.IsNullOrEmpty(TenDangNhap))
+                        MessageBox.Show("Vui lòng không bỏ trống mã nhân viên, tên nhân viên, tên đăng nhập");
+                    else
+                    {
+                        if (string.IsNullOrEmpty(MatKhau))
+                            BLL_NhanVien.Update(MaNhanVien, TenNhanVien, TenDangNhap, MatKhau, QuyenHan, DiaChi, DienThoai);
+                        else
+                            BLL_NhanVien.Update(MaNhanVien, TenNhanVien, TenDangNhap, Utilities.Instance.MaHoa(MatKhau), QuyenHan, DiaChi, DienThoai);
+
+                        MessageBox.Show("Cập nhật nhân viên thành công.");
                         reset();
                         dtNhanVien.CurrentCell = dtNhanVien.Rows[vitri].Cells[0];
                         dtNhanVien.Rows[vitri].Selected = true;
                         Gan_click();
-
                     }
-
-                    KiemTraThem = false;
                 }
 
+                KiemTraThem = false;
             }
             catch (Exception ex)
             {
@@ -232,6 +240,7 @@ namespace BanVeChuyenBay.GUI
             this.txtDiaChi.Text = "";
             this.txtDienThoai.Text = "";
             this.txtTenDangNhap.Text = "";
+            this.lblMatKhau.Text = "Mật Khẩu";
             this.txtMatKhau.Text = "";
             this.cbQuyenHan.Text = "Nhân Viên";
             LoadDataGridView();
