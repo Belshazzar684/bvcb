@@ -241,10 +241,10 @@ namespace BanVeChuyenBay.GUI
                         MyDatabaseConnection dbConn = new MyDatabaseConnection(_ConnectionString.GetMasterConnectionString());
                         if (dbConn.Open())
                         {
+                            dbConn.Close();
                             MessageBox.Show("Test success.");
                             if (!grbConnectToDatabase.Enabled)
-                                grbConnectToDatabase.Enabled = true;
-                            dbConn.Close();
+                                grbConnectToDatabase.Enabled = true; 
                         }
                         else
                             MessageBox.Show("Test fail.");
@@ -254,18 +254,18 @@ namespace BanVeChuyenBay.GUI
                         _ConnectionString.InitialCatalog = cboDatabaseName.Text;
                         _ConnectionString.ActiveDatabase = true;
                         MyDatabaseConnection dbConn = new MyDatabaseConnection(_ConnectionString.GetConnectionString());
-                        if (dbConn.Open())
+                        if (dbConn.CheckTable())
                         {
+                            dbConn.Close();
                             MessageBox.Show("Test success.");
                             if (!grbConnectToDatabase.Enabled)
                                 grbConnectToDatabase.Enabled = true;
-                            dbConn.Close();
                         }
                         else
                         {
                             _ConnectionString.ActiveUserName = false;
                             _ConnectionString.ActiveDatabase = false;
-                            MessageBox.Show("Test fail.");
+                            MessageBox.Show("Database is not valid.");
                         }
                     }
                 }
@@ -274,10 +274,10 @@ namespace BanVeChuyenBay.GUI
                     MyDatabaseConnection dbConn = new MyDatabaseConnection(_ConnectionString.GetMasterConnectionString());
                     if (dbConn.Open())
                     {
+                        dbConn.Close();
                         MessageBox.Show("Test success.");
                         if (!grbConnectToDatabase.Enabled)
                             grbConnectToDatabase.Enabled = true;
-                        dbConn.Close();
                     }
                     else
                         MessageBox.Show("Test fail.");
@@ -298,12 +298,14 @@ namespace BanVeChuyenBay.GUI
             {
                 dbConn.Close();
                 this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-                List<String> databaseNames = DatabaseManager.GetAllDatabaseName(dbConn);
+                List<String> databaseNames = DatabaseManager.GetAllDatabaseName(_ConnectionString.DataSource);
                 this.Cursor = System.Windows.Forms.Cursors.Arrow;
                 if (databaseNames == null)
                     MessageBox.Show("Load fail");
                 else
                 {
+                    if (databaseNames.Count <= 0)
+                        MessageBox.Show("Server " + _ConnectionString.DataSource + " doesn't have any User Database.");
                     cboDatabaseName.Items.Clear();
                     foreach (var dbName in databaseNames)
                     {
@@ -346,7 +348,7 @@ namespace BanVeChuyenBay.GUI
             }
 
             this.Cursor = Cursors.WaitCursor;
-            bool isTrue = DatabaseManager.CreateDatabase(dbConn, Properties.Resources.script, databaseName);
+            bool isTrue = DatabaseManager.CreateDatabase(_ConnectionString.DataSource, Properties.Resources.script, databaseName);
             this.Cursor = Cursors.Arrow;
             if (isTrue)
             {

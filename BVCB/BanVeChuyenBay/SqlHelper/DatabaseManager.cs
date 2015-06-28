@@ -51,18 +51,26 @@ namespace BanVeChuyenBay.SqlHelper
         //-----------------------------------------
         //Desc: lấy tên tất cả cơ sở dữ liệu trong sql server
         //-----------------------------------------
-        public static List<string> GetAllDatabaseName(MyDatabaseConnection dbConn)
+        public static List<string> GetAllDatabaseName(string serverName)
         {
-            string sql = "SELECT * FROM sys.databases d WHERE d.database_id > 6";
-            DataTable data = dbConn.ExecuteQuery(sql);
-            if (data == null)
-                return null;
-            else
+            try
             {
-                List<string> databaseNames = new List<string>();
-                for (int i = 0; i < data.Rows.Count; i++)
-                    databaseNames.Add(data.Rows[i][0].ToString());
-                return databaseNames;
+                Server srv = new Server(serverName);
+                if (srv == null)
+                    return null;
+                else
+                {
+                    List<string> databaseNames = new List<string>();
+                    foreach (Database db in srv.Databases)
+                        if (!db.IsSystemObject)
+                            databaseNames.Add(db.Name);
+                    return databaseNames;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return null;
             }
         }
 
@@ -94,40 +102,24 @@ namespace BanVeChuyenBay.SqlHelper
         //-----------------------------------------
         //Desc: tạo cơ sở dữ liệu
         //-----------------------------------------
-        public static bool CreateDatabase(MyDatabaseConnection dbConn, string fileScript,
+        public static bool CreateDatabase(string serverName, string dataScript,
             string databaseName)
         {
-            if (dbConn == null || dbConn.SqlConn == null)
-                return false;
-
-            string[] commands = fileScript.Split(new[] { "GO" }, StringSplitOptions.RemoveEmptyEntries);
-            int i;
-            SqlConnection sqlConn = dbConn.SqlConn;
             try
             {
-                SqlCommand sqlCmd = new SqlCommand() { CommandType = System.Data.CommandType.Text };
-                sqlCmd.Connection = sqlConn;
-                sqlConn.Open();
-
-                sqlCmd.CommandText = " USE [master]";
-                sqlCmd.ExecuteNonQuery();
-                sqlCmd.CommandText = "CREATE DATABASE [" + databaseName + "]";
-                sqlCmd.ExecuteNonQuery();
-                sqlCmd.CommandText = "USE [" + databaseName + "]";
-                sqlCmd.ExecuteNonQuery();
-
-                for (i = 0; i < commands.Length; i++)
+                Server srv = new Server(serverName);
+                if (srv == null)
+                    return false;
+                else
                 {
-                    sqlCmd.CommandText = commands[i];
-                    sqlCmd.ExecuteNonQuery();
+                    string data = dataScript.Replace("Database_Name", databaseName);
+                    srv.ConnectionContext.ExecuteNonQuery(data);
+                    return true;
                 }
-                sqlConn.Close();
-                return true;
             }
-            catch
+            catch(Exception ex)
             {
-                if (sqlConn.State == System.Data.ConnectionState.Open)
-                    sqlConn.Close();
+                Debug.WriteLine(ex.Message);
                 return false;
             }
         }
@@ -152,7 +144,7 @@ namespace BanVeChuyenBay.SqlHelper
         //-----------------------------------------
         public static bool RestoreDatabase(MyDatabaseConnection dbConn, string databaseName, string fileName)
         {
-            if (dbConn == null)
+            if (dbConn == null || dbConn.SqlConn == null)
                 return false;
             try
             {

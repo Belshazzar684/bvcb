@@ -211,6 +211,15 @@ namespace BanVeChuyenBay.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to select * from sys.tables where        ///exists (select * from sys.tables where name = &apos;DIADIEM&apos;)         ///and exists (select * from sys.tables where name = &apos;HANGHANGKHONG&apos;)         ///and exists (select * from sys.tables where name = &apos;SANBAY&apos;)         ///and exists (select * from sys.tables where name = &apos;TUYENBAY&apos;)         ///and exists (select * from sys.tables where name = &apos;LICHCHUYENBAY&apos;)         ///and exists (select * from sys.tables where name = &apos;CT_LICHCHUYENBAY&apos;)         ///and exists (select * from sys.tables where name = &apos;HANGVE&apos;)         ///and exists (select * from sys.t [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string CheckTable {
+            get {
+                return ResourceManager.GetString("CheckTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ChinaFlag {
@@ -316,6 +325,16 @@ namespace BanVeChuyenBay.Properties {
         internal static System.Drawing.Bitmap EUFlag {
             get {
                 object obj = ResourceManager.GetObject("EUFlag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_import_icon {
+            get {
+                object obj = ResourceManager.GetObject("file-import-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -511,29 +530,33 @@ namespace BanVeChuyenBay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CREATE PROCEDURE [dbo].[DELETE_BAOCAODOANHTHUCHUYENBAY]
+        ///   Looks up a localized string similar to 
+        ///CREATE DATABASE [Database_Name]
+        ///GO
+        ///USE [Database_Name]
+        ///GO
+        ///
+        ///---- NOI DUNG BM1
+        ///SET DATEFORMAT dmy;
+        ///
+        ///CREATE TABLE DIADIEM
         ///(
-        ///@MaChuyenBay varchar(10)
+        ///	MaDiaDiem varchar(10) primary key not null,
+        ///	QuocGia nvarchar(50) not null,
+        ///	ThanhPho nvarchar(50) not null,
         ///)
-        ///AS
-        ///BEGIN
-        ///	IF(EXISTS (SELECT * FROM BAOCAODOANHTHUCHUYENBAY A WHERE A.MaChuyenBay = @MaChuyenBay))
-        ///	BEGIN
-        ///	DELETE FROM BAOCAODOANHTHUCHUYENBAY
-        ///	WHERE MaChuyenBay = @MaChuyenBay
-        ///	END 
-        ///END
         ///
-        ///GO
-        ////****** Object:  StoredProcedure [dbo].[DELETE_BAOCAODOANHTHUNAM]    Script Date: 22/05/2015 15:25:37 ******/
-        ///SET ANSI_NULLS ON
-        ///GO
-        ///SET QUOTED_IDENTIFIER ON
-        ///GO
-        ///
-        ///CREATE PROCEDURE [dbo].[DELETE_BAOCAODOANHTHUNAM]
+        ///CREATE TABLE HANGHANGKHONG
         ///(
-        ///@Na [rest of string was truncated]&quot;;.
+        ///	MaHang varchar(10) primary key not null,
+        ///	TenHang nvarchar(50) not null,
+        ///)
+        ///
+        ///CREATE TABLE SANBAY
+        ///(
+        ///	MaSanBay VARCHAR(10) PRIMARY KEY NOT NULL,
+        ///	TenSanBay NVARCHAR(100),
+        ///	MaDiaDiem varchar(10) FOREIGN KEY REFERENCES DIADIEM [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string script {
             get {
