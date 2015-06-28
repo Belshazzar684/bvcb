@@ -78,6 +78,9 @@
     <Reference Include="DevExpress.Data.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Excel.4.5">
+      <HintPath>Lib\Excel.4.5.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -551,12 +554,14 @@
     <None Include="Resources\nhavien.png" />
     <None Include="Resources\ChinaFlag.png" />
     <None Include="DataBase\script.sql" />
+    <None Include="DataBase\CheckTable.sql" />
     <Content Include="Resources\currency.jpg" />
     <None Include="Resources\EUFlag.jpg" />
     <None Include="Resources\JapanFlag.png" />
     <None Include="Resources\RussianFlag.png" />
     <None Include="Resources\diadiem.jpg" />
     <None Include="Resources\customer_acct_mgt.jpg" />
+    <None Include="Resources\file-import-icon.png" />
     <Content Include="Resources\saigon-nhatrang-danang-hoian-hue-hanoi-319984314.jpg" />
     <None Include="Resources\SingleView.jpg" />
     <Content Include="Resources\thiet_ke_web_ve_may_bay_1.jpg" />

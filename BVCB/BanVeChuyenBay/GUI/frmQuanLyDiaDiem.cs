@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BanVeChuyenBay;
+using BanVeChuyenBay.SqlHelper;
+using System.Diagnostics;
 
 namespace BanVeChuyenBay.GUI
 {
@@ -21,12 +23,12 @@ namespace BanVeChuyenBay.GUI
 
         void LoadDanhSachDiaDiem()
         {
-            dataGridView1.Rows.Clear();
+            dgwDsDiaDiem.Rows.Clear();
 
             DataTable dt = BLL.BLL_DiaDiem.SelectAllDiaDiem();
             foreach (DataRow row in dt.Rows)
             {
-                dataGridView1.Rows.Add(row.ItemArray[(int)Support.BLL.Support.IDDiaDiem.QuocGia], row.ItemArray[(int)Support.BLL.Support.IDDiaDiem.ThanhPho], row.ItemArray[(int)Support.BLL.Support.IDDiaDiem.MaDiaDiem]);
+                dgwDsDiaDiem.Rows.Add(row.ItemArray[(int)Support.BLL.Support.IDDiaDiem.QuocGia], row.ItemArray[(int)Support.BLL.Support.IDDiaDiem.ThanhPho], row.ItemArray[(int)Support.BLL.Support.IDDiaDiem.MaDiaDiem]);
             }
         }
 
@@ -38,9 +40,9 @@ namespace BanVeChuyenBay.GUI
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgwDsDiaDiem.SelectedRows.Count > 0)
             {
-                BLL.BLL_DiaDiem.DeleteDiaDiem(dataGridView1.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString());
+                BLL.BLL_DiaDiem.DeleteDiaDiem(dgwDsDiaDiem.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString());
                 LoadDanhSachDiaDiem();
             }
             else
@@ -51,9 +53,9 @@ namespace BanVeChuyenBay.GUI
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgwDsDiaDiem.SelectedRows.Count > 0)
             {
-                BLL.BLL_DiaDiem.UpdateDiaDiem(dataGridView1.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString(), txtQuocGia.Text, txtThanhPho.Text);
+                BLL.BLL_DiaDiem.UpdateDiaDiem(dgwDsDiaDiem.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString(), txtQuocGia.Text, txtThanhPho.Text);
                 LoadDanhSachDiaDiem();
             }
             else
@@ -64,10 +66,10 @@ namespace BanVeChuyenBay.GUI
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgwDsDiaDiem.SelectedRows.Count > 0)
             {
-                txtQuocGia.Text = dataGridView1.SelectedRows[0].Cells["QuocGia"].Value.ToString();
-                txtThanhPho.Text = dataGridView1.SelectedRows[0].Cells["ThanhPho"].Value.ToString();
+                txtQuocGia.Text = dgwDsDiaDiem.SelectedRows[0].Cells["QuocGia"].Value.ToString();
+                txtThanhPho.Text = dgwDsDiaDiem.SelectedRows[0].Cells["ThanhPho"].Value.ToString();
             }
         }
 
@@ -76,6 +78,40 @@ namespace BanVeChuyenBay.GUI
             DevComponents.DotNetBar.TabControl TAB = frmMain.m_Tab;
             TAB.Tabs.Remove(TAB.SelectedTab);
             Close();
+        }
+
+        ///sự kiện click nút thêm từ file
+        ///chức năng: thêm địa điểm từ file
+        ///mô tả: chọn file excel chứa dữ liệu và hiển thị lên lưới
+        private void btnThemTuFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Filter = "Excel files (*.xls, *.xlsx)|*.xls;*.xlsx";
+                dlg.Multiselect = false;
+                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string filePath = dlg.FileName;
+                    List<string> data = Utilities.Instance.ReadFileExcel(filePath);
+                    if (data == null)
+                        MessageBox.Show("Đọc file thất bại");
+                    else
+                    {
+                        for (int i = 0; i * 2 < data.Count; i++)
+                        {
+                            if (!String.IsNullOrEmpty(data[2*i]) && !String.IsNullOrEmpty(data[2*i + 1]))
+                                dgwDsDiaDiem.Rows.Add(data[2*i], data[2*i + 1]);
+                        }
+                        MessageBox.Show("Đọc file thành công");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                MessageBox.Show("Có lỗi trong quá trình đọc file");
+            }
         }
     }
 }

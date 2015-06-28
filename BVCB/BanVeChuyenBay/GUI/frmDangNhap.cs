@@ -42,6 +42,7 @@ namespace BanVeChuyenBay.GUI
             }
             else
             {
+                
                 DataTable dt = BLL_NhanVien.Select_DangNhap(TenDangNhap, Utilities.Instance.MaHoa(MatKhau));
 
                 if (dt.Rows.Count > 0)

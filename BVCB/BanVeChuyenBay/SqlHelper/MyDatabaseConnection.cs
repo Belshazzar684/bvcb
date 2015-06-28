@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Resources = BanVeChuyenBay.Properties.Resources;
 
 namespace BanVeChuyenBay.SqlHelper
 {
@@ -13,21 +15,21 @@ namespace BanVeChuyenBay.SqlHelper
         //-----------------------------------------
         //Desc: Kết nối với csdl sql
         //-----------------------------------------
-        private SqlConnection _sqlConn;
+        private SqlConnection _SqlConn;
         public SqlConnection SqlConn
         {
-            get { return _sqlConn; }
-            set { _sqlConn = value; }
+            get { return _SqlConn; }
+            set { _SqlConn = value; }
         }
 
         public MyDatabaseConnection()
         {
-            _sqlConn = new SqlConnection();
+            _SqlConn = new SqlConnection();
         }
 
         public MyDatabaseConnection(String connectionString)
         {
-            _sqlConn = new SqlConnection(connectionString);
+            _SqlConn = new SqlConnection(connectionString);
         }
 
         //-----------------------------------------
@@ -37,7 +39,7 @@ namespace BanVeChuyenBay.SqlHelper
         {
             try
             {
-                _sqlConn.Open();
+                _SqlConn.Open();
             }
             catch
             {
@@ -53,7 +55,7 @@ namespace BanVeChuyenBay.SqlHelper
         {
             try
             {
-                _sqlConn.Close();
+                _SqlConn.Close();
             }
             catch
             {
@@ -67,7 +69,7 @@ namespace BanVeChuyenBay.SqlHelper
         //-----------------------------------------
         public DataTable ExecuteStoredProcedure(string spName, params SqlParameter[] sqlParameters)
         {
-            SqlCommand sqlCmd = new SqlCommand(spName, _sqlConn) { CommandType = CommandType.StoredProcedure };
+            SqlCommand sqlCmd = new SqlCommand(spName, _SqlConn) { CommandType = CommandType.StoredProcedure };
             if (sqlParameters != null && sqlParameters.Length > 0)
             {
                 foreach (SqlParameter sqlParam in sqlParameters)
@@ -106,7 +108,7 @@ namespace BanVeChuyenBay.SqlHelper
         //-----------------------------------------
         public bool ExecuteStoredProcedureNonQuery(string spName, params SqlParameter[] sqlParameters)
         {
-            SqlCommand sqlCmd = new SqlCommand(spName, _sqlConn) { CommandType = CommandType.StoredProcedure };
+            SqlCommand sqlCmd = new SqlCommand(spName, _SqlConn) { CommandType = CommandType.StoredProcedure };
             if (sqlParameters != null && sqlParameters.Length > 0)
             {
                 foreach (SqlParameter sqlParam in sqlParameters)
@@ -141,7 +143,7 @@ namespace BanVeChuyenBay.SqlHelper
         //-----------------------------------------
         public object ExecuteStoredProcedureScalar(string spName, params SqlParameter[] sqlParameters)
         {
-           SqlCommand sqlCmd = new SqlCommand(spName, _sqlConn) { CommandType = CommandType.StoredProcedure };
+           SqlCommand sqlCmd = new SqlCommand(spName, _SqlConn) { CommandType = CommandType.StoredProcedure };
             if (sqlParameters != null && sqlParameters.Length > 0)
             {
                 foreach (SqlParameter sqlParam in sqlParameters)
@@ -177,7 +179,7 @@ namespace BanVeChuyenBay.SqlHelper
         //-----------------------------------------
         public DataTable ExecuteQuery(string sql)
         {
-            SqlCommand sqlCmd = new SqlCommand(sql, _sqlConn) { CommandType = CommandType.Text };
+            SqlCommand sqlCmd = new SqlCommand(sql, _SqlConn) { CommandType = CommandType.Text };
             SqlDataAdapter sqlDa = new SqlDataAdapter(sqlCmd);
             DataTable dt = new DataTable();
             if (Open())
@@ -204,7 +206,7 @@ namespace BanVeChuyenBay.SqlHelper
         //-----------------------------------------
         public bool ExecuteNonQuery(string sql)
         {
-           SqlCommand sqlCmd = new SqlCommand(sql, _sqlConn) { CommandType = CommandType.Text };
+           SqlCommand sqlCmd = new SqlCommand(sql, _SqlConn) { CommandType = CommandType.Text };
             if (Open())
             {
                 try
@@ -228,7 +230,7 @@ namespace BanVeChuyenBay.SqlHelper
         //-----------------------------------------
         public object ExecuteScalar(string sql)
         {
-           SqlCommand sqlCmd = new SqlCommand(sql, _sqlConn) { CommandType = CommandType.Text };
+           SqlCommand sqlCmd = new SqlCommand(sql, _SqlConn) { CommandType = CommandType.Text };
             object obj;
             if (Open())
             {
@@ -248,6 +250,24 @@ namespace BanVeChuyenBay.SqlHelper
                 return null;
         }
 
-
+        //-----------------------------------------
+        //Desc: Kiểm tra tồn tại các bảng trong csdl
+        //-----------------------------------------
+        public bool CheckTable()
+        {
+            try
+            {
+                DataTable dt = ExecuteQuery(Resources.CheckTable);
+                if (dt != null && dt.Rows.Count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
+        }
     }
 }

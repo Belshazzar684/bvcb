@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Excel;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +41,50 @@ namespace BanVeChuyenBay.SqlHelper
         public string MaHoa(string data)
         {
             return BitConverter.ToString(encryptData(data)).Replace("-", "").ToLower();
+        }
+
+        ///hàm đọc file excel
+        ///chức năng: 
+        ///mô tả:
+        public List<string> ReadFileExcel(string filePath)
+        {
+            try
+            {
+                IExcelDataReader FileExcel;
+                FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+                
+                //Câu lệnh dùng cho Excel 2007 trở lên
+                FileExcel = ExcelReaderFactory.CreateOpenXmlReader(stream);
+
+                if (!FileExcel.IsValid)
+                {
+                    if (FileExcel.IsClosed)
+                        stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+
+                    //Câu lệnh dùng cho Excel 2003 trở xuống
+                    FileExcel = ExcelReaderFactory.CreateBinaryReader(stream);
+                }
+
+                DataSet result = FileExcel.AsDataSet();
+                FileExcel.IsFirstRowAsColumnNames = true;
+                List<string> data = new List<string>();
+                foreach (DataTable tbl in result.Tables)
+                {
+                    //dòng 1 là tên bảng, dòng 2 là tên cột
+                    for (int i = 2; i < tbl.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < tbl.Columns.Count; j++)
+                            data.Add(tbl.Rows[i][j].ToString());
+                    }
+                }
+                FileExcel.Close();
+                return data;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return null;
+            }
         }
     }
 }
