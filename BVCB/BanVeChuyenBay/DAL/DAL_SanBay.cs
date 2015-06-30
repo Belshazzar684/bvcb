@@ -55,5 +55,18 @@ namespace BanVeChuyenBay.DAL
 
             return dt;
         }
+
+        ///hàm kiểm tra tuyến bay
+        ///chức năng: kiểm tra tuyến bay đã tồn tại chưa
+        ///mô tả: kiểm tra theo MaSanBay
+        public int KiemTraSanBay(String MaSanBay)
+        {
+            SqlCommand cm = new SqlCommand("SELECT_EXIST_SANBAY", connect());
+            cm.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cm.Parameters.AddWithValue("@MaSanBay", MaSanBay);
+            int count = (int)cm.ExecuteScalar();
+            return count;
+        }
     }
 }

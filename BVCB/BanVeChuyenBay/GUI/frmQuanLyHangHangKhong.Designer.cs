@@ -45,6 +45,7 @@
             this.btXoa = new DevComponents.DotNetBar.ButtonX();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnThemTuFile = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -143,7 +144,7 @@
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.Controls.Add(this.dataGridView1);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel1.Location = new System.Drawing.Point(51, 103);
+            this.groupPanel1.Location = new System.Drawing.Point(13, 103);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(602, 369);
             // 
@@ -181,13 +182,14 @@
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.btnThemTuFile);
             this.groupPanel2.Controls.Add(this.btSua);
             this.groupPanel2.Controls.Add(this.btThoat);
             this.groupPanel2.Controls.Add(this.buttonX1);
             this.groupPanel2.Controls.Add(this.btThem);
             this.groupPanel2.Controls.Add(this.btXoa);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel2.Location = new System.Drawing.Point(659, 103);
+            this.groupPanel2.Location = new System.Drawing.Point(621, 103);
             this.groupPanel2.Name = "groupPanel2";
             this.groupPanel2.Size = new System.Drawing.Size(193, 369);
             // 
@@ -228,7 +230,7 @@
             this.btSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btSua.Image = global::BanVeChuyenBay.Properties.Resources.Pencil_icon;
             this.btSua.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btSua.Location = new System.Drawing.Point(48, 163);
+            this.btSua.Location = new System.Drawing.Point(48, 184);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(106, 48);
             this.btSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -257,7 +259,7 @@
             this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonX1.Image = global::BanVeChuyenBay.Properties.Resources.edit_validated_icon;
             this.buttonX1.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.buttonX1.Location = new System.Drawing.Point(48, 228);
+            this.buttonX1.Location = new System.Drawing.Point(48, 238);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(106, 48);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -286,7 +288,7 @@
             this.btXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btXoa.Image = global::BanVeChuyenBay.Properties.Resources.Actions_edit_delete_icon;
             this.btXoa.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btXoa.Location = new System.Drawing.Point(48, 85);
+            this.btXoa.Location = new System.Drawing.Point(48, 125);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(106, 53);
             this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -316,6 +318,20 @@
             this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox1.TabIndex = 52;
             this.PictureBox1.TabStop = false;
+            // 
+            // btnThemTuFile
+            // 
+            this.btnThemTuFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThemTuFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThemTuFile.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThemTuFile.Image = global::BanVeChuyenBay.Properties.Resources.file_import_icon;
+            this.btnThemTuFile.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.btnThemTuFile.Location = new System.Drawing.Point(48, 66);
+            this.btnThemTuFile.Name = "btnThemTuFile";
+            this.btnThemTuFile.Size = new System.Drawing.Size(106, 53);
+            this.btnThemTuFile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThemTuFile.TabIndex = 88;
+            this.btnThemTuFile.Text = "Thêm\r\nTừ File";
             // 
             // frmQuanLyHangHangKhong
             // 
@@ -353,5 +369,6 @@
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn TenSanBay;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn TongChuyenBay;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn SoChuyenHienTai;
+        private DevComponents.DotNetBar.ButtonX btnThemTuFile;
     }
 }

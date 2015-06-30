@@ -561,5 +561,13 @@ namespace BanVeChuyenBay
             }
         }
 
+        ///sự kiện click nút Định Dạng File Nhập
+        ///chức năng: hiển thị thông tin hỗ trợ nhập file
+        ///mô tả:
+        private void btnQDNhapFile_Click(object sender, EventArgs e)
+        {
+            frmDinhDangFileNhap.Instance.Visible = true;
+        }
+
     }
 }

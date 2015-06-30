@@ -179,6 +179,12 @@
     <Compile Include="GUI\frmDanhSachPhieuDatCho.Designer.cs">
       <DependentUpon>frmDanhSachPhieuDatCho.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmDinhDangExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDinhDangExcel.Designer.cs">
+      <DependentUpon>frmDinhDangExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmQuanLyDiaDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -413,6 +419,9 @@
     <EmbeddedResource Include="GUI\frmDanhSachPhieuDatCho.resx">
       <DependentUpon>frmDanhSachPhieuDatCho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDinhDangExcel.resx">
+      <DependentUpon>frmDinhDangExcel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLyDiaDiem.resx">
       <DependentUpon>frmQuanLyDiaDiem.cs</DependentUpon>
     </EmbeddedResource>
@@ -562,6 +571,9 @@
     <None Include="Resources\diadiem.jpg" />
     <None Include="Resources\customer_acct_mgt.jpg" />
     <None Include="Resources\file-import-icon.png" />
+    <None Include="Resources\dinh-dang-dia-diem.png" />
+    <None Include="Resources\dinh-dang-san-bay.png" />
+    <None Include="Resources\dinh-dang-tuyen-bay.png" />
     <Content Include="Resources\saigon-nhatrang-danang-hoian-hue-hanoi-319984314.jpg" />
     <None Include="Resources\SingleView.jpg" />
     <Content Include="Resources\thiet_ke_web_ve_may_bay_1.jpg" />

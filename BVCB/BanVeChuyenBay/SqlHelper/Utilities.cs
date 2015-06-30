@@ -46,7 +46,7 @@ namespace BanVeChuyenBay.SqlHelper
         ///hàm đọc file excel
         ///chức năng: 
         ///mô tả:
-        public List<string> ReadFileExcel(string filePath)
+        public DataTableCollection ReadFileExcel(string filePath)
         {
             try
             {
@@ -64,21 +64,9 @@ namespace BanVeChuyenBay.SqlHelper
                     //Câu lệnh dùng cho Excel 2003 trở xuống
                     FileExcel = ExcelReaderFactory.CreateBinaryReader(stream);
                 }
-
                 DataSet result = FileExcel.AsDataSet();
-                FileExcel.IsFirstRowAsColumnNames = true;
-                List<string> data = new List<string>();
-                foreach (DataTable tbl in result.Tables)
-                {
-                    //dòng 1 là tên bảng, dòng 2 là tên cột
-                    for (int i = 2; i < tbl.Rows.Count; i++)
-                    {
-                        for (int j = 0; j < tbl.Columns.Count; j++)
-                            data.Add(tbl.Rows[i][j].ToString());
-                    }
-                }
                 FileExcel.Close();
-                return data;
+                return result.Tables;
             }
             catch (Exception ex)
             {
