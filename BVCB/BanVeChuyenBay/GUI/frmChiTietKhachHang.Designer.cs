@@ -36,6 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbKhachHang = new System.Windows.Forms.ComboBox();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbMaKhachHang = new System.Windows.Forms.ComboBox();
+            this.MaChuyenBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhieuDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HangVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNguoiDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +48,6 @@
             this.TenHanhKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMNDHanhKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoaiHanhKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbMaKhachHang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.panelEx1.SuspendLayout();
@@ -70,8 +71,11 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaChuyenBay,
             this.MaPhieuDat,
             this.HangVe,
             this.TenNguoiDat,
@@ -159,6 +163,34 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(478, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 19);
+            this.label1.TabIndex = 89;
+            this.label1.Text = "Mã khách hàng:";
+            // 
+            // cbMaKhachHang
+            // 
+            this.cbMaKhachHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbMaKhachHang.FormattingEnabled = true;
+            this.cbMaKhachHang.Location = new System.Drawing.Point(602, 91);
+            this.cbMaKhachHang.Name = "cbMaKhachHang";
+            this.cbMaKhachHang.Size = new System.Drawing.Size(187, 27);
+            this.cbMaKhachHang.TabIndex = 88;
+            this.cbMaKhachHang.SelectedIndexChanged += new System.EventHandler(this.cbMaKhachHang_SelectedIndexChanged);
+            // 
+            // MaChuyenBay
+            // 
+            this.MaChuyenBay.DataPropertyName = "MaChuyenBay";
+            this.MaChuyenBay.HeaderText = "Mã chuyến bay";
+            this.MaChuyenBay.Name = "MaChuyenBay";
+            this.MaChuyenBay.ReadOnly = true;
+            // 
             // MaPhieuDat
             // 
             this.MaPhieuDat.DataPropertyName = "MaPhieuDatCho";
@@ -229,27 +261,6 @@
             this.DienThoaiHanhKhach.ReadOnly = true;
             this.DienThoaiHanhKhach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(478, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 19);
-            this.label1.TabIndex = 89;
-            this.label1.Text = "Mã khách hàng:";
-            // 
-            // cbMaKhachHang
-            // 
-            this.cbMaKhachHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMaKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbMaKhachHang.FormattingEnabled = true;
-            this.cbMaKhachHang.Location = new System.Drawing.Point(602, 91);
-            this.cbMaKhachHang.Name = "cbMaKhachHang";
-            this.cbMaKhachHang.Size = new System.Drawing.Size(187, 27);
-            this.cbMaKhachHang.TabIndex = 88;
-            this.cbMaKhachHang.SelectedIndexChanged += new System.EventHandler(this.cbMaKhachHang_SelectedIndexChanged);
-            // 
             // frmChiTietKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,6 +287,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbKhachHang;
         private DevComponents.DotNetBar.PanelEx panelEx1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbMaKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaChuyenBay;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieuDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn HangVe;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNguoiDat;
@@ -285,7 +299,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenHanhKhach;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMNDHanhKhach;
         private System.Windows.Forms.DataGridViewTextBoxColumn DienThoaiHanhKhach;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbMaKhachHang;
     }
 }

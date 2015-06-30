@@ -622,7 +622,7 @@ namespace BanVeChuyenBay
         {
             if (checkTab("Thông Tin Vé Đặt") == false)
             {
-                frmXemThongTinVe form = new frmXemThongTinVe();
+                frmXemThongTinVe form = new frmXemThongTinVe(MaNhanVien);
                 AddTabControl(form, "Thông Tin Vé Đặt");
             }
         }

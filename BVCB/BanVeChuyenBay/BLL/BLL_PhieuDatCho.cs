@@ -35,20 +35,5 @@ namespace BanVeChuyenBay.BLL
         {
             return pdc.SelectMaxSTTPhieuDatCho();
         }
-
-        //Nhat
-        public static int SelectLast_MaPhieuDatCho()
-        {
-            DataTable dt = pdc.SelectLastMaPhieuDatCho();
-            if (dt.Rows.Count > 0)
-            {
-                //Lay gia tri cuoi cua chuoi do MaPhieuDatCho co tien to 'MP'
-                return int.Parse(dt.Rows[0].ItemArray[0].ToString().Substring(2, 1));
-            }
-            else
-            {
-                return -1;
-            }
-        }
     }
 }
