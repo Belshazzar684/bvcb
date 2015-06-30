@@ -64,19 +64,18 @@ namespace BanVeChuyenBay.GUI
                         int count = 0;
                         foreach (DataTable table in tables)
                         {
-                            if (table.Rows.Count >= 2 && table.Columns.Count >= 2)
+                            if (table.Rows.Count >= 2 && table.Columns.Count >= 1)
                             {
                                 for (int i = 2; i < table.Rows.Count; i++)
                                 {
                                     if (table.Rows[i] != null
-                                        && !String.IsNullOrEmpty(table.Rows[i][0].ToString())
-                                            && !String.IsNullOrEmpty(table.Rows[i][1].ToString()))
+                                        && !String.IsNullOrEmpty(table.Rows[i][0].ToString()))
                                     {
                                         try
                                         {
                                             //if (BLL.BLL_HangHangKhong.KiemTraHang(table.Rows[i][0].ToString()) == 0)
                                             {
-                                                //BLL.BLL_HangHangKhong.InsertHangHangKhong(table.Rows[i][0].ToString(), table.Rows[i][1].ToString());
+                                                //BLL.BLL_HangHangKhong.InsertHangHangKhong(table.Rows[i][0].ToString());
                                                 count++;
                                             }
                                         }

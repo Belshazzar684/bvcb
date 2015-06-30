@@ -56,8 +56,8 @@ namespace BanVeChuyenBay.DAL
             return dt;
         }
 
-        ///hàm kiểm tra tuyến bay
-        ///chức năng: kiểm tra tuyến bay đã tồn tại chưa
+        ///hàm kiểm tra sân bay
+        ///chức năng: kiểm tra sân bay đã tồn tại chưa
         ///mô tả: kiểm tra theo MaSanBay
         public int KiemTraSanBay(String MaSanBay)
         {
