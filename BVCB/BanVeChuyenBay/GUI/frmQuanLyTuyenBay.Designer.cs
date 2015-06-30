@@ -37,6 +37,7 @@
             this.SanBayDi = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.SanBayDen = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnThemTuFile = new DevComponents.DotNetBar.ButtonX();
             this.btThoat = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.btThem = new DevComponents.DotNetBar.ButtonX();
@@ -168,6 +169,7 @@
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.btnThemTuFile);
             this.groupPanel2.Controls.Add(this.btThoat);
             this.groupPanel2.Controls.Add(this.buttonX1);
             this.groupPanel2.Controls.Add(this.btThem);
@@ -207,6 +209,21 @@
             this.groupPanel2.TabIndex = 90;
             this.groupPanel2.Text = "Chức năng";
             // 
+            // btnThemTuFile
+            // 
+            this.btnThemTuFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThemTuFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThemTuFile.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThemTuFile.Image = global::BanVeChuyenBay.Properties.Resources.file_import_icon;
+            this.btnThemTuFile.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.btnThemTuFile.Location = new System.Drawing.Point(48, 78);
+            this.btnThemTuFile.Name = "btnThemTuFile";
+            this.btnThemTuFile.Size = new System.Drawing.Size(106, 53);
+            this.btnThemTuFile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThemTuFile.TabIndex = 87;
+            this.btnThemTuFile.Text = "Thêm\r\nTừ File";
+            this.btnThemTuFile.Click += new System.EventHandler(this.btnThemTuFile_Click);
+            // 
             // btThoat
             // 
             this.btThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -229,7 +246,7 @@
             this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonX1.Image = global::BanVeChuyenBay.Properties.Resources.edit_validated_icon;
             this.buttonX1.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.buttonX1.Location = new System.Drawing.Point(48, 201);
+            this.buttonX1.Location = new System.Drawing.Point(48, 224);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(106, 48);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -259,7 +276,7 @@
             this.btXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btXoa.Image = global::BanVeChuyenBay.Properties.Resources.Actions_edit_delete_icon;
             this.btXoa.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btXoa.Location = new System.Drawing.Point(48, 100);
+            this.btXoa.Location = new System.Drawing.Point(48, 151);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(106, 53);
             this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -325,5 +342,6 @@
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn MaTuyenBay;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn SanBayDi;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn SanBayDen;
+        private DevComponents.DotNetBar.ButtonX btnThemTuFile;
     }
 }

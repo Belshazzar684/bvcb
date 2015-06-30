@@ -303,7 +303,7 @@
             this.btnThemTuFile.Size = new System.Drawing.Size(106, 48);
             this.btnThemTuFile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnThemTuFile.TabIndex = 87;
-            this.btnThemTuFile.Text = "Từ File";
+            this.btnThemTuFile.Text = "Thêm\r\nTừ File";
             this.btnThemTuFile.Click += new System.EventHandler(this.btnThemTuFile_Click);
             // 
             // btSua

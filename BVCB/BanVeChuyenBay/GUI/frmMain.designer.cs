@@ -145,6 +145,7 @@
             this.btQLSanBay = new DevComponents.DotNetBar.ButtonItem();
             this.btnKhachHang = new DevComponents.DotNetBar.ButtonItem();
             this.btnHangHangKhong = new DevComponents.DotNetBar.ButtonItem();
+            this.btnDiaDiem = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
             this.btLichChuyenBay = new DevComponents.DotNetBar.ButtonItem();
             this.btVeChuyenBay = new DevComponents.DotNetBar.ButtonItem();
@@ -193,7 +194,7 @@
             this.galleryContainer14 = new DevComponents.DotNetBar.GalleryContainer();
             this.labelItem14 = new DevComponents.DotNetBar.LabelItem();
             this.btThemChuyenBay = new DevComponents.DotNetBar.ButtonItem();
-            this.btnDiaDiem = new DevComponents.DotNetBar.ButtonItem();
+            this.btnQDNhapFile = new DevComponents.DotNetBar.ButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.bar1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -1690,12 +1691,12 @@
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
             this.ribbonControl1.Controls.Add(this.rbpDanhMuc);
-            this.ribbonControl1.Controls.Add(this.rbpTraCuu);
             this.ribbonControl1.Controls.Add(this.rbpHeThong);
             this.ribbonControl1.Controls.Add(this.rbpGioiThieu);
             this.ribbonControl1.Controls.Add(this.rbpPhanQuyen);
             this.ribbonControl1.Controls.Add(this.rbpThayDoi);
             this.ribbonControl1.Controls.Add(this.rbpBaoCao);
+            this.ribbonControl1.Controls.Add(this.rbpTraCuu);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -1777,7 +1778,8 @@
             this.btQLSanBay,
             this.btnKhachHang,
             this.btnHangHangKhong,
-            this.btnDiaDiem});
+            this.btnDiaDiem,
+            this.btnQDNhapFile});
             this.ribbonBar5.Location = new System.Drawing.Point(512, 0);
             this.ribbonBar5.Name = "ribbonBar5";
             this.ribbonBar5.Size = new System.Drawing.Size(662, 92);
@@ -1845,6 +1847,16 @@
             this.btnHangHangKhong.SubItemsExpandWidth = 14;
             this.btnHangHangKhong.Text = "Hãng hàng không";
             this.btnHangHangKhong.Click += new System.EventHandler(this.btnHangHangKhong_Click);
+            // 
+            // btnDiaDiem
+            // 
+            this.btnDiaDiem.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnDiaDiem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDiaDiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDiaDiem.Name = "btnDiaDiem";
+            this.btnDiaDiem.SubItemsExpandWidth = 14;
+            this.btnDiaDiem.Text = "Địa điểm";
+            this.btnDiaDiem.Click += new System.EventHandler(this.btnDiaDiem_Click);
             // 
             // ribbonBar3
             // 
@@ -2623,15 +2635,15 @@
             this.btThemChuyenBay.SubItemsExpandWidth = 14;
             this.btThemChuyenBay.Text = "Thêm";
             // 
-            // btnDiaDiem
+            // btnQDNhapFile
             // 
-            this.btnDiaDiem.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnDiaDiem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDiaDiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDiaDiem.Name = "btnDiaDiem";
-            this.btnDiaDiem.SubItemsExpandWidth = 14;
-            this.btnDiaDiem.Text = "Địa điểm";
-            this.btnDiaDiem.Click += new System.EventHandler(this.btnDiaDiem_Click);
+            this.btnQDNhapFile.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnQDNhapFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnQDNhapFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQDNhapFile.Name = "btnQDNhapFile";
+            this.btnQDNhapFile.SubItemsExpandWidth = 14;
+            this.btnQDNhapFile.Text = "Quy Định Nhập File";
+            this.btnQDNhapFile.Click += new System.EventHandler(this.btnQDNhapFile_Click);
             // 
             // frmMain
             // 
@@ -2841,5 +2853,6 @@
         private DevComponents.DotNetBar.ButtonItem btnHangHangKhong;
         private DevComponents.DotNetBar.ButtonItem btnVeDat;
         private DevComponents.DotNetBar.ButtonItem btnDiaDiem;
+        private DevComponents.DotNetBar.ButtonItem btnQDNhapFile;
     }
 }

@@ -82,35 +82,67 @@ namespace BanVeChuyenBay.GUI
 
         ///sự kiện click nút thêm từ file
         ///chức năng: thêm địa điểm từ file
-        ///mô tả: chọn file excel chứa dữ liệu và hiển thị lên lưới
+        ///mô tả: chọn file excel chứa dữ liệu và thêm vào csdl
         private void btnThemTuFile_Click(object sender, EventArgs e)
         {
             try
             {
+                if (frmDinhDangFileNhap.Instance.CheckRemind)
+                {
+                    frmDinhDangFileNhap.Instance.CheckOk = false;
+                    frmDinhDangFileNhap.Instance.ShowDialog();
+                    if (!frmDinhDangFileNhap.Instance.CheckOk)
+                        return;
+                }
                 OpenFileDialog dlg = new OpenFileDialog();
                 dlg.Filter = "Excel files (*.xls, *.xlsx)|*.xls;*.xlsx";
                 dlg.Multiselect = false;
                 if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     string filePath = dlg.FileName;
-                    List<string> data = Utilities.Instance.ReadFileExcel(filePath);
-                    if (data == null)
+                    DataTableCollection tables = Utilities.Instance.ReadFileExcel(filePath);
+                    if (tables == null)
                         MessageBox.Show("Đọc file thất bại");
                     else
                     {
-                        for (int i = 0; i * 2 < data.Count; i++)
+                        int count = 0;
+                        foreach (DataTable table in tables)
                         {
-                            if (!String.IsNullOrEmpty(data[2*i]) && !String.IsNullOrEmpty(data[2*i + 1]))
-                                dgwDsDiaDiem.Rows.Add(data[2*i], data[2*i + 1]);
+                            if (table.Rows.Count >=2 && table.Columns.Count >= 2)
+                            {
+                                for (int i = 2; i < table.Rows.Count; i++)
+                                {
+                                    if (table.Rows[i] != null
+                                        && !String.IsNullOrEmpty(table.Rows[i][0].ToString())
+                                            && !String.IsNullOrEmpty(table.Rows[i][1].ToString()))
+                                    {
+                                        try
+                                        {
+                                            BLL.BLL_DiaDiem.InsertDiaDiem(table.Rows[i][0].ToString(), table.Rows[i][1].ToString());
+                                            count++;
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            Debug.WriteLine(ex.Message);
+                                        }
+                                    }
+                                }
+                            }
                         }
-                        MessageBox.Show("Đọc file thành công");
+                        if (count == 0)
+                            MessageBox.Show("Không thêm được dòng dữ liệu nào.");
+                        else
+                        {
+                            LoadDanhSachDiaDiem();
+                            MessageBox.Show("Có " + count.ToString() + " địa điểm được thêm vào.");
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                MessageBox.Show("Có lỗi trong quá trình đọc file");
+                MessageBox.Show("Có lỗi trong quá trình thêm dữ liệu");
             }
         }
     }

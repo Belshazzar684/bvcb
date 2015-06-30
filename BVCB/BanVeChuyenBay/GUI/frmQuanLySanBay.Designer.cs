@@ -33,7 +33,12 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaSanBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.TenSanBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.QuocgIa = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.ThanhPho = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnThemTuFile = new DevComponents.DotNetBar.ButtonX();
             this.btSua = new DevComponents.DotNetBar.ButtonX();
             this.btThoat = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
@@ -41,10 +46,6 @@
             this.btXoa = new DevComponents.DotNetBar.ButtonX();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MaSanBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.TenSanBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.QuocgIa = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.ThanhPho = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -149,10 +150,37 @@
             this.dataGridView1.Size = new System.Drawing.Size(533, 348);
             this.dataGridView1.TabIndex = 0;
             // 
+            // MaSanBay
+            // 
+            this.MaSanBay.HeaderText = "Mã Sân Bay";
+            this.MaSanBay.Name = "MaSanBay";
+            // 
+            // TenSanBay
+            // 
+            this.TenSanBay.FillWeight = 250F;
+            this.TenSanBay.HeaderText = "Tên Sân Bay";
+            this.TenSanBay.Name = "TenSanBay";
+            this.TenSanBay.Width = 180;
+            // 
+            // QuocgIa
+            // 
+            this.QuocgIa.HeaderText = "Quốc Gia";
+            this.QuocgIa.Name = "QuocgIa";
+            this.QuocgIa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QuocgIa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ThanhPho
+            // 
+            this.ThanhPho.HeaderText = "Thành Phố";
+            this.ThanhPho.Name = "ThanhPho";
+            this.ThanhPho.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ThanhPho.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // groupPanel2
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.btnThemTuFile);
             this.groupPanel2.Controls.Add(this.btSua);
             this.groupPanel2.Controls.Add(this.btThoat);
             this.groupPanel2.Controls.Add(this.buttonX1);
@@ -193,6 +221,21 @@
             this.groupPanel2.TabIndex = 92;
             this.groupPanel2.Text = "Chức năng";
             // 
+            // btnThemTuFile
+            // 
+            this.btnThemTuFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThemTuFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThemTuFile.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThemTuFile.Image = global::BanVeChuyenBay.Properties.Resources.file_import_icon;
+            this.btnThemTuFile.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.btnThemTuFile.Location = new System.Drawing.Point(48, 66);
+            this.btnThemTuFile.Name = "btnThemTuFile";
+            this.btnThemTuFile.Size = new System.Drawing.Size(106, 53);
+            this.btnThemTuFile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThemTuFile.TabIndex = 88;
+            this.btnThemTuFile.Text = "Thêm\r\nTừ File";
+            this.btnThemTuFile.Click += new System.EventHandler(this.btnThemTuFile_Click);
+            // 
             // btSua
             // 
             this.btSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -200,7 +243,7 @@
             this.btSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btSua.Image = global::BanVeChuyenBay.Properties.Resources.Pencil_icon;
             this.btSua.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btSua.Location = new System.Drawing.Point(48, 163);
+            this.btSua.Location = new System.Drawing.Point(48, 184);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(106, 48);
             this.btSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -230,7 +273,7 @@
             this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonX1.Image = global::BanVeChuyenBay.Properties.Resources.edit_validated_icon;
             this.buttonX1.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.buttonX1.Location = new System.Drawing.Point(48, 228);
+            this.buttonX1.Location = new System.Drawing.Point(48, 238);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(106, 48);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -260,7 +303,7 @@
             this.btXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btXoa.Image = global::BanVeChuyenBay.Properties.Resources.Actions_edit_delete_icon;
             this.btXoa.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btXoa.Location = new System.Drawing.Point(48, 85);
+            this.btXoa.Location = new System.Drawing.Point(48, 125);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(106, 53);
             this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -291,32 +334,6 @@
             this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox1.TabIndex = 52;
             this.PictureBox1.TabStop = false;
-            // 
-            // MaSanBay
-            // 
-            this.MaSanBay.HeaderText = "Mã Sân Bay";
-            this.MaSanBay.Name = "MaSanBay";
-            // 
-            // TenSanBay
-            // 
-            this.TenSanBay.FillWeight = 250F;
-            this.TenSanBay.HeaderText = "Tên Sân Bay";
-            this.TenSanBay.Name = "TenSanBay";
-            this.TenSanBay.Width = 180;
-            // 
-            // QuocgIa
-            // 
-            this.QuocgIa.HeaderText = "Quốc Gia";
-            this.QuocgIa.Name = "QuocgIa";
-            this.QuocgIa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.QuocgIa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ThanhPho
-            // 
-            this.ThanhPho.HeaderText = "Thành Phố";
-            this.ThanhPho.Name = "ThanhPho";
-            this.ThanhPho.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ThanhPho.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frmQuanLySanBay
             // 
@@ -354,5 +371,6 @@
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn TenSanBay;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn QuocgIa;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn ThanhPho;
+        private DevComponents.DotNetBar.ButtonX btnThemTuFile;
     }
 }

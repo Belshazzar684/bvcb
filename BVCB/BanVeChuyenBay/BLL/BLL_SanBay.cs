@@ -31,5 +31,13 @@ namespace BanVeChuyenBay.BLL
         {
             return sanbay.SelectAllSanBay();
         }
+
+        ///hàm kiểm tra tuyến bay
+        ///chức năng: kiểm tra tuyến bay đã tồn tại chưa
+        ///mô tả: kiểm tra theo MaSanBay
+        public static int KiemTraSanBay(String MaSanBay)
+        {
+            return sanbay.KiemTraSanBay(MaSanBay);
+        }
     }
 }

@@ -302,6 +302,36 @@ namespace BanVeChuyenBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dinh_dang_dia_diem {
+            get {
+                object obj = ResourceManager.GetObject("dinh-dang-dia-diem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dinh_dang_san_bay {
+            get {
+                object obj = ResourceManager.GetObject("dinh-dang-san-bay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dinh_dang_tuyen_bay {
+            get {
+                object obj = ResourceManager.GetObject("dinh-dang-tuyen-bay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_validated_icon {
             get {
                 object obj = ResourceManager.GetObject("edit-validated-icon", resourceCulture);

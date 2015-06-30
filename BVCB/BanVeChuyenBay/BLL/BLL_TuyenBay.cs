@@ -30,5 +30,22 @@ namespace BanVeChuyenBay.BLL
         {
             return tb.SelectAtColumnsTuyenBay(columns);
         }
+
+        ///hàm thêm tuyến bay
+        ///chức năng: thêm tuyến bay khi đã có MaSanBayDi và MaSanBayDen
+        ///mô tả: kiểm tra tồn tại trước khi thêm
+        public static int InsertTuyenBay(String MaSanBayDi, String MaSanBayDen)
+        {
+            string MaTuyenBay = MaSanBayDi + "_" + MaSanBayDen;
+            return tb.InsertTuyenBay(MaTuyenBay, MaSanBayDi, MaSanBayDen);
+        }
+
+        ///hàm kiểm tra tuyến bay
+        ///chức năng: kiểm tra tuyến bay đã tồn tại chưa
+        ///mô tả: kiểm tra theo MaSanBayDi và MaSanBayDen
+        public static int KiemTraTuyenBay(String MaSanBayDi, String MaSanBayDen)
+        {
+            return tb.KiemTraTuyenBay(MaSanBayDi, MaSanBayDen);
+        }
     }
 }
