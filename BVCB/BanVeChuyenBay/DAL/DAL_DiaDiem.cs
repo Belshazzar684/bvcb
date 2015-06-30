@@ -15,8 +15,7 @@ namespace BanVeChuyenBay.DAL
             SqlCommand cm = new SqlCommand("INSERT_DIADIEM", connect());
             cm.CommandType = CommandType.StoredProcedure;
 
-            //Mã random chờ mã tự động
-            cm.Parameters.AddWithValue("@MaDiaDiem", new Random().Next());
+            cm.Parameters.AddWithValue("@MaDiaDiem", "DD" + BLL.BLL_BoDem.SelectBoDem("DIADIEM") + 1);
             cm.Parameters.AddWithValue("@QuocGia", QuocGia);
             cm.Parameters.AddWithValue("@ThanhPho", ThanhPho);
 

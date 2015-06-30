@@ -179,7 +179,7 @@ namespace BanVeChuyenBay.GUI
 
                 DataTable dt = BLL.BLL_PhieuDatCho.SelectAllPhieuDatCho();
 
-                String MaPhieuDat = Support.BLL.Support.MaPhieuDat + (dt.Rows.Count + 1);
+                String MaPhieuDat = Support.BLL.Support.MaPhieuDat + (BLL.BLL_BoDem.SelectBoDem("PHIEUDATCHO") + 1);
 
                 BLL.BLL_PhieuDatCho.InsertPhieuDatCho(MaPhieuDat, txtNguoiDat.Text, txtCMND.Text, txtDienThoai.Text, DateTime.Now);
                 BLL.BLL_CT_PhieuDatCho.InsertCT_PhieuDatCho(MaPhieuDat, cbMaChuyenBay.Text, txtNguoiBay.Text, txtCMND_Di.Text, txtDienThoai_Di.Text, cbHangVe.Text, true);

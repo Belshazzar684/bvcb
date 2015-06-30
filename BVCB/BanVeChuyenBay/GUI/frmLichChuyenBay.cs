@@ -60,6 +60,7 @@ namespace BanVeChuyenBay.GUI
             dataGridView2.Rows[0].Cells[0].Value = "";
             dataGridView2.Rows[0].Cells[1].Value = "";
 
+            txtMaChuyenBay.Text = "cb" + (BLL_BoDem.SelectBoDem("LICHCHUYENBAY") + 1);
         }
 
         private void loadSoHangVe()
@@ -355,7 +356,7 @@ namespace BanVeChuyenBay.GUI
 
 
                 /// nhap du lieu vao bll
-                BLL_LichChuyenBay.InsertLichChuyenBay(lcb.MaChuyenBay, lcb.MaTuyenBay, lcb.KhoiHanh, lcb.ThoiGianBay, lcb.DonGia, "VNA");
+                BLL_LichChuyenBay.InsertLichChuyenBay(lcb.MaChuyenBay, lcb.MaTuyenBay, lcb.KhoiHanh, lcb.ThoiGianBay, lcb.DonGia, "HHK1");
 
                 for (int i = 0; i < ct_lcb.Count; i++)
                 {
@@ -440,7 +441,7 @@ namespace BanVeChuyenBay.GUI
 
         private void buttonX4_Click(object sender, EventArgs e)
         {
-            txtMaChuyenBay.Text = "";
+            txtMaChuyenBay.Text = "cb" + (BLL_BoDem.SelectBoDem("LICHCHUYENBAY") + 1);
             txtGiaVe.Text = "";
             txtThoiGianBay.Text = "";
 

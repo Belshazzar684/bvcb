@@ -226,7 +226,7 @@ namespace BanVeChuyenBay.GUI
                 //    stt = int.Parse(dt.Rows[0].ItemArray[0].ToString());
 
                 //Nhat - fix bug 1.5.1
-                String MaPhieuDat = Support.BLL.Support.MaPhieuDat + (BLL.BLL_PhieuDatCho.SelectLast_MaPhieuDatCho() + 1);
+                String MaPhieuDat = Support.BLL.Support.MaPhieuDat + (BLL.BLL_BoDem.SelectBoDem("PHIEUDATCHO") + 1);
 
 
                 BLL.BLL_PhieuDatCho.InsertPhieuDatCho(MaPhieuDat, txtNguoiDat.Text, txtCMND.Text, txtDienThoai.Text, dateTimePicker1.Value);

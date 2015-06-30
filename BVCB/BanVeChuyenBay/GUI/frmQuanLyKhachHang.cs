@@ -34,6 +34,7 @@ namespace BanVeChuyenBay.GUI
 
         private void frmQuanLyKhachHang_Load(object sender, EventArgs e)
         {
+            txtMaKhachHang.Text = (BLL_BoDem.SelectBoDem("NHANVIEN") + 1).ToString();
             LoadDataGridView();
             Gan_click();
             if (chkPass.Checked)
@@ -43,7 +44,7 @@ namespace BanVeChuyenBay.GUI
             else
             {
                 this.txtMatKhau.UseSystemPasswordChar = true;
-            }
+            }    
         }
 
         Boolean KiemTraThem = false;
@@ -53,11 +54,6 @@ namespace BanVeChuyenBay.GUI
             {
                 this.dtKhachHang.AutoGenerateColumns = false;
                 dtKhachHang.DataSource = BLL_NhanVien.SelectALLKhachHang();
-                foreach (DataGridViewRow row in dtKhachHang.Rows)
-                {
-                    DataTable ctkh = BLL_KhachHang.Select_ChiTietKhachHang(row.Cells["MaKhachHang"].Value.ToString());
-                    row.Cells["SoLuongVeDat"].Value = BLL_KhachHang.Select_ChiTietKhachHang(row.Cells["MaKhachHang"].Value.ToString()).Rows.Count;
-                }
                 txtMaKhachHang.ReadOnly = true;
                 lbTongLoaiThuoc.Text = dtKhachHang.RowCount.ToString();
                 this.dtKhachHang.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -124,6 +120,7 @@ namespace BanVeChuyenBay.GUI
             KiemTraThem = true;
             dtKhachHang.Enabled = false;
             btxoa.Enabled = false;
+            txtMaKhachHang.Text = (BLL_BoDem.SelectBoDem("NHANVIEN") + 1).ToString();
         }
 
         private void btluu_Click(object sender, EventArgs e)
@@ -132,7 +129,7 @@ namespace BanVeChuyenBay.GUI
             {
 
                 //Ma random cho ma tu dong
-                string MaKhachHang = new Random().Next().ToString();
+                string MaKhachHang = txtMaKhachHang.Text;
                 string TenKhachHang = txtTenKhachHang.Text;
                 string DiaChi = txtDiaChi.Text;
                 string DienThoai = txtDienThoai.Text;

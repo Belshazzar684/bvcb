@@ -41,7 +41,7 @@ namespace BanVeChuyenBay.GUI
                         }
                     }
                     //Ma nhan vien random cho ma tu dong
-                    String NewMaNhanVien = new Random().Next().ToString();
+                    String NewMaNhanVien = (BLL_BoDem.SelectBoDem("NHANVIEN") + 1).ToString();
                     BLL_NhanVien.Insert(NewMaNhanVien, txtTenNguoiDung.Text, txtTenDangNhap.Text, Utilities.Instance.MaHoa(txtMatKhauMoi.Text), 3, txtDiaChi.Text, txtDienThoai.Text);
                     BLL_KhachHang.Insert_ThongTinKhachHang(NewMaNhanVien, dtpNgaySinh.Value, cbGioiTinh.Text, txtCMND.Text);
                     MessageBox.Show("Tạo nhân tài khoản thành công.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

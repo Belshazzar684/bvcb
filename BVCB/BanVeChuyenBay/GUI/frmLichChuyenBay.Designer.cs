@@ -84,6 +84,7 @@
             this.txtMaChuyenBay.ForeColor = System.Drawing.Color.Blue;
             this.txtMaChuyenBay.Location = new System.Drawing.Point(226, 4);
             this.txtMaChuyenBay.Name = "txtMaChuyenBay";
+            this.txtMaChuyenBay.ReadOnly = true;
             this.txtMaChuyenBay.Size = new System.Drawing.Size(248, 26);
             this.txtMaChuyenBay.TabIndex = 35;
             // 

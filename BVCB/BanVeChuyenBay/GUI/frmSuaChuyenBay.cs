@@ -490,7 +490,7 @@ namespace BanVeChuyenBay.GUI
                 List<CT_Ghe> ct_ghe = solveDataInputCT_Ghe();
 
 
-                BLL.BLL_LichChuyenBay.UpdateLichChuyenBay(lcb.MaChuyenBay, lcb.MaTuyenBay, lcb.KhoiHanh, lcb.ThoiGianBay, lcb.DonGia, "VNA");
+                BLL.BLL_LichChuyenBay.UpdateLichChuyenBay(lcb.MaChuyenBay, lcb.MaTuyenBay, lcb.KhoiHanh, lcb.ThoiGianBay, lcb.DonGia, "HHK1");
                 BLL.BLL_CT_LichChuyenBay.DeleteCT_LichChuyenBay(lcb.MaChuyenBay);
 
                 for (int i = 0; i < ct_lcb.Count; i++)

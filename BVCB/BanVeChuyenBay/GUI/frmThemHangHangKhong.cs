@@ -16,5 +16,10 @@ namespace BanVeChuyenBay.GUI
         {
             InitializeComponent();
         }
+
+        private void btnTaoMoi_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

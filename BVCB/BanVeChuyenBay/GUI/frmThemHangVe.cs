@@ -54,11 +54,22 @@ namespace BanVeChuyenBay.GUI
                 BLL.BLL_HangVe.InsertHangVe(txtMaHangVe.Text, txtTenHangVe.Text, x);
 
                 MessageBox.Show("Thêm thành công", "Thông báo");
+                buttonX1_Click(sender, e);
             }
             catch
             {
                 MessageBox.Show("Mã hạng vé đã tồn tại", "Thông báo");
             }
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            txtMaHangVe.Text ="HV" + (BLL.BLL_BoDem.SelectBoDem("HANGVE") + 1);
+        }
+
+        private void frmThemHangVe_Load(object sender, EventArgs e)
+        {
+            txtMaHangVe.Text = "HV" + (BLL.BLL_BoDem.SelectBoDem("HANGVE") + 1);
         }
     }
 }

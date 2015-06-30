@@ -236,7 +236,7 @@
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(90, 31);
             this.btnLuu.TabIndex = 9;
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Text = "Tạo";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label7

@@ -709,10 +709,11 @@
             this.txtMaKhachHang.ForeColor = System.Drawing.Color.Silver;
             this.txtMaKhachHang.Location = new System.Drawing.Point(10, 22);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.ReadOnly = true;
             this.txtMaKhachHang.Size = new System.Drawing.Size(132, 20);
             this.txtMaKhachHang.TabIndex = 0;
             this.txtMaKhachHang.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaKhachHang.WatermarkText = "Nhập mã khách hàng";
+            this.txtMaKhachHang.WatermarkText = "Mã khách hàng";
             // 
             // dockContainerItem1
             // 
@@ -789,6 +790,7 @@
             // 
             // SoLuongVeDat
             // 
+            this.SoLuongVeDat.DataPropertyName = "SoVeDat";
             this.SoLuongVeDat.HeaderText = "Số lượng vé đặt";
             this.SoLuongVeDat.Name = "SoLuongVeDat";
             this.SoLuongVeDat.ReadOnly = true;

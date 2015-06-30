@@ -97,6 +97,7 @@
             this.btnTaoMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnTaoMoi.TabIndex = 90;
             this.btnTaoMoi.Text = "Tạo mới";
+            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
             // 
             // btThoat
             // 
@@ -151,6 +152,7 @@
             this.txtMaSanBay.ForeColor = System.Drawing.Color.Blue;
             this.txtMaSanBay.Location = new System.Drawing.Point(217, 114);
             this.txtMaSanBay.Name = "txtMaSanBay";
+            this.txtMaSanBay.ReadOnly = true;
             this.txtMaSanBay.Size = new System.Drawing.Size(216, 26);
             this.txtMaSanBay.TabIndex = 37;
             // 

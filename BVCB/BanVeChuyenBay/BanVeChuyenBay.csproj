@@ -116,6 +116,7 @@
     <Compile Include="BLL\BLL_BaoCaoDoanhThuChuyenBay.cs" />
     <Compile Include="BLL\BLL_BCDoanhThuNam.cs" />
     <Compile Include="BLL\BLL_BCDoanhThuThang.cs" />
+    <Compile Include="BLL\BLL_BoDem.cs" />
     <Compile Include="BLL\BLL_CT_Ghe.cs" />
     <Compile Include="BLL\BLL_CT_LichChuyenBay.cs" />
     <Compile Include="BLL\BLL_CT_PhieuDatCho.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="DAL\DAL_BaoCaoDoanhThuChuyenBay.cs" />
     <Compile Include="DAL\DAL_BCDoanhThuNam.cs" />
     <Compile Include="DAL\DAL_BCDoanhThuThang.cs" />
+    <Compile Include="DAL\DAL_BoDem.cs" />
     <Compile Include="DAL\DAL_ChiTietKhachHang.cs" />
     <Compile Include="DAL\DAL_CT_Ghe.cs" />
     <Compile Include="DAL\DAL_CT_LichChuyenBay.cs" />

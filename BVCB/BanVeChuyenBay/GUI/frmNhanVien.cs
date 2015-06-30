@@ -41,7 +41,6 @@ namespace BanVeChuyenBay.GUI
             {
                 this.dtNhanVien.AutoGenerateColumns = false;
                 dtNhanVien.DataSource = BLL_NhanVien.SelectALL();
-                //txtMaNhanVien.ReadOnly = true;
                 lbTongLoaiThuoc.Text = dtNhanVien.RowCount.ToString();
                 this.dtNhanVien.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
@@ -107,6 +106,7 @@ namespace BanVeChuyenBay.GUI
             KiemTraThem = true;
             dtNhanVien.Enabled = false;
             btxoa.Enabled = false;
+            txtMaNhanVien.Text = (BLL_BoDem.SelectBoDem("NHANVIEN") + 1).ToString();
         }
 
         int ConvertQuyenHan()
@@ -138,7 +138,6 @@ namespace BanVeChuyenBay.GUI
         {
             try
             {
-
                 string MaNhanVien = txtMaNhanVien.Text;
                 string TenNhanVien = txtTenNhanVien.Text;
                 string DiaChi = txtDiaChi.Text;
@@ -235,7 +234,7 @@ namespace BanVeChuyenBay.GUI
         }
         public void reset()
         {
-            this.txtMaNhanVien.Text = "";
+            this.txtMaNhanVien.Text = (BLL_BoDem.SelectBoDem("NHANVIEN") + 1).ToString();
             this.txtTenNhanVien.Text = "";
             this.txtDiaChi.Text = "";
             this.txtDienThoai.Text = "";
