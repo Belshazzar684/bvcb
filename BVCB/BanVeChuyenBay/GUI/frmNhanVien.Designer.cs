@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dockSite2 = new DevComponents.DotNetBar.DockSite();
             this.bar1 = new DevComponents.DotNetBar.Bar();
             this.panelDockContainer1 = new DevComponents.DotNetBar.PanelDockContainer();
@@ -169,6 +169,7 @@
             this.chkPass.Size = new System.Drawing.Size(109, 20);
             this.chkPass.TabIndex = 36;
             this.chkPass.Text = "Hiện mật khẩu";
+            this.chkPass.CheckedChanged += new System.EventHandler(this.chkPass_CheckedChanged);
             // 
             // txtMatKhau
             // 
@@ -316,11 +317,11 @@
             this.btThemMoi.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btThemMoi.Image = global::BanVeChuyenBay.Properties.Resources.recycle_icon;
             this.btThemMoi.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btThemMoi.Location = new System.Drawing.Point(55, 360);
+            this.btThemMoi.Location = new System.Drawing.Point(29, 360);
             this.btThemMoi.Name = "btThemMoi";
-            this.btThemMoi.Size = new System.Drawing.Size(90, 29);
+            this.btThemMoi.Size = new System.Drawing.Size(104, 29);
             this.btThemMoi.TabIndex = 13;
-            this.btThemMoi.Text = "Thêm mới";
+            this.btThemMoi.Text = "Thiết lập lại";
             this.btThemMoi.Click += new System.EventHandler(this.btkhong_Click);
             // 
             // lbTongLoaiThuoc
@@ -375,7 +376,7 @@
             this.btThoat.ImageFixedSize = new System.Drawing.Size(25, 25);
             this.btThoat.Location = new System.Drawing.Point(165, 360);
             this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(81, 29);
+            this.btThoat.Size = new System.Drawing.Size(104, 29);
             this.btThoat.TabIndex = 7;
             this.btThoat.Text = "Thoát";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
@@ -653,15 +654,15 @@
             this.dtNhanVien.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNhanVien,

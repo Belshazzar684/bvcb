@@ -48,7 +48,7 @@ namespace BanVeChuyenBay.GUI
                 if (dt.Rows.Count > 0)
                 {
                     DataRow dr = dt.Rows[0];
-                    MessageBox.Show("Đang nhập thành công");
+                    MessageBox.Show("Đăng nhập thành công");
                     this.DialogResult = DialogResult.OK;
                     string dlCon = dr["TenNhanVien"].ToString();
                     string MaNV = dr["MaNhanVien"].ToString();
@@ -61,7 +61,7 @@ namespace BanVeChuyenBay.GUI
                 }
                 else
                 {
-                    MessageBox.Show("\tĐang nhập thất bại! \nVui lòng kiểm tra lại thông tin đăng nhập!");
+                    MessageBox.Show("\tĐăng nhập thất bại! \nVui lòng kiểm tra lại thông tin đăng nhập!");
                     txtTenDangNhap.Focus();
                 }
             }
