@@ -22,6 +22,8 @@ namespace BanVeChuyenBay.GUI
         String MaSanBayDi = "";
         String MaSanBayDen = "";
         int DonGia;
+        bool LaKhachHang = false;
+        string MaKhachHang = null;
 
      
         public frmVeChuyenBay()
@@ -29,6 +31,26 @@ namespace BanVeChuyenBay.GUI
             InitializeComponent();
             DSSanBay = BLL.BLL_SanBay.SelectAllSanBay();
             DSTuyenBay = BLL.BLL_TuyenBay.SelectAllTuyenBay();
+        }
+
+        public frmVeChuyenBay(String _MaKhachHang)
+        {
+            InitializeComponent();
+            DSSanBay = BLL.BLL_SanBay.SelectAllSanBay();
+            DSTuyenBay = BLL.BLL_TuyenBay.SelectAllTuyenBay();
+            LaKhachHang = true;
+            btnDanhSach.Enabled = false;
+            MaKhachHang = _MaKhachHang;
+            DataTable dt = BLL.BLL_NhanVien.Select_MaNhanVien(MaKhachHang);
+            DataTable dt2 = BLL.BLL_KhachHang.Select_ThongTinKhachHang(MaKhachHang);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow tr1 = dt.Rows[0];
+                DataRow tr2 = dt2.Rows[0];
+                txtNguoiDat.Text = tr1["TenNhanVien"].ToString();
+                txtDienThoai.Text = tr1["DienThoai"].ToString();
+                txtCMND.Text = tr2["CMND"].ToString();
+            }
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -176,7 +198,10 @@ namespace BanVeChuyenBay.GUI
 
                     BLL.BLL_CT_Ghe.UpdateCT_Ghe(cbMaChuyenBay.Text, cbHangVe.Text, Convert.ToInt32(row.ItemArray[(int)Support.BLL.Support.IDCTGhe.SoGhe]), n, soghetrong);
                 }
-
+                if (LaKhachHang)
+                {
+                    BLL.BLL_KhachHang.Insert_ChiTietKhachHang(MaKhachHang, MaPhieuDat);
+                }
 
                 MessageBox.Show("Bán vé thành công");
 
@@ -198,6 +223,12 @@ namespace BanVeChuyenBay.GUI
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
+            if (!LaKhachHang)
+            {
+                txtNguoiDat.Clear();
+                txtCMND.Clear();
+                txtDienThoai.Clear();
+            }
             cbMaChuyenBay.Items.Clear();
             txtSanBayDi.Clear();
             txtSanBayDen.Clear();
@@ -207,9 +238,6 @@ namespace BanVeChuyenBay.GUI
             txtGiaTien.Clear();
             txtTinhTrangVe.Clear();
 
-            txtNguoiDat.Clear();
-            txtCMND.Clear();
-            txtDienThoai.Clear();
             txtNguoiBay.Clear();
             txtCMND_Di.Clear();
             txtDienThoai_Di.Clear();

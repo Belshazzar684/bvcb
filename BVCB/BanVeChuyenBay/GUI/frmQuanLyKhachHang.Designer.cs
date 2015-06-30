@@ -54,7 +54,7 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.dockSite3 = new DevComponents.DotNetBar.DockSite();
-            this.txtTenNhanVien = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTenKhachHang = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.mathuoc = new DevComponents.DotNetBar.LabelX();
             this.dockSite4 = new DevComponents.DotNetBar.DockSite();
             this.dockSite5 = new DevComponents.DotNetBar.DockSite();
@@ -69,13 +69,13 @@
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtMaNhanVien = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCMND = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaKhachHang = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dockContainerItem1 = new DevComponents.DotNetBar.DockContainerItem();
             this.dockSite6 = new DevComponents.DotNetBar.DockSite();
-            this.dtNhanVien = new System.Windows.Forms.DataGridView();
+            this.dtKhachHang = new System.Windows.Forms.DataGridView();
             this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNguoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuongVeDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,7 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.bar1.SuspendLayout();
             this.panelDockContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtNhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // labelX6
@@ -122,6 +122,7 @@
             this.chkPass.Size = new System.Drawing.Size(109, 20);
             this.chkPass.TabIndex = 23;
             this.chkPass.Text = "Hiện mật khẩu";
+            this.chkPass.CheckedChanged += new System.EventHandler(this.chkPass_CheckedChanged);
             // 
             // labelX7
             // 
@@ -153,6 +154,7 @@
             this.txtMatKhau.TabIndex = 20;
             this.txtMatKhau.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMatKhau.WatermarkText = "Nhập mật khẩu";
+            this.txtMatKhau.Validating += new System.ComponentModel.CancelEventHandler(this.txtMatKhau_Validating);
             // 
             // txtTenDangNhap
             // 
@@ -170,6 +172,7 @@
             this.txtTenDangNhap.TabIndex = 18;
             this.txtTenDangNhap.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTenDangNhap.WatermarkText = "Nhập tên đăng nhập";
+            this.txtTenDangNhap.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenDangNhap_Validating);
             // 
             // labelX5
             // 
@@ -201,6 +204,7 @@
             this.txtDiaChi.TabIndex = 16;
             this.txtDiaChi.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDiaChi.WatermarkText = "Nhập địa chỉ";
+            this.txtDiaChi.Validating += new System.ComponentModel.CancelEventHandler(this.txtDiaChi_Validating);
             // 
             // dockContainerItem2
             // 
@@ -265,6 +269,7 @@
             this.txtDienThoai.TabIndex = 14;
             this.txtDienThoai.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDienThoai.WatermarkText = "Nhập nhập điện thoại";
+            this.txtDienThoai.Validating += new System.ComponentModel.CancelEventHandler(this.txtDienThoai_Validating);
             // 
             // btThemMoi
             // 
@@ -278,6 +283,7 @@
             this.btThemMoi.Size = new System.Drawing.Size(90, 29);
             this.btThemMoi.TabIndex = 13;
             this.btThemMoi.Text = "Thêm mới";
+            this.btThemMoi.Click += new System.EventHandler(this.btkhong_Click);
             // 
             // lbTongLoaiThuoc
             // 
@@ -352,6 +358,7 @@
             this.btluu.Size = new System.Drawing.Size(86, 29);
             this.btluu.TabIndex = 8;
             this.btluu.Text = "Lưu";
+            this.btluu.Click += new System.EventHandler(this.btluu_Click);
             // 
             // btThoat
             // 
@@ -365,6 +372,7 @@
             this.btThoat.Size = new System.Drawing.Size(75, 29);
             this.btThoat.TabIndex = 7;
             this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btxoa
             // 
@@ -378,6 +386,7 @@
             this.btxoa.Size = new System.Drawing.Size(75, 29);
             this.btxoa.TabIndex = 7;
             this.btxoa.Text = "Xóa";
+            this.btxoa.Click += new System.EventHandler(this.btxoa_Click);
             // 
             // btthem
             // 
@@ -392,6 +401,7 @@
             this.btthem.Size = new System.Drawing.Size(91, 29);
             this.btthem.TabIndex = 6;
             this.btthem.Text = "Thêm";
+            this.btthem.Click += new System.EventHandler(this.btthem_Click);
             // 
             // labelX3
             // 
@@ -434,22 +444,23 @@
             this.dockSite3.TabIndex = 29;
             this.dockSite3.TabStop = false;
             // 
-            // txtTenNhanVien
+            // txtTenKhachHang
             // 
             // 
             // 
             // 
-            this.txtTenNhanVien.Border.Class = "TextBoxBorder";
-            this.txtTenNhanVien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTenNhanVien.ButtonCustom.Tooltip = "";
-            this.txtTenNhanVien.ButtonCustom2.Tooltip = "";
-            this.txtTenNhanVien.ForeColor = System.Drawing.Color.Black;
-            this.txtTenNhanVien.Location = new System.Drawing.Point(10, 66);
-            this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(278, 20);
-            this.txtTenNhanVien.TabIndex = 2;
-            this.txtTenNhanVien.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenNhanVien.WatermarkText = "Nhập tên khách hàng";
+            this.txtTenKhachHang.Border.Class = "TextBoxBorder";
+            this.txtTenKhachHang.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTenKhachHang.ButtonCustom.Tooltip = "";
+            this.txtTenKhachHang.ButtonCustom2.Tooltip = "";
+            this.txtTenKhachHang.ForeColor = System.Drawing.Color.Black;
+            this.txtTenKhachHang.Location = new System.Drawing.Point(10, 66);
+            this.txtTenKhachHang.Name = "txtTenKhachHang";
+            this.txtTenKhachHang.Size = new System.Drawing.Size(278, 20);
+            this.txtTenKhachHang.TabIndex = 2;
+            this.txtTenKhachHang.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenKhachHang.WatermarkText = "Nhập tên khách hàng";
+            this.txtTenKhachHang.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenNhanVien_Validating);
             // 
             // mathuoc
             // 
@@ -572,7 +583,7 @@
             this.panelDockContainer1.Controls.Add(this.labelX8);
             this.panelDockContainer1.Controls.Add(this.cbGioiTinh);
             this.panelDockContainer1.Controls.Add(this.dtpNgaySinh);
-            this.panelDockContainer1.Controls.Add(this.textBoxX1);
+            this.panelDockContainer1.Controls.Add(this.txtCMND);
             this.panelDockContainer1.Controls.Add(this.chkPass);
             this.panelDockContainer1.Controls.Add(this.labelX7);
             this.panelDockContainer1.Controls.Add(this.txtMatKhau);
@@ -591,9 +602,9 @@
             this.panelDockContainer1.Controls.Add(this.btthem);
             this.panelDockContainer1.Controls.Add(this.labelX3);
             this.panelDockContainer1.Controls.Add(this.labelX2);
-            this.panelDockContainer1.Controls.Add(this.txtTenNhanVien);
+            this.panelDockContainer1.Controls.Add(this.txtTenKhachHang);
             this.panelDockContainer1.Controls.Add(this.mathuoc);
-            this.panelDockContainer1.Controls.Add(this.txtMaNhanVien);
+            this.panelDockContainer1.Controls.Add(this.txtMaKhachHang);
             this.panelDockContainer1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelDockContainer1.Location = new System.Drawing.Point(3, 23);
             this.panelDockContainer1.Name = "panelDockContainer1";
@@ -669,39 +680,39 @@
             this.dtpNgaySinh.Size = new System.Drawing.Size(89, 20);
             this.dtpNgaySinh.TabIndex = 67;
             // 
-            // textBoxX1
+            // txtCMND
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.ButtonCustom.Tooltip = "";
-            this.textBoxX1.ButtonCustom2.Tooltip = "";
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(10, 289);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(199, 20);
-            this.textBoxX1.TabIndex = 24;
-            this.textBoxX1.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxX1.WatermarkText = "Nhập tên đăng nhập";
+            this.txtCMND.Border.Class = "TextBoxBorder";
+            this.txtCMND.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCMND.ButtonCustom.Tooltip = "";
+            this.txtCMND.ButtonCustom2.Tooltip = "";
+            this.txtCMND.ForeColor = System.Drawing.Color.Black;
+            this.txtCMND.Location = new System.Drawing.Point(10, 289);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(199, 20);
+            this.txtCMND.TabIndex = 24;
+            this.txtCMND.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtCMND.WatermarkText = "Nhập tên đăng nhập";
             // 
-            // txtMaNhanVien
-            // 
-            // 
+            // txtMaKhachHang
             // 
             // 
-            this.txtMaNhanVien.Border.Class = "TextBoxBorder";
-            this.txtMaNhanVien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMaNhanVien.ButtonCustom.Tooltip = "";
-            this.txtMaNhanVien.ButtonCustom2.Tooltip = "";
-            this.txtMaNhanVien.ForeColor = System.Drawing.Color.Silver;
-            this.txtMaNhanVien.Location = new System.Drawing.Point(10, 22);
-            this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(132, 20);
-            this.txtMaNhanVien.TabIndex = 0;
-            this.txtMaNhanVien.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaNhanVien.WatermarkText = "Nhập mã khách hàng";
+            // 
+            // 
+            this.txtMaKhachHang.Border.Class = "TextBoxBorder";
+            this.txtMaKhachHang.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMaKhachHang.ButtonCustom.Tooltip = "";
+            this.txtMaKhachHang.ButtonCustom2.Tooltip = "";
+            this.txtMaKhachHang.ForeColor = System.Drawing.Color.Silver;
+            this.txtMaKhachHang.Location = new System.Drawing.Point(10, 22);
+            this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.Size = new System.Drawing.Size(132, 20);
+            this.txtMaKhachHang.TabIndex = 0;
+            this.txtMaKhachHang.WatermarkFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaKhachHang.WatermarkText = "Nhập mã khách hàng";
             // 
             // dockContainerItem1
             // 
@@ -719,14 +730,14 @@
             this.dockSite6.TabIndex = 32;
             this.dockSite6.TabStop = false;
             // 
-            // dtNhanVien
+            // dtKhachHang
             // 
-            this.dtNhanVien.AllowUserToAddRows = false;
-            this.dtNhanVien.AllowUserToDeleteRows = false;
-            this.dtNhanVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtNhanVien.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dtNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dtKhachHang.AllowUserToAddRows = false;
+            this.dtKhachHang.AllowUserToDeleteRows = false;
+            this.dtKhachHang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtKhachHang.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dtKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtKhachHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -735,11 +746,11 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaKhachHang,
-            this.TenNguoiDung,
+            this.TenKhachHang,
             this.SoLuongVeDat,
             this.DienThoai,
             this.TenDangNhap,
@@ -748,39 +759,39 @@
             this.NgaySinh,
             this.GioiTinh,
             this.MatKhau});
-            this.dtNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtNhanVien.GridColor = System.Drawing.SystemColors.Control;
-            this.dtNhanVien.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.dtNhanVien.Location = new System.Drawing.Point(0, 65);
-            this.dtNhanVien.Name = "dtNhanVien";
-            this.dtNhanVien.ReadOnly = true;
-            this.dtNhanVien.RowHeadersVisible = false;
-            this.dtNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtNhanVien.Size = new System.Drawing.Size(814, 475);
-            this.dtNhanVien.TabIndex = 35;
+            this.dtKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtKhachHang.GridColor = System.Drawing.SystemColors.Control;
+            this.dtKhachHang.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.dtKhachHang.Location = new System.Drawing.Point(0, 65);
+            this.dtKhachHang.Name = "dtKhachHang";
+            this.dtKhachHang.ReadOnly = true;
+            this.dtKhachHang.RowHeadersVisible = false;
+            this.dtKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtKhachHang.Size = new System.Drawing.Size(814, 475);
+            this.dtKhachHang.TabIndex = 35;
+            this.dtKhachHang.CurrentCellChanged += new System.EventHandler(this.dtKhachHang_CurrentCellChanged);
             // 
             // MaKhachHang
             // 
-            this.MaKhachHang.DataPropertyName = "MaKhachHang";
+            this.MaKhachHang.DataPropertyName = "MaNhanVien";
             this.MaKhachHang.HeaderText = "Mã khách hàng";
             this.MaKhachHang.Name = "MaKhachHang";
             this.MaKhachHang.ReadOnly = true;
             this.MaKhachHang.Width = 135;
             // 
-            // TenNguoiDung
+            // TenKhachHang
             // 
-            this.TenNguoiDung.DataPropertyName = "TenNguoiDung";
-            this.TenNguoiDung.HeaderText = "Tên khách hàng";
-            this.TenNguoiDung.Name = "TenNguoiDung";
-            this.TenNguoiDung.ReadOnly = true;
-            this.TenNguoiDung.Width = 135;
+            this.TenKhachHang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenKhachHang.DataPropertyName = "TenNhanVien";
+            this.TenKhachHang.HeaderText = "Tên khách hàng";
+            this.TenKhachHang.Name = "TenKhachHang";
+            this.TenKhachHang.ReadOnly = true;
             // 
             // SoLuongVeDat
             // 
             this.SoLuongVeDat.HeaderText = "Số lượng vé đặt";
             this.SoLuongVeDat.Name = "SoLuongVeDat";
             this.SoLuongVeDat.ReadOnly = true;
-            this.SoLuongVeDat.Width = 135;
             // 
             // DienThoai
             // 
@@ -808,6 +819,7 @@
             // 
             // DiaChi
             // 
+            this.DiaChi.DataPropertyName = "DiaChi";
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.ReadOnly = true;
@@ -815,6 +827,7 @@
             // 
             // NgaySinh
             // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
             this.NgaySinh.ReadOnly = true;
@@ -822,6 +835,7 @@
             // 
             // GioiTinh
             // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
             this.GioiTinh.HeaderText = "Giới tính";
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.ReadOnly = true;
@@ -841,7 +855,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 540);
-            this.Controls.Add(this.dtNhanVien);
+            this.Controls.Add(this.dtKhachHang);
             this.Controls.Add(this.dockSite7);
             this.Controls.Add(this.dockSite3);
             this.Controls.Add(this.dockSite4);
@@ -852,6 +866,7 @@
             this.Controls.Add(this.dockSite6);
             this.Name = "frmQuanLyKhachHang";
             this.Text = "QUẢN LÝ KHÁCH HÀNG";
+            this.Load += new System.EventHandler(this.frmQuanLyKhachHang_Load);
             this.panelDockContainer2.ResumeLayout(false);
             this.panelDockContainer2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar2)).EndInit();
@@ -861,7 +876,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             this.bar1.ResumeLayout(false);
             this.panelDockContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtNhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtKhachHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -892,7 +907,7 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.DockSite dockSite3;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTenNhanVien;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenKhachHang;
         private DevComponents.DotNetBar.LabelX mathuoc;
         private DevComponents.DotNetBar.DockSite dockSite4;
         private DevComponents.DotNetBar.DockSite dockSite5;
@@ -902,18 +917,18 @@
         private DevComponents.DotNetBar.DockSite dockSite2;
         private DevComponents.DotNetBar.Bar bar1;
         private DevComponents.DotNetBar.PanelDockContainer panelDockContainer1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMaNhanVien;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaKhachHang;
         private DevComponents.DotNetBar.DockContainerItem dockContainerItem1;
         private DevComponents.DotNetBar.DockSite dockSite6;
-        private System.Windows.Forms.DataGridView dtNhanVien;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private System.Windows.Forms.DataGridView dtKhachHang;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtCMND;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX8;
         private System.Windows.Forms.ComboBox cbGioiTinh;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private DevComponents.DotNetBar.ButtonX btnChiTiet;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKhachHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenNguoiDung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongVeDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;

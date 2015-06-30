@@ -93,6 +93,26 @@ namespace BanVeChuyenBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_user {
+            get {
+                object obj = ResourceManager.GetObject("Add_user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Add_user2 {
+            get {
+                object obj = ResourceManager.GetObject("Add_user2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Air_tickets_icon {
             get {
                 object obj = ResourceManager.GetObject("Air-tickets-icon", resourceCulture);
@@ -242,6 +262,16 @@ namespace BanVeChuyenBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Create_user {
+            get {
+                object obj = ResourceManager.GetObject("Create_user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap currency {
             get {
                 object obj = ResourceManager.GetObject("currency", resourceCulture);
@@ -255,6 +285,16 @@ namespace BanVeChuyenBay.Properties {
         internal static System.Drawing.Bitmap customer {
             get {
                 object obj = ResourceManager.GetObject("customer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap customer1 {
+            get {
+                object obj = ResourceManager.GetObject("customer1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -285,6 +325,16 @@ namespace BanVeChuyenBay.Properties {
         internal static System.Drawing.Bitmap default_red1 {
             get {
                 object obj = ResourceManager.GetObject("default-red1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap destination {
+            get {
+                object obj = ResourceManager.GetObject("destination", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -600,6 +650,16 @@ namespace BanVeChuyenBay.Properties {
         internal static System.Drawing.Bitmap thiet_ke_web_ve_may_bay_1 {
             get {
                 object obj = ResourceManager.GetObject("thiet_ke_web_ve_may_bay_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tickets_icon {
+            get {
+                object obj = ResourceManager.GetObject("Tickets_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

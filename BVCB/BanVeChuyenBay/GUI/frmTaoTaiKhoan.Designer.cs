@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.txtMatKhauXacNhan = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtMatKhauMoi = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTenDangNhap = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtDienThoai = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDiaChi = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtTenNguoiDung = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -45,10 +43,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtTenDangNhap = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMatKhauXacNhan = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMatKhauMoi = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,9 +56,9 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.textBoxX2);
+            this.groupPanel1.Controls.Add(this.txtDienThoai);
             this.groupPanel1.Controls.Add(this.label5);
-            this.groupPanel1.Controls.Add(this.textBoxX1);
+            this.groupPanel1.Controls.Add(this.txtDiaChi);
             this.groupPanel1.Controls.Add(this.label1);
             this.groupPanel1.Controls.Add(this.cbGioiTinh);
             this.groupPanel1.Controls.Add(this.dtpNgaySinh);
@@ -112,80 +112,53 @@
             this.groupPanel1.TabIndex = 1;
             this.groupPanel1.Text = "Tài khoản";
             // 
-            // txtMatKhauXacNhan
+            // txtDienThoai
             // 
             // 
             // 
             // 
-            this.txtMatKhauXacNhan.Border.Class = "TextBoxBorder";
-            this.txtMatKhauXacNhan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMatKhauXacNhan.ButtonCustom.Tooltip = "";
-            this.txtMatKhauXacNhan.ButtonCustom2.Tooltip = "";
-            this.txtMatKhauXacNhan.Location = new System.Drawing.Point(139, 71);
-            this.txtMatKhauXacNhan.Name = "txtMatKhauXacNhan";
-            this.txtMatKhauXacNhan.Size = new System.Drawing.Size(207, 20);
-            this.txtMatKhauXacNhan.TabIndex = 51;
-            this.txtMatKhauXacNhan.UseSystemPasswordChar = true;
-            this.txtMatKhauXacNhan.WatermarkText = "Nhập mật khẩu xác nhận";
+            this.txtDienThoai.Border.Class = "TextBoxBorder";
+            this.txtDienThoai.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtDienThoai.ButtonCustom.Tooltip = "";
+            this.txtDienThoai.ButtonCustom2.Tooltip = "";
+            this.txtDienThoai.Location = new System.Drawing.Point(139, 234);
+            this.txtDienThoai.Name = "txtDienThoai";
+            this.txtDienThoai.Size = new System.Drawing.Size(207, 20);
+            this.txtDienThoai.TabIndex = 8;
+            this.txtDienThoai.WatermarkText = "Nhập số điện thoại";
             // 
-            // txtMatKhauMoi
+            // label5
             // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 236);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 67;
+            this.label5.Text = "Điện thoại:";
             // 
-            // 
-            // 
-            this.txtMatKhauMoi.Border.Class = "TextBoxBorder";
-            this.txtMatKhauMoi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMatKhauMoi.ButtonCustom.Tooltip = "";
-            this.txtMatKhauMoi.ButtonCustom2.Tooltip = "";
-            this.txtMatKhauMoi.Location = new System.Drawing.Point(140, 45);
-            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(207, 20);
-            this.txtMatKhauMoi.TabIndex = 50;
-            this.txtMatKhauMoi.UseSystemPasswordChar = true;
-            this.txtMatKhauMoi.WatermarkText = "Nhập mật khẩu mới";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Xác nhận mật khẩu:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Mật khẩu:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Tên đăng nhập:";
-            // 
-            // txtTenDangNhap
+            // txtDiaChi
             // 
             // 
             // 
             // 
-            this.txtTenDangNhap.Border.Class = "TextBoxBorder";
-            this.txtTenDangNhap.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTenDangNhap.ButtonCustom.Tooltip = "";
-            this.txtTenDangNhap.ButtonCustom2.Tooltip = "";
-            this.txtTenDangNhap.Location = new System.Drawing.Point(139, 19);
-            this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(207, 20);
-            this.txtTenDangNhap.TabIndex = 52;
-            this.txtTenDangNhap.UseSystemPasswordChar = true;
-            this.txtTenDangNhap.WatermarkText = "Nhập tên tài khoản";
+            this.txtDiaChi.Border.Class = "TextBoxBorder";
+            this.txtDiaChi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtDiaChi.ButtonCustom.Tooltip = "";
+            this.txtDiaChi.ButtonCustom2.Tooltip = "";
+            this.txtDiaChi.Location = new System.Drawing.Point(139, 208);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(207, 20);
+            this.txtDiaChi.TabIndex = 7;
+            this.txtDiaChi.WatermarkText = "Nhập địa chỉ liên lạc";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 210);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "Địa chỉ:";
             // 
             // cbGioiTinh
             // 
@@ -198,7 +171,7 @@
             this.cbGioiTinh.Location = new System.Drawing.Point(140, 181);
             this.cbGioiTinh.Name = "cbGioiTinh";
             this.cbGioiTinh.Size = new System.Drawing.Size(89, 21);
-            this.cbGioiTinh.TabIndex = 64;
+            this.cbGioiTinh.TabIndex = 6;
             // 
             // dtpNgaySinh
             // 
@@ -206,7 +179,7 @@
             this.dtpNgaySinh.Location = new System.Drawing.Point(140, 154);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(89, 20);
-            this.dtpNgaySinh.TabIndex = 63;
+            this.dtpNgaySinh.TabIndex = 5;
             // 
             // txtTenNguoiDung
             // 
@@ -220,8 +193,7 @@
             this.txtTenNguoiDung.Location = new System.Drawing.Point(140, 100);
             this.txtTenNguoiDung.Name = "txtTenNguoiDung";
             this.txtTenNguoiDung.Size = new System.Drawing.Size(207, 20);
-            this.txtTenNguoiDung.TabIndex = 62;
-            this.txtTenNguoiDung.UseSystemPasswordChar = true;
+            this.txtTenNguoiDung.TabIndex = 3;
             this.txtTenNguoiDung.WatermarkText = "Nhập tên người dùng";
             // 
             // txtCMND
@@ -236,8 +208,7 @@
             this.txtCMND.Location = new System.Drawing.Point(140, 126);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(207, 20);
-            this.txtCMND.TabIndex = 61;
-            this.txtCMND.UseSystemPasswordChar = true;
+            this.txtCMND.TabIndex = 4;
             this.txtCMND.WatermarkText = "Nhập chứng minh nhân dân";
             // 
             // btnHuy
@@ -250,8 +221,9 @@
             this.btnHuy.Location = new System.Drawing.Point(193, 269);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(90, 32);
-            this.btnHuy.TabIndex = 59;
+            this.btnHuy.TabIndex = 10;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -263,7 +235,7 @@
             this.btnLuu.Location = new System.Drawing.Point(68, 269);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(90, 31);
-            this.btnLuu.TabIndex = 60;
+            this.btnLuu.TabIndex = 9;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -303,55 +275,79 @@
             this.label10.TabIndex = 55;
             this.label10.Text = "Giới tính:";
             // 
-            // textBoxX1
+            // txtTenDangNhap
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.ButtonCustom.Tooltip = "";
-            this.textBoxX1.ButtonCustom2.Tooltip = "";
-            this.textBoxX1.Location = new System.Drawing.Point(139, 208);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(207, 20);
-            this.textBoxX1.TabIndex = 66;
-            this.textBoxX1.UseSystemPasswordChar = true;
-            this.textBoxX1.WatermarkText = "Nhập địa chỉ liên lạc";
+            this.txtTenDangNhap.Border.Class = "TextBoxBorder";
+            this.txtTenDangNhap.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTenDangNhap.ButtonCustom.Tooltip = "";
+            this.txtTenDangNhap.ButtonCustom2.Tooltip = "";
+            this.txtTenDangNhap.Location = new System.Drawing.Point(139, 19);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(207, 20);
+            this.txtTenDangNhap.TabIndex = 0;
+            this.txtTenDangNhap.WatermarkText = "Nhập tên tài khoản";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 210);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 65;
-            this.label1.Text = "Địa chỉ:";
-            // 
-            // textBoxX2
+            // txtMatKhauXacNhan
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX2.ButtonCustom.Tooltip = "";
-            this.textBoxX2.ButtonCustom2.Tooltip = "";
-            this.textBoxX2.Location = new System.Drawing.Point(139, 234);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(207, 20);
-            this.textBoxX2.TabIndex = 68;
-            this.textBoxX2.UseSystemPasswordChar = true;
-            this.textBoxX2.WatermarkText = "Nhập số điện thoại";
+            this.txtMatKhauXacNhan.Border.Class = "TextBoxBorder";
+            this.txtMatKhauXacNhan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMatKhauXacNhan.ButtonCustom.Tooltip = "";
+            this.txtMatKhauXacNhan.ButtonCustom2.Tooltip = "";
+            this.txtMatKhauXacNhan.Location = new System.Drawing.Point(139, 71);
+            this.txtMatKhauXacNhan.Name = "txtMatKhauXacNhan";
+            this.txtMatKhauXacNhan.Size = new System.Drawing.Size(207, 20);
+            this.txtMatKhauXacNhan.TabIndex = 2;
+            this.txtMatKhauXacNhan.UseSystemPasswordChar = true;
+            this.txtMatKhauXacNhan.WatermarkText = "Nhập mật khẩu xác nhận";
             // 
-            // label5
+            // txtMatKhauMoi
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 236);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 67;
-            this.label5.Text = "Điện thoại:";
+            // 
+            // 
+            // 
+            this.txtMatKhauMoi.Border.Class = "TextBoxBorder";
+            this.txtMatKhauMoi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMatKhauMoi.ButtonCustom.Tooltip = "";
+            this.txtMatKhauMoi.ButtonCustom2.Tooltip = "";
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(140, 45);
+            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(207, 20);
+            this.txtMatKhauMoi.TabIndex = 1;
+            this.txtMatKhauMoi.UseSystemPasswordChar = true;
+            this.txtMatKhauMoi.WatermarkText = "Nhập mật khẩu mới";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(31, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Xác nhận mật khẩu:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Mật khẩu:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Tên đăng nhập:";
             // 
             // frmTaoTaiKhoan
             // 
@@ -361,6 +357,7 @@
             this.Controls.Add(this.groupPanel1);
             this.Name = "frmTaoTaiKhoan";
             this.Text = "TẠO TÀI KHOẢN";
+            this.Load += new System.EventHandler(this.frmTaoTaiKhoan_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -376,9 +373,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTenDangNhap;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtDienThoai;
         private System.Windows.Forms.Label label5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtDiaChi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbGioiTinh;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;

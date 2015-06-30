@@ -19,6 +19,12 @@ namespace BanVeChuyenBay.BLL
         {
             return nv.SelectAll();
         }
+
+        public static DataTable SelectALLKhachHang()
+        {
+            return nv.SelectAllKhachHang();
+        }
+
         public static DataTable Select_MaNhanVien(string MaNhanVien)
         {
             return nv.SelectMaNhanVien(MaNhanVien);

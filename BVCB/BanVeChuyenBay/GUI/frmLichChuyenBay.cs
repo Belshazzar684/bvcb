@@ -355,7 +355,7 @@ namespace BanVeChuyenBay.GUI
 
 
                 /// nhap du lieu vao bll
-                BLL_LichChuyenBay.InsertLichChuyenBay(lcb.MaChuyenBay, lcb.MaTuyenBay, lcb.KhoiHanh, lcb.ThoiGianBay, lcb.DonGia);
+                BLL_LichChuyenBay.InsertLichChuyenBay(lcb.MaChuyenBay, lcb.MaTuyenBay, lcb.KhoiHanh, lcb.ThoiGianBay, lcb.DonGia, "VNA");
 
                 for (int i = 0; i < ct_lcb.Count; i++)
                 {

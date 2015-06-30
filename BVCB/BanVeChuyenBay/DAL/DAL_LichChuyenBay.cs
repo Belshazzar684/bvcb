@@ -25,7 +25,7 @@ namespace BanVeChuyenBay.DAL
             return dt;
         }
 
-        public int InsertLichChuyenBay(string MaChuyenBay, string MaTuyenBay, DateTime KhoiHanh, int ThoiGianBay, int DonGia)
+        public int InsertLichChuyenBay(string MaChuyenBay, string MaTuyenBay, DateTime KhoiHanh, int ThoiGianBay, int DonGia, string MaHang)
         {
             SqlCommand cm = new SqlCommand("INSERT_LICHCHUYENBAY", connect());
             cm.CommandType = CommandType.StoredProcedure;
@@ -35,6 +35,7 @@ namespace BanVeChuyenBay.DAL
             cm.Parameters.AddWithValue("@KhoiHanh", KhoiHanh);
             cm.Parameters.AddWithValue("@ThoiGianBay", ThoiGianBay);
             cm.Parameters.AddWithValue("@GiaVe", DonGia);
+            cm.Parameters.AddWithValue("@MaHang", MaHang);
             return cm.ExecuteNonQuery();
         }
 
@@ -126,7 +127,7 @@ namespace BanVeChuyenBay.DAL
             return dt;
         }
         
-        public int UpdateLichChuyenBay(string MaChuyenBay, string MaTuyenBay, DateTime KhoiHanh, int ThoiGianBay, int DonGia)
+        public int UpdateLichChuyenBay(string MaChuyenBay, string MaTuyenBay, DateTime KhoiHanh, int ThoiGianBay, int DonGia,string MaHang)
         {
             SqlCommand cm = new SqlCommand("UPDATE_LICHCHUYENBAY", connect());
             cm.CommandType = CommandType.StoredProcedure;
@@ -136,6 +137,7 @@ namespace BanVeChuyenBay.DAL
             cm.Parameters.AddWithValue("@KhoiHanh", KhoiHanh);
             cm.Parameters.AddWithValue("@ThoiGianBay", ThoiGianBay);
             cm.Parameters.AddWithValue("@GiaVe", DonGia);
+            cm.Parameters.AddWithValue("@MaHang", MaHang);
             return cm.ExecuteNonQuery();
         }
 

@@ -21,7 +21,8 @@ namespace BanVeChuyenBay.GUI
         String MaSanBayDi = "";
         String MaSanBayDen = "";
         int DonGia;
-
+        bool LaKhachHang = false;
+        string MaKhachHang = null;
         
 
         public frmPhieuDatCho()
@@ -50,6 +51,48 @@ namespace BanVeChuyenBay.GUI
                     }
                 }
             }
+        }
+
+        public frmPhieuDatCho(string _MaKhachHang)
+        {
+            InitializeComponent();
+            DSSanBay = BLL.BLL_SanBay.SelectAllSanBay();
+            DSTuyenBay = BLL.BLL_TuyenBay.SelectAllTuyenBay();
+
+
+            // xoa danh sach phieu dat cho khi chuyen bay di
+            // lay danh sach chuyen bay đa bay roi
+            DataTable thamso = BLL.BLL_ThamSo.SelectAllThamSo();
+            if (Boolean.Parse(thamso.Rows[0].ItemArray[(int)Support.BLL.Support.IDThamSo.TGHuyVe].ToString()))
+            {
+                DataTable dschuyenbay = BLL.BLL_LichChuyenBay.SelectAllLichChuyenBayPlaned();
+
+                foreach (DataRow row in dschuyenbay.Rows)
+                {
+                    String machuyenbay = row.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.MaChuyenBay].ToString();
+                    DataTable dt = BLL.BLL_CT_PhieuDatCho.SelectAtCT_PhieuDatCho(machuyenbay);
+                    foreach (DataRow temp in dt.Rows)
+                    {
+                        String maphieudatcho = temp.ItemArray[(int)Support.BLL.Support.IDCTPhieuDatCho.MaPhieuDat].ToString();
+                        BLL.BLL_CT_PhieuDatCho.DeleteCT_PhieuDatCho(maphieudatcho);
+                        BLL.BLL_PhieuDatCho.DeletePhieuDatCho(maphieudatcho);
+                    }
+                }
+            }
+
+            //Khachhang
+            LaKhachHang = true;
+            DataTable dt2 = BLL.BLL_NhanVien.Select_MaNhanVien(MaKhachHang);
+            DataTable dt3 = BLL.BLL_KhachHang.Select_ThongTinKhachHang(MaKhachHang);
+            if (dt2.Rows.Count > 0)
+            {
+                DataRow tr1 = dt2.Rows[0];
+                DataRow tr2 = dt3.Rows[0];
+                txtNguoiDat.Text = tr1["TenNhanVien"].ToString();
+                txtDienThoai.Text = tr1["DienThoai"].ToString();
+                txtCMND.Text = tr2["CMND"].ToString();
+            }
+            MaKhachHang = _MaKhachHang;
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -203,7 +246,10 @@ namespace BanVeChuyenBay.GUI
 
                     BLL.BLL_CT_Ghe.UpdateCT_Ghe(cbMaChuyenBay.Text, cbHangVe.Text, Convert.ToInt32(row.ItemArray[(int)Support.BLL.Support.IDCTGhe.SoGhe]), n, soghetrong);
                 }
-
+                if (LaKhachHang)
+                {
+                    BLL.BLL_KhachHang.Insert_ChiTietKhachHang(MaKhachHang, MaPhieuDat);
+                }
 
                 MessageBox.Show("Đặt vé thành công");
                 btnTaoMoi_Click(sender, e);
@@ -225,9 +271,12 @@ namespace BanVeChuyenBay.GUI
             txtGiaTien.Clear();
             txtTinhTrangVe.Clear();
 
-            txtNguoiDat.Clear();
-            txtCMND.Clear();
-            txtDienThoai.Clear();
+            if (!LaKhachHang)
+            {
+                txtNguoiDat.Clear();
+                txtCMND.Clear();
+                txtDienThoai.Clear();
+            }
             txtNguoiBay.Clear();
             txtCMND_Di.Clear();
             txtDienThoai_Di.Clear();

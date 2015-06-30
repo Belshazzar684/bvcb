@@ -30,6 +30,17 @@ namespace BanVeChuyenBay.DAL
             data.Fill(dt);
             return dt;
         }
+
+        public DataTable SelectAllKhachHang()
+        {
+            SqlCommand cm = new SqlCommand("NHANVIEN_SELECT_ALL_KHACHHANG", connect());
+            cm.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter data = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            data.Fill(dt);
+            return dt;
+        }
+
         public DataTable SelectMaNhanVien(string MaNhanVien)
         {
             SqlCommand cm = new SqlCommand("NHANVIEN_SELECT_MANHANVIEN", connect());
