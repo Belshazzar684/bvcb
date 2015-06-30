@@ -17,6 +17,7 @@ namespace BanVeChuyenBay
         static public string MaNhanVien;
         public static string TienTe;
         public static double TiGia;
+        private bool LaKhachHang = false;
 
         public static DevComponents.DotNetBar.TabControl  m_Tab;
         public frmMain()
@@ -78,10 +79,12 @@ namespace BanVeChuyenBay
                 BatTat(false);
                 btnTraCuu.Enabled = true;
                 btnThoat.Enabled = true;
+                btnTaoTaiKhoan.Enabled = true;
             }
             else
             {
                 BatTat(true);
+                btnTaoTaiKhoan.Enabled = false;
             }
 
             XuLyQuyenHan();
@@ -143,6 +146,19 @@ namespace BanVeChuyenBay
         public void BatTatNV()
         {
             rbpDanhMuc.Enabled = true;
+
+            //--Nhat
+            btLichChuyenBay.Enabled = true;
+            btQLChuyenBay.Enabled = true;
+            btQLSanBay.Enabled = true;
+            btQLTuyenBay.Enabled = true;
+            btnKhachHang.Enabled = true;
+            btnVeDat.Enabled = false;
+            btnDiaDiem.Enabled = true;
+            btnHangHangKhong.Enabled = true;
+            btnQDNhapFile.Enabled = true;
+            //---
+
             rbpTraCuu.Enabled = true;
             rbpBaoCao.Enabled = true;
             rbpThayDoi.Enabled = false;
@@ -155,11 +171,42 @@ namespace BanVeChuyenBay
             btnBaoCaoNam.Enabled = true;
             btnSaoLuuPhucHoi.Enabled = false;
         }
+
+        public void BatTatKH()
+        {
+            rbpDanhMuc.Enabled = true;
+
+            //--Nhat
+            btLichChuyenBay.Enabled = false;
+            btQLChuyenBay.Enabled = false;
+            btQLSanBay.Enabled = false;
+            btQLTuyenBay.Enabled = false;
+            btnKhachHang.Enabled = false;
+            btnVeDat.Enabled = true;
+            btnDiaDiem.Enabled = false;
+            btnHangHangKhong.Enabled = false;
+            btnQDNhapFile.Enabled = false;
+            //---
+
+            rbpTraCuu.Enabled = true;
+            rbpBaoCao.Enabled = false;
+            rbpThayDoi.Enabled = false;
+            rbpPhanQuyen.Enabled = false;
+            btnNhanLich.Enabled = false;
+            btnVe.Enabled = true;
+            btnDatVe.Enabled = true;
+            btnTraCuu.Enabled = true;
+            btnBaoCaoThang.Enabled = false;
+            btnBaoCaoNam.Enabled = false;
+            btnSaoLuuPhucHoi.Enabled = false;
+        }
+
         public void XuLyQuyenHan()
         {
             DataTable td = BLL_NhanVien.Select_MaNhanVien(ma);
             if (td.Rows.Count > 0)
             {
+                LaKhachHang = false;
                 DataRow tr = td.Rows[0];
 
                 int QuyenHan = Convert.ToInt32(tr["QuyenHan"]);
@@ -168,14 +215,23 @@ namespace BanVeChuyenBay
                 {
                     BatTatQTV();
                 }
-                else if (QuyenHan == 2)
-                {
-                    BatTatBGD();
-                }
-                else
-                {
-                    BatTatNV();
-                }
+                else 
+                    if (QuyenHan == 2)
+                    {
+                        BatTatBGD();
+                    }
+                    else
+                    {
+                        if (QuyenHan == 0)
+                        {
+                            BatTatNV();
+                        }
+                        else
+                        {
+                            BatTatKH();
+                            LaKhachHang = true;
+                        }
+                    }
             
             }
         }
@@ -202,7 +258,8 @@ namespace BanVeChuyenBay
                 BatTat(true);
                 btDangNhap.Enabled = false;
                 btDangXuat.Enabled = true;
-                btDoiMatKhau.Enabled = true;               
+                btDoiMatKhau.Enabled = true;
+                btnTaoTaiKhoan.Enabled = false;
                 XuLyQuyenHan();
             }
         }
@@ -247,7 +304,8 @@ namespace BanVeChuyenBay
                         btDangXuat.Enabled = false;
                         btDoiMatKhau.Enabled = false;                        
                     }
-                    btDangNhap.Enabled = true;                    
+                    btDangNhap.Enabled = true;
+                    btnTaoTaiKhoan.Enabled = true;
                     DangNhap();
                 }
             }
@@ -342,7 +400,16 @@ namespace BanVeChuyenBay
         {
             if (checkTab("Vé Chuyến Bay") == false)
             {
-                frmVeChuyenBay form = new frmVeChuyenBay();
+                frmVeChuyenBay form;
+                if (!LaKhachHang)
+                {
+                    form = new frmVeChuyenBay();
+                    
+                }
+                else
+                {
+                    form = new frmVeChuyenBay(MaNhanVien);
+                }
                 AddTabControl(form, "Vé Chuyến Bay");
             }
         }
@@ -351,7 +418,15 @@ namespace BanVeChuyenBay
         {
             if (checkTab("Phiếu Đặt Chỗ") == false)
             {
-                frmPhieuDatCho form = new frmPhieuDatCho();
+                frmPhieuDatCho form;
+                if (!LaKhachHang)
+                {
+                    form = new frmPhieuDatCho();
+                }
+                else
+                {
+                    form = new frmPhieuDatCho(MaNhanVien);
+                }
                 AddTabControl(form, "Phiếu Đặt Chỗ");
             }
         }
@@ -567,6 +642,11 @@ namespace BanVeChuyenBay
         private void btnQDNhapFile_Click(object sender, EventArgs e)
         {
             frmDinhDangFileNhap.Instance.Visible = true;
+        }
+
+        private void btnTaoTaiKhoan_Click(object sender, EventArgs e)
+        {
+            new frmTaoTaiKhoan().ShowDialog();
         }
 
     }

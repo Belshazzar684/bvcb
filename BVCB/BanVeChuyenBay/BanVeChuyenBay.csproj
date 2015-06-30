@@ -121,6 +121,7 @@
     <Compile Include="BLL\BLL_CT_PhieuDatCho.cs" />
     <Compile Include="BLL\BLL_DiaDiem.cs" />
     <Compile Include="BLL\BLL_HangVe.cs" />
+    <Compile Include="BLL\BLL_KhachHang.cs" />
     <Compile Include="BLL\BLL_LichChuyenBay.cs" />
     <Compile Include="BLL\BLL_NhanVien.cs" />
     <Compile Include="BLL\BLL_PhieuDatCho.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="DAL\DAL_BaoCaoDoanhThuChuyenBay.cs" />
     <Compile Include="DAL\DAL_BCDoanhThuNam.cs" />
     <Compile Include="DAL\DAL_BCDoanhThuThang.cs" />
+    <Compile Include="DAL\DAL_ChiTietKhachHang.cs" />
     <Compile Include="DAL\DAL_CT_Ghe.cs" />
     <Compile Include="DAL\DAL_CT_LichChuyenBay.cs" />
     <Compile Include="DAL\DAL_CT_PhieuDatCho.cs" />
@@ -142,6 +144,7 @@
     <Compile Include="DAL\DAL_PhieuDatCho.cs" />
     <Compile Include="DAL\DAL_SanBay.cs" />
     <Compile Include="DAL\DAL_ThamSo.cs" />
+    <Compile Include="DAL\DAL_ThongTinKhachHang.cs" />
     <Compile Include="DAL\DAL_TuyenBay.cs" />
     <Compile Include="GUI\ConnectionProperties.cs">
       <SubType>Form</SubType>
