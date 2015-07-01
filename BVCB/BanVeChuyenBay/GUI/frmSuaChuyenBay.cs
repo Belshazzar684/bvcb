@@ -173,6 +173,8 @@ namespace BanVeChuyenBay.GUI
                 dtpNgayGio.Value = (DateTime)rows[0].ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.KhoiHanh];
                 txtThoiGianBay.Text = rows[0].ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.ThoiGianBay].ToString();
                 txtGiaVe.Text = rows[0].ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.GiaVe].ToString();
+                //Hang hang ko
+                cbHangHangKhong.SelectedValue = rows[0].ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.MaHang].ToString();
 
                 DSSanBay = BLL.BLL_SanBay.SelectAllSanBay();
                 DSTuyenBay = BLL.BLL_TuyenBay.SelectAllTuyenBay();

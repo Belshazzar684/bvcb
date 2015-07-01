@@ -31,9 +31,10 @@ namespace BanVeChuyenBay.GUI
 
             foreach (DataRow row in DSLichChuyenBay.Rows)
             {
+                string TenHang = BLL.BLL_HangHangKhong.SelectHangHangKhong(row.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.MaHang].ToString()).Rows[0].ItemArray[1].ToString();
                 dtgvLichChuyenBay.Rows.Add(row.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.MaChuyenBay], row.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.MaTuyenBay],
                     row.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.KhoiHanh], row.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.ThoiGianBay],
-                    row.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.GiaVe]);
+                    row.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.GiaVe], TenHang);
 
                 if (dtgvLichChuyenBay.Rows.Count >= MaxRows - 1)
                     dtgvLichChuyenBay.AllowUserToAddRows = false;

@@ -54,7 +54,8 @@ namespace Support.BLL
             MaTuyenBay,
             KhoiHanh,
             ThoiGianBay,
-            GiaVe
+            GiaVe,
+            MaHang
         }
 
         public enum IDCTLichChuyenBay

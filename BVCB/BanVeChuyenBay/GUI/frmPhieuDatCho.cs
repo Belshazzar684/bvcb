@@ -133,6 +133,9 @@ namespace BanVeChuyenBay.GUI
 
                 rows = DSSanBay.Select("MaSanBay='" + MaSanBayDen + "'");
                 txtSanBayDen.Text = rows[0].ItemArray[(int)Support.BLL.Support.IDSanBay.TenSanBay].ToString();
+                //Hang hang khong
+                string TenHang = BLL.BLL_HangHangKhong.SelectHangHangKhong(rowLichChuyenBay.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.MaHang].ToString()).Rows[0].ItemArray[1].ToString();
+                txtHangHangKhong.Text = TenHang;
 
                 if (!cbHangVe.Text.Equals(""))
                 {
@@ -232,7 +235,7 @@ namespace BanVeChuyenBay.GUI
                 String MaPhieuDat = Support.BLL.Support.MaPhieuDat + (BLL.BLL_BoDem.SelectBoDem("PHIEUDATCHO") + 1);
 
 
-                BLL.BLL_PhieuDatCho.InsertPhieuDatCho(MaPhieuDat, txtNguoiDat.Text, txtCMND.Text, txtDienThoai.Text, dateTimePicker1.Value);
+                BLL.BLL_PhieuDatCho.InsertPhieuDatCho(MaPhieuDat, txtNguoiDat.Text, txtCMND.Text, txtDienThoai.Text, DateTime.Now);
                 BLL.BLL_CT_PhieuDatCho.InsertCT_PhieuDatCho(MaPhieuDat, cbMaChuyenBay.Text, txtNguoiBay.Text, txtCMND_Di.Text, txtDienThoai_Di.Text, cbHangVe.Text, false);
 
 

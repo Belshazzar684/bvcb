@@ -123,6 +123,16 @@ namespace BanVeChuyenBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Air_travel_icon {
+            get {
+                object obj = ResourceManager.GetObject("Air_travel_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap airplane_icon {
             get {
                 object obj = ResourceManager.GetObject("airplane-icon", resourceCulture);

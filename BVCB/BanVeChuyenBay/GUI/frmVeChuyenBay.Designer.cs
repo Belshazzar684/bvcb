@@ -66,6 +66,8 @@
             this.btnTaoMoi = new DevComponents.DotNetBar.ButtonX();
             this.btnLuu = new DevComponents.DotNetBar.ButtonX();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtHangHangKhong = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -120,6 +122,8 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.txtHangHangKhong);
+            this.groupPanel1.Controls.Add(this.label1);
             this.groupPanel1.Controls.Add(this.label14);
             this.groupPanel1.Controls.Add(this.Label11);
             this.groupPanel1.Controls.Add(this.Label9);
@@ -173,7 +177,7 @@
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label14.Location = new System.Drawing.Point(79, 189);
+            this.label14.Location = new System.Drawing.Point(77, 182);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(114, 23);
             this.label14.TabIndex = 95;
@@ -182,7 +186,7 @@
             // Label11
             // 
             this.Label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Label11.Location = new System.Drawing.Point(77, 239);
+            this.Label11.Location = new System.Drawing.Point(76, 223);
             this.Label11.Name = "Label11";
             this.Label11.Size = new System.Drawing.Size(114, 23);
             this.Label11.TabIndex = 83;
@@ -211,7 +215,7 @@
             this.txtHangVe.BackColor = System.Drawing.Color.PapayaWhip;
             this.txtHangVe.Enabled = false;
             this.txtHangVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHangVe.Location = new System.Drawing.Point(368, 185);
+            this.txtHangVe.Location = new System.Drawing.Point(366, 178);
             this.txtHangVe.Name = "txtHangVe";
             this.txtHangVe.Size = new System.Drawing.Size(140, 26);
             this.txtHangVe.TabIndex = 87;
@@ -253,7 +257,7 @@
             this.cbHangVe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHangVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbHangVe.ForeColor = System.Drawing.Color.Blue;
-            this.cbHangVe.Location = new System.Drawing.Point(273, 185);
+            this.cbHangVe.Location = new System.Drawing.Point(271, 178);
             this.cbHangVe.Name = "cbHangVe";
             this.cbHangVe.Size = new System.Drawing.Size(89, 27);
             this.cbHangVe.TabIndex = 92;
@@ -286,7 +290,7 @@
             this.txtGiaTien.Enabled = false;
             this.txtGiaTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaTien.ForeColor = System.Drawing.Color.Blue;
-            this.txtGiaTien.Location = new System.Drawing.Point(273, 287);
+            this.txtGiaTien.Location = new System.Drawing.Point(271, 264);
             this.txtGiaTien.Name = "txtGiaTien";
             this.txtGiaTien.Size = new System.Drawing.Size(235, 26);
             this.txtGiaTien.TabIndex = 91;
@@ -296,7 +300,7 @@
             this.txtTinhTrangVe.BackColor = System.Drawing.Color.PapayaWhip;
             this.txtTinhTrangVe.Enabled = false;
             this.txtTinhTrangVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTinhTrangVe.Location = new System.Drawing.Point(272, 237);
+            this.txtTinhTrangVe.Location = new System.Drawing.Point(271, 221);
             this.txtTinhTrangVe.Name = "txtTinhTrangVe";
             this.txtTinhTrangVe.Size = new System.Drawing.Size(235, 26);
             this.txtTinhTrangVe.TabIndex = 86;
@@ -313,7 +317,7 @@
             // Label7
             // 
             this.Label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Label7.Location = new System.Drawing.Point(77, 290);
+            this.Label7.Location = new System.Drawing.Point(75, 267);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(80, 23);
             this.Label7.TabIndex = 79;
@@ -586,6 +590,26 @@
             this.PictureBox1.TabIndex = 70;
             this.PictureBox1.TabStop = false;
             // 
+            // txtHangHangKhong
+            // 
+            this.txtHangHangKhong.BackColor = System.Drawing.Color.PapayaWhip;
+            this.txtHangHangKhong.Enabled = false;
+            this.txtHangHangKhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHangHangKhong.ForeColor = System.Drawing.Color.Blue;
+            this.txtHangHangKhong.Location = new System.Drawing.Point(273, 306);
+            this.txtHangHangKhong.Name = "txtHangHangKhong";
+            this.txtHangHangKhong.Size = new System.Drawing.Size(235, 26);
+            this.txtHangHangKhong.TabIndex = 101;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(78, 309);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 23);
+            this.label1.TabIndex = 100;
+            this.label1.Text = "Hãng hàng không:";
+            // 
             // frmVeChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,5 +669,7 @@
         internal System.Windows.Forms.TextBox txtNguoiDat;
         internal System.Windows.Forms.TextBox txtNguoiBay;
         private DevComponents.DotNetBar.ButtonX btnDanhSach;
+        internal System.Windows.Forms.TextBox txtHangHangKhong;
+        internal System.Windows.Forms.Label label1;
     }
 }

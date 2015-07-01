@@ -247,7 +247,7 @@
             this.btnHangHangKhong.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnHangHangKhong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnHangHangKhong.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnHangHangKhong.Image = global::BanVeChuyenBay.Properties.Resources.avion_icon;
+            this.btnHangHangKhong.Image = global::BanVeChuyenBay.Properties.Resources.Air_travel_icon;
             this.btnHangHangKhong.Location = new System.Drawing.Point(46, 230);
             this.btnHangHangKhong.Name = "btnHangHangKhong";
             this.btnHangHangKhong.Size = new System.Drawing.Size(141, 37);

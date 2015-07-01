@@ -91,6 +91,9 @@ namespace BanVeChuyenBay.GUI
 
                 rows = DSSanBay.Select("MaSanBay='" + MaSanBayDen + "'");
                 txtSanBayDen.Text = rows[0].ItemArray[(int)Support.BLL.Support.IDSanBay.TenSanBay].ToString();
+                //Hang hang khong
+                string TenHang = BLL.BLL_HangHangKhong.SelectHangHangKhong(rowLichChuyenBay.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.MaHang].ToString()).Rows[0].ItemArray[1].ToString();
+                txtHangHangKhong.Text = TenHang;
 
                 if (!cbHangVe.Text.Equals(""))
                 {

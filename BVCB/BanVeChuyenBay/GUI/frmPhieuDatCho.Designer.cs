@@ -30,9 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuDatCho));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.btThoat = new DevComponents.DotNetBar.ButtonX();
+            this.btnTaoMoi = new DevComponents.DotNetBar.ButtonX();
+            this.btnLuu = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.txtHangVe = new System.Windows.Forms.TextBox();
             this.cbHangVe = new System.Windows.Forms.ComboBox();
@@ -63,15 +66,12 @@
             this.txtDienThoai_Di = new System.Windows.Forms.TextBox();
             this.txtNguoiBay = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btThoat = new DevComponents.DotNetBar.ButtonX();
-            this.btnTaoMoi = new DevComponents.DotNetBar.ButtonX();
-            this.btnLuu = new DevComponents.DotNetBar.ButtonX();
+            this.txtHangHangKhong = new System.Windows.Forms.TextBox();
             this.panelEx1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.groupPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEx1
@@ -100,6 +100,16 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             // 
+            // PictureBox1
+            // 
+            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
+            this.PictureBox1.Location = new System.Drawing.Point(106, 26);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(88, 56);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBox1.TabIndex = 103;
+            this.PictureBox1.TabStop = false;
+            // 
             // reflectionLabel1
             // 
             // 
@@ -113,11 +123,56 @@
             this.reflectionLabel1.TabIndex = 102;
             this.reflectionLabel1.Text = "<b><font size=\"+6\"><i></i><font color=\"#B02B2C\">PHIẾU ĐẶT CHỖ</font></font></b>";
             // 
+            // btThoat
+            // 
+            this.btThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btThoat.Image = global::BanVeChuyenBay.Properties.Resources.Windows_Close_Program_icon;
+            this.btThoat.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.btThoat.Location = new System.Drawing.Point(762, 485);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(97, 37);
+            this.btThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btThoat.TabIndex = 101;
+            this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            // 
+            // btnTaoMoi
+            // 
+            this.btnTaoMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnTaoMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnTaoMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTaoMoi.Image = global::BanVeChuyenBay.Properties.Resources.create_icon;
+            this.btnTaoMoi.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.btnTaoMoi.Location = new System.Drawing.Point(576, 485);
+            this.btnTaoMoi.Name = "btnTaoMoi";
+            this.btnTaoMoi.Size = new System.Drawing.Size(107, 37);
+            this.btnTaoMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnTaoMoi.TabIndex = 100;
+            this.btnTaoMoi.Text = "Tạo Mới";
+            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnLuu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLuu.Image = global::BanVeChuyenBay.Properties.Resources.Save_icon;
+            this.btnLuu.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.btnLuu.Location = new System.Drawing.Point(404, 485);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(87, 37);
+            this.btnLuu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnLuu.TabIndex = 99;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // groupPanel1
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.dateTimePicker1);
+            this.groupPanel1.Controls.Add(this.txtHangHangKhong);
             this.groupPanel1.Controls.Add(this.label14);
             this.groupPanel1.Controls.Add(this.txtHangVe);
             this.groupPanel1.Controls.Add(this.cbHangVe);
@@ -168,14 +223,6 @@
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 105;
             this.groupPanel1.Text = "Thông tin chuyến bay";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(273, 313);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(234, 20);
-            this.dateTimePicker1.TabIndex = 99;
             // 
             // label14
             // 
@@ -323,9 +370,9 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(77, 310);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 23);
+            this.label1.Size = new System.Drawing.Size(146, 23);
             this.label1.TabIndex = 79;
-            this.label1.Text = "Ngày Đặt:";
+            this.label1.Text = "Hãng hàng không:";
             // 
             // Label7
             // 
@@ -534,60 +581,16 @@
             this.label6.TabIndex = 78;
             this.label6.Text = "Điện Thoại:";
             // 
-            // PictureBox1
+            // txtHangHangKhong
             // 
-            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
-            this.PictureBox1.Location = new System.Drawing.Point(106, 26);
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(88, 56);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBox1.TabIndex = 103;
-            this.PictureBox1.TabStop = false;
-            // 
-            // btThoat
-            // 
-            this.btThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btThoat.Image = global::BanVeChuyenBay.Properties.Resources.Windows_Close_Program_icon;
-            this.btThoat.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btThoat.Location = new System.Drawing.Point(762, 485);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(97, 37);
-            this.btThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btThoat.TabIndex = 101;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
-            // 
-            // btnTaoMoi
-            // 
-            this.btnTaoMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnTaoMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnTaoMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTaoMoi.Image = global::BanVeChuyenBay.Properties.Resources.create_icon;
-            this.btnTaoMoi.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btnTaoMoi.Location = new System.Drawing.Point(576, 485);
-            this.btnTaoMoi.Name = "btnTaoMoi";
-            this.btnTaoMoi.Size = new System.Drawing.Size(107, 37);
-            this.btnTaoMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnTaoMoi.TabIndex = 100;
-            this.btnTaoMoi.Text = "Tạo Mới";
-            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnLuu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLuu.Image = global::BanVeChuyenBay.Properties.Resources.Save_icon;
-            this.btnLuu.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btnLuu.Location = new System.Drawing.Point(404, 485);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(87, 37);
-            this.btnLuu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnLuu.TabIndex = 99;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.txtHangHangKhong.BackColor = System.Drawing.Color.PapayaWhip;
+            this.txtHangHangKhong.Enabled = false;
+            this.txtHangHangKhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHangHangKhong.ForeColor = System.Drawing.Color.Blue;
+            this.txtHangHangKhong.Location = new System.Drawing.Point(272, 307);
+            this.txtHangHangKhong.Name = "txtHangHangKhong";
+            this.txtHangHangKhong.Size = new System.Drawing.Size(235, 26);
+            this.txtHangHangKhong.TabIndex = 99;
             // 
             // frmPhieuDatCho
             // 
@@ -598,13 +601,13 @@
             this.Name = "frmPhieuDatCho";
             this.Text = "Phiếu Đặt Chỗ";
             this.panelEx1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel2.PerformLayout();
             this.groupPanel3.ResumeLayout(false);
             this.groupPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -648,6 +651,6 @@
         internal System.Windows.Forms.Label label14;
         internal System.Windows.Forms.TextBox txtHangVe;
         internal System.Windows.Forms.ComboBox cbHangVe;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        internal System.Windows.Forms.TextBox txtHangHangKhong;
     }
 }

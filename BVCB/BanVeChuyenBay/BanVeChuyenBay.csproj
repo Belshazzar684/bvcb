@@ -572,6 +572,7 @@
     <None Include="DataBase\script.sql" />
     <None Include="DataBase\CheckTable.sql" />
     <None Include="Resources\currency-icon.png" />
+    <None Include="Resources\Air-travel-icon.png" />
     <Content Include="Resources\currency.jpg" />
     <None Include="Resources\EUFlag.jpg" />
     <None Include="Resources\JapanFlag.png" />

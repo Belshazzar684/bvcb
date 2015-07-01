@@ -44,17 +44,18 @@
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dtgvLichChuyenBay = new System.Windows.Forms.DataGridView();
+            this.SanBayDi = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.SanBayDen = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.KhoiHanh = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.ThoiGian = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.SoGheTrong = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.HangHangKhong = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btSua = new DevComponents.DotNetBar.ButtonX();
             this.btThoat = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.btThem = new DevComponents.DotNetBar.ButtonX();
             this.btXoa = new DevComponents.DotNetBar.ButtonX();
-            this.SanBayDi = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.SanBayDen = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.KhoiHanh = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.ThoiGian = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.SoGheTrong = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.panelEx1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCTLichChuyenBay)).BeginInit();
@@ -244,6 +245,8 @@
             // 
             // dtgvLichChuyenBay
             // 
+            this.dtgvLichChuyenBay.AllowUserToAddRows = false;
+            this.dtgvLichChuyenBay.AllowUserToDeleteRows = false;
             this.dtgvLichChuyenBay.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dtgvLichChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvLichChuyenBay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -251,13 +254,56 @@
             this.SanBayDen,
             this.KhoiHanh,
             this.ThoiGian,
-            this.SoGheTrong});
+            this.SoGheTrong,
+            this.HangHangKhong});
             this.dtgvLichChuyenBay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvLichChuyenBay.Location = new System.Drawing.Point(0, 0);
             this.dtgvLichChuyenBay.Name = "dtgvLichChuyenBay";
+            this.dtgvLichChuyenBay.ReadOnly = true;
+            this.dtgvLichChuyenBay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvLichChuyenBay.Size = new System.Drawing.Size(777, 250);
             this.dtgvLichChuyenBay.TabIndex = 0;
             this.dtgvLichChuyenBay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLichChuyenBay_CellClick);
+            // 
+            // SanBayDi
+            // 
+            this.SanBayDi.HeaderText = "Mã Chuyến Bay";
+            this.SanBayDi.Name = "SanBayDi";
+            this.SanBayDi.ReadOnly = true;
+            // 
+            // SanBayDen
+            // 
+            this.SanBayDen.HeaderText = "Mã Tuyến Bay";
+            this.SanBayDen.Name = "SanBayDen";
+            this.SanBayDen.ReadOnly = true;
+            this.SanBayDen.Width = 150;
+            // 
+            // KhoiHanh
+            // 
+            this.KhoiHanh.HeaderText = "Khởi Hành";
+            this.KhoiHanh.Name = "KhoiHanh";
+            this.KhoiHanh.ReadOnly = true;
+            this.KhoiHanh.Width = 200;
+            // 
+            // ThoiGian
+            // 
+            this.ThoiGian.HeaderText = "Thời Gian";
+            this.ThoiGian.Name = "ThoiGian";
+            this.ThoiGian.ReadOnly = true;
+            this.ThoiGian.Width = 50;
+            // 
+            // SoGheTrong
+            // 
+            this.SoGheTrong.HeaderText = "Đơn Giá";
+            this.SoGheTrong.Name = "SoGheTrong";
+            this.SoGheTrong.ReadOnly = true;
+            // 
+            // HangHangKhong
+            // 
+            this.HangHangKhong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.HangHangKhong.HeaderText = "Hãng hàng không";
+            this.HangHangKhong.Name = "HangHangKhong";
+            this.HangHangKhong.ReadOnly = true;
             // 
             // groupPanel2
             // 
@@ -378,36 +424,6 @@
             this.btXoa.Text = "Xóa";
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
-            // SanBayDi
-            // 
-            this.SanBayDi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SanBayDi.HeaderText = "Mã Chuyến Bay";
-            this.SanBayDi.Name = "SanBayDi";
-            // 
-            // SanBayDen
-            // 
-            this.SanBayDen.HeaderText = "Mã Tuyến Bay";
-            this.SanBayDen.Name = "SanBayDen";
-            this.SanBayDen.Width = 150;
-            // 
-            // KhoiHanh
-            // 
-            this.KhoiHanh.HeaderText = "Khởi Hành";
-            this.KhoiHanh.Name = "KhoiHanh";
-            this.KhoiHanh.Width = 200;
-            // 
-            // ThoiGian
-            // 
-            this.ThoiGian.HeaderText = "Thời Gian";
-            this.ThoiGian.Name = "ThoiGian";
-            this.ThoiGian.Width = 80;
-            // 
-            // SoGheTrong
-            // 
-            this.SoGheTrong.HeaderText = "Đơn Giá";
-            this.SoGheTrong.Name = "SoGheTrong";
-            this.SoGheTrong.Width = 150;
-            // 
             // frmQuanLyChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,5 +473,6 @@
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn KhoiHanh;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn ThoiGian;
         private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn SoGheTrong;
+        private DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn HangHangKhong;
     }
 }
