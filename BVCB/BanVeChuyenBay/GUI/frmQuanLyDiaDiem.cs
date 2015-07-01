@@ -34,10 +34,27 @@ namespace BanVeChuyenBay.GUI
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            BLL.BLL_DiaDiem.InsertDiaDiem(txtQuocGia.Text, txtThanhPho.Text);
-            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm địa điểm mới" + dgwDsDiaDiem.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString());
+            bool DaTonTai = false;
+            foreach (DataGridViewRow row in dgwDsDiaDiem.Rows)
+            {
+                if (row.Cells["QuocGia"].Value.ToString().Trim().ToLower() == txtQuocGia.Text.Trim().ToLower() &&
+                    row.Cells["ThanhPho"].Value.ToString().Trim().ToLower() == txtThanhPho.Text.Trim().ToLower())
+                {
+                    DaTonTai = true;
+                    break;
+                }
+            }
+            if (!DaTonTai)
+            {
+                BLL.BLL_DiaDiem.InsertDiaDiem(txtQuocGia.Text, txtThanhPho.Text);
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm địa điểm mới" + dgwDsDiaDiem.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString());
 
-            LoadDanhSachDiaDiem();
+                LoadDanhSachDiaDiem();
+            }
+            else
+            {
+                MessageBox.Show("Địa điểm đã tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btXoa_Click(object sender, EventArgs e)

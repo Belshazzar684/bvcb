@@ -37,6 +37,7 @@
             this.cbMaHang = new System.Windows.Forms.ComboBox();
             this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtTenHang = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbMaSanBay = new System.Windows.Forms.ComboBox();
@@ -47,7 +48,6 @@
             this.txtTenSanBay = new System.Windows.Forms.TextBox();
             this.Label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
-            this.txtTenHang = new System.Windows.Forms.TextBox();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             this.panelEx3.SuspendLayout();
@@ -155,6 +155,7 @@
             this.btnThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnThoat.TabIndex = 93;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // cbMaHang
             // 
@@ -190,6 +191,15 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 42;
             this.pictureBox2.TabStop = false;
+            // 
+            // txtTenHang
+            // 
+            this.txtTenHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenHang.ForeColor = System.Drawing.Color.Blue;
+            this.txtTenHang.Location = new System.Drawing.Point(217, 154);
+            this.txtTenHang.Name = "txtTenHang";
+            this.txtTenHang.Size = new System.Drawing.Size(216, 26);
+            this.txtTenHang.TabIndex = 38;
             // 
             // label1
             // 
@@ -296,15 +306,6 @@
             this.Label2.Size = new System.Drawing.Size(106, 23);
             this.Label2.TabIndex = 35;
             this.Label2.Text = "Mã Sân Bay:";
-            // 
-            // txtTenHang
-            // 
-            this.txtTenHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenHang.ForeColor = System.Drawing.Color.Blue;
-            this.txtTenHang.Location = new System.Drawing.Point(217, 154);
-            this.txtTenHang.Name = "txtTenHang";
-            this.txtTenHang.Size = new System.Drawing.Size(216, 26);
-            this.txtTenHang.TabIndex = 38;
             // 
             // frmSuaHangHangKhong
             // 
