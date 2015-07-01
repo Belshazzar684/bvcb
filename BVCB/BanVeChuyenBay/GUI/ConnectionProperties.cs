@@ -198,6 +198,7 @@ namespace BanVeChuyenBay.GUI
                 {
                     foreach (DataRow row in tableEnumServers.Rows)
                         cboServerName.Items.Add(row["Name"]);
+                   
                 }
                 catch (ArgumentNullException ex)
                 {

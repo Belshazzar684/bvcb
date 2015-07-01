@@ -44,6 +44,7 @@ namespace BanVeChuyenBay.GUI
 
             BLL.BLL_HangVe.DeleteHangVe(cbMaHangVe.Text);
             MessageBox.Show("Xóa thành công", "Thông báo");
+            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Xóa hạng vé " + cbMaHangVe.Text);
 
             cbMaHangVe.Text = "";
             textBox1.Text = "";

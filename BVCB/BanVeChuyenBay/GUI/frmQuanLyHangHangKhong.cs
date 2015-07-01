@@ -94,6 +94,8 @@ namespace BanVeChuyenBay.GUI
                         {
                             LoadDSHangHangKhong();
                             MessageBox.Show("Có " + count.ToString() + " hãng hàng không được thêm vào.");
+                            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm hãng hàng không từ File");
+
                         }
                     }
                 }
@@ -139,6 +141,8 @@ namespace BanVeChuyenBay.GUI
                 if(dataGridView1.CurrentRow != null)
                 {
                     BLL.BLL_HangHangKhong.DeleteHangHangKhong(dataGridView1.CurrentRow.Cells["MaHang"].Value.ToString());
+                    BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Xóa hãng hàng không " + dataGridView1.CurrentRow.Cells["MaHang"].Value.ToString());
+
                     LoadDSHangHangKhong();
                 }
             }

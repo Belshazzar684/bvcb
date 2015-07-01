@@ -49,6 +49,7 @@ namespace BanVeChuyenBay.GUI
             XoaTuyenBay(cbMaTuyenBay.Text);
 
             MessageBox.Show("Xóa thành công", "Thông báo");
+            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Xóa tuyến bay " + cbMaTuyenBay.Text);
             cbMaTuyenBay.Text = "";
         }
 

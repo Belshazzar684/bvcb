@@ -66,6 +66,8 @@ namespace BanVeChuyenBay.GUI
             {
                 cbKhachHang.SelectedValue = MaKhachHang;
             }
+            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Xem Chi Tiết Khách Hàng");
+
         }
 
         private void btThoat_Click(object sender, EventArgs e)

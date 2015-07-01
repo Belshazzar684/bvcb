@@ -52,6 +52,7 @@ namespace BanVeChuyenBay.GUI
         {
             BLL.BLL_HangHangKhong.UpdateHangHangKhong(cbMaHang.Text, txtTenHang.Text);
             MessageBox.Show("Sửa thành công", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Sửa hãng hàng không " + cbMaHang.Text);
         }
     }
 }

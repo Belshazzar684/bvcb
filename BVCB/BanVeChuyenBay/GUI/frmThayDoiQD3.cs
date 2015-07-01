@@ -47,6 +47,7 @@ namespace BanVeChuyenBay.GUI
 
             BLL.BLL_ThamSo.UpdateThamSo(Convert.ToBoolean(cbHuyDatCho.Text), Convert.ToInt32(txtTGDatVe.Text));
             MessageBox.Show("Nhập thành công", "Thông báo");
+            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thay đổi quy định hạn đặt vé");
         }
     }
 }

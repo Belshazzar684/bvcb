@@ -125,6 +125,7 @@ namespace BanVeChuyenBay
             btnBaoCaoThang.Enabled = false;
             btnBaoCaoNam.Enabled = false;
             btnSaoLuuPhucHoi.Enabled = true;
+            btnLog.Enabled = true;
         }
 
         public void BatTatBGD()
@@ -141,6 +142,7 @@ namespace BanVeChuyenBay
             btnBaoCaoThang.Enabled = false;
             btnBaoCaoNam.Enabled = false;
             btnSaoLuuPhucHoi.Enabled = false;
+            btnLog.Enabled = false;
         }
 
         public void BatTatNV()
@@ -157,6 +159,7 @@ namespace BanVeChuyenBay
             btnDiaDiem.Enabled = true;
             btnHangHangKhong.Enabled = true;
             btnQDNhapFile.Enabled = true;
+            btnLog.Enabled = false;
             //---
 
             rbpTraCuu.Enabled = true;
@@ -186,6 +189,7 @@ namespace BanVeChuyenBay
             btnDiaDiem.Enabled = false;
             btnHangHangKhong.Enabled = false;
             btnQDNhapFile.Enabled = false;
+            btnLog.Enabled = false;
             //---
 
             rbpTraCuu.Enabled = true;
@@ -288,6 +292,7 @@ namespace BanVeChuyenBay
                     //{
                     // TabCtrl_main.Tabs.Remove(TabCtrl_main.SelectedTab);
                     tabControl.Tabs.Clear();
+
                     //}
 
                     if (checkTab("Giơi thiệu") == false)
@@ -304,6 +309,7 @@ namespace BanVeChuyenBay
                         btDangXuat.Enabled = false;
                         btDoiMatKhau.Enabled = false;                        
                     }
+                    BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Đăng Xuất Khỏi Hệ Thống");
                     btDangNhap.Enabled = true;
                     btnTaoTaiKhoan.Enabled = true;
                     DangNhap();
@@ -514,7 +520,8 @@ namespace BanVeChuyenBay
         }
 
         private void btThoat_Click(object sender, EventArgs e)
-        {   
+        {
+            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Đăng Xuất Khỏi Hệ Thống");
                this.Close();
         }
 
@@ -563,6 +570,7 @@ namespace BanVeChuyenBay
         {
             if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Đăng Xuất Khỏi Hệ Thống");
                 e.Cancel = true;
             }
         }
@@ -647,6 +655,15 @@ namespace BanVeChuyenBay
         private void btnTaoTaiKhoan_Click(object sender, EventArgs e)
         {
             new frmTaoTaiKhoan().ShowDialog();
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            if (checkTab("Quản Lý Log Người Dùng") == false)
+            {
+                frmLogNguoiDung form = new frmLogNguoiDung();
+                AddTabControl(form, "Quản Lý Log Người Dùng");
+            }
         }
 
     }

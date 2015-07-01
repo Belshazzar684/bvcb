@@ -116,6 +116,8 @@ namespace BanVeChuyenBay.GUI
                         {
                             LoadDanhSachTuyenBay();
                             MessageBox.Show("Có " + count.ToString() + " tuyến bay được thêm vào.");
+                            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm" + count.ToString() + "Tuyến bay vào");
+
                         }
                     }
                 }

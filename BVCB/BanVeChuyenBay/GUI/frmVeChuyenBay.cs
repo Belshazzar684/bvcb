@@ -210,6 +210,7 @@ namespace BanVeChuyenBay.GUI
                 }
 
                 MessageBox.Show("Bán vé thành công");
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Bán vé chuyến bay");
 
                 // Update DoanhThuChuyenBay
                 DataTable updateDoanhThuChuyenBay = BLL.BLL_BaoCaoDoanhThuChuyenBay.SelectAllDoanhThuChuyenBay(cbMaChuyenBay.Text);

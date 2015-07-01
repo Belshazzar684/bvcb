@@ -51,6 +51,7 @@ namespace BanVeChuyenBay.GUI
                 BLL.BLL_SanBay.InsertSanBay(txtMaSanBay.Text, txtTenSanBay.Text, MaDiaDiem);
 
                 MessageBox.Show("Thêm thành công", "Thông báo");
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm sân bay " + txtMaSanBay.Text);
             }
             catch
             {

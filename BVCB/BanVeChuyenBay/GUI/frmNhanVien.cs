@@ -155,6 +155,8 @@ namespace BanVeChuyenBay.GUI
                     {
                         BLL_NhanVien.Insert(MaNhanVien, TenNhanVien, TenDangNhap, Utilities.Instance.MaHoa(MatKhau), QuyenHan, DiaChi, DienThoai);
                         MessageBox.Show("Tạo nhân viên thành công.");
+                        BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Tạo nhân viên mới!" + MaNhanVien);
+
                         if (dtNhanVien.RowCount > 0)
                         {
                             DataGridViewRow r = this.dtNhanVien.SelectedRows[0];
@@ -176,6 +178,8 @@ namespace BanVeChuyenBay.GUI
                             BLL_NhanVien.Update(MaNhanVien, TenNhanVien, TenDangNhap, Utilities.Instance.MaHoa(MatKhau), QuyenHan, DiaChi, DienThoai);
 
                         MessageBox.Show("Cập nhật nhân viên thành công.");
+                        BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Cập nhật thông tin nhân viên" + TenNhanVien);
+
                         reset();
                         dtNhanVien.CurrentCell = dtNhanVien.Rows[vitri].Cells[0];
                         dtNhanVien.Rows[vitri].Selected = true;
@@ -213,6 +217,8 @@ namespace BanVeChuyenBay.GUI
                             dtNhanVien.Rows[vitri - 1].Selected = true;
                             Gan_click();
                         }
+                        BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Xóa nhân viên" + TenNhanVien);
+
                     }                 
                 }
 

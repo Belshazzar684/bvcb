@@ -128,6 +128,7 @@ namespace BanVeChuyenBay.GUI
                             this.Cursor = Cursors.Arrow;
                             MessageBox.Show("Sao lưu dữ liệu thành công,"
                             + " vui lòng kiểm tra lại thư mục tại đường dẫn trên");
+                            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Tiến hành sao lưu dữ liệu");
                         }
                         else
                         {
@@ -208,6 +209,7 @@ namespace BanVeChuyenBay.GUI
                     {
                         this.Cursor = Cursors.Arrow;
                         MessageBox.Show("Phục hồi thành công, vui lòng kiểm tra cơ sở dữ liệu.");
+                        BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Tiến hành phục hồi dữ liệu");
                     }
                     else
                     {

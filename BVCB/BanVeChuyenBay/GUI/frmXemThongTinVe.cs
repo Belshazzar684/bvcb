@@ -77,6 +77,8 @@ namespace BanVeChuyenBay.GUI
                         LoadDataGridView();
                     }
                 }
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Hủy vé ");
+
             }
         }
 

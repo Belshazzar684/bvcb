@@ -92,5 +92,11 @@ namespace Support.BLL
             DienThoai,
             MaHangVe
         }
+        public enum IDLogNguoiDung
+        {
+            TenDangNhap = 0,
+            ThoiGian,
+            HanhDong
+        }
     }
 }

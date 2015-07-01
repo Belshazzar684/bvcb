@@ -55,6 +55,8 @@ namespace BanVeChuyenBay.GUI
                     this.DialogResult = DialogResult.OK;
                     frmMain.MaNhanVien = MaNV;
                     frmMain.TenDangNhap = dlCon;
+                    BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Đăng Nhập Vào Hệ Thống");
+
                   
                     frmMain f = new frmMain();
                     f.BatTat(true);

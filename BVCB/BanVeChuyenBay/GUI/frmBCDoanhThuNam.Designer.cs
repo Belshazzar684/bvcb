@@ -148,7 +148,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.crvBCDoanhThuNam.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crvBCDoanhThuNam.CachedPageNumberPerDoc = 10;
+             this.crvBCDoanhThuNam.CachedPageNumberPerDoc = 10;
             this.crvBCDoanhThuNam.Cursor = System.Windows.Forms.Cursors.Default;
             this.crvBCDoanhThuNam.Location = new System.Drawing.Point(3, 70);
             this.crvBCDoanhThuNam.Name = "crvBCDoanhThuNam";

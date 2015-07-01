@@ -45,6 +45,7 @@ namespace BanVeChuyenBay.GUI
                     BLL_NhanVien.Insert(NewMaNhanVien, txtTenNguoiDung.Text, txtTenDangNhap.Text, Utilities.Instance.MaHoa(txtMatKhauMoi.Text), 3, txtDiaChi.Text, txtDienThoai.Text);
                     BLL_KhachHang.Insert_ThongTinKhachHang(NewMaNhanVien, dtpNgaySinh.Value, cbGioiTinh.Text, txtCMND.Text);
                     MessageBox.Show("Tạo nhân tài khoản thành công.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Tạo tài khoản mới " + txtTenDangNhap);
                     this.Close();
                 }
                 else

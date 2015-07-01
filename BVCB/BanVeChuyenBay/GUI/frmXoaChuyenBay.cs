@@ -77,6 +77,8 @@ namespace BanVeChuyenBay.GUI
                 {
                     String MaChuyenBay = cbMaChuyenBay.Text.ToString();
                     XoaChuyenBay(MaChuyenBay);
+                    BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Xóa chuyến bay " + cbMaChuyenBay.Text.Trim());
+
                     
                 }catch
                 { }

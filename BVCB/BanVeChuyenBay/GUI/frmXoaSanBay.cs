@@ -60,6 +60,7 @@ namespace BanVeChuyenBay.GUI
                 BLL.BLL_SanBay.DeleteSanBayAt(cbMaSanBay.Text);
 
                 MessageBox.Show("Xóa thành công.", "Thông báo");
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Xóa sân bay " + cbMaSanBay.Text);
                 cbMaSanBay.Text = "";
             }
         }

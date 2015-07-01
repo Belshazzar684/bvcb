@@ -50,6 +50,8 @@ namespace BanVeChuyenBay.GUI
                 BLL.BLL_TuyenBay.InsertTuyenBay(txtMaTuyenBay.Text, cbMaSanBayDi.Text, cbMaSanBayDen.Text);
 
                 MessageBox.Show("Thêm tuyến bay thành công", "Thông báo");
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm tuyến bay mới " + txtMaTuyenBay.Text.Trim());
+
             }catch
             {
                 MessageBox.Show("Tuyến bay đã tôn tại", "Thông báo");

@@ -153,6 +153,7 @@ namespace BanVeChuyenBay.GUI
                         BLL_NhanVien.Insert(MaKhachHang, TenKhachHang, TenDangNhap, Utilities.Instance.MaHoa(MatKhau), 3, DiaChi, DienThoai);
                         BLL_KhachHang.Insert_ThongTinKhachHang(MaKhachHang, dtpNgaySinh.Value, cbGioiTinh.Text, txtCMND.Text);
                         MessageBox.Show("Tạo khách hàng thành công.");
+                        BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm khách hàng " + MaKhachHang);
                         if (dtKhachHang.RowCount > 0)
                         {
                             DataGridViewRow r = this.dtKhachHang.SelectedRows[0];
@@ -179,6 +180,8 @@ namespace BanVeChuyenBay.GUI
                             BLL_KhachHang.Update_ThongTinKhachHang(MaKhachHang, dtpNgaySinh.Value, cbGioiTinh.Text, txtCMND.Text);
                         }
                         MessageBox.Show("Cập nhật khách hàng thành công.");
+                        BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Cập nhật thông tin khách hàng " + MaKhachHang);
+
                         reset();
                         dtKhachHang.CurrentCell = dtKhachHang.Rows[vitri].Cells[0];
                         dtKhachHang.Rows[vitri].Selected = true;
@@ -216,6 +219,8 @@ namespace BanVeChuyenBay.GUI
                             dtKhachHang.Rows[vitri - 1].Selected = true;
                             Gan_click();
                         }
+                        BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Xóa khách hàng " + MaKhachHang);
+
                     }
                 }
 

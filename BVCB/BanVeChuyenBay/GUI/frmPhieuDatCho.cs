@@ -258,6 +258,8 @@ namespace BanVeChuyenBay.GUI
                 }
 
                 MessageBox.Show("Đặt vé thành công");
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Tạo phiếu đặt chổ mới có mã phiếu" + MaPhieuDat);
+
                 btnTaoMoi_Click(sender, e);
             }
             catch

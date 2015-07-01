@@ -129,6 +129,8 @@ namespace BanVeChuyenBay.GUI
                         {
                             LoadDanhSachSanBay();
                             MessageBox.Show("Có " + count.ToString() + " sân bay được thêm vào.");
+                            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm" + count.ToString() + "sân bay từ File");
+
                         }
                     }
                 }

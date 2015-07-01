@@ -32,6 +32,8 @@ namespace BanVeChuyenBay.GUI
                     string MatKhauMoi = txtMatKhauMoi.Text;
                     BLL_NhanVien.UpdateMatKhau(id, Utilities.Instance.MaHoa(MatKhauMoi));
                     MessageBox.Show("Thay đổi mật khẩu thành công");
+                    BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thay đổi mật khẩu của tài khoản" + id);
+
                     this.DialogResult = DialogResult.Cancel;
                 }
                 catch (Exception ex)

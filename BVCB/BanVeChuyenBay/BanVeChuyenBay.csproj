@@ -125,6 +125,7 @@
     <Compile Include="BLL\BLL_HangVe.cs" />
     <Compile Include="BLL\BLL_KhachHang.cs" />
     <Compile Include="BLL\BLL_LichChuyenBay.cs" />
+    <Compile Include="BLL\BLL_LogNguoiDung.cs" />
     <Compile Include="BLL\BLL_NhanVien.cs" />
     <Compile Include="BLL\BLL_PhieuDatCho.cs" />
     <Compile Include="BLL\BLL_SanBay.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="DAL\DAL_HangVe.cs" />
     <Compile Include="DAL\DAL_KetNoi.cs" />
     <Compile Include="DAL\DAL_LichChuyenBay.cs" />
+    <Compile Include="DAL\DAL_LogNguoiDung.cs" />
     <Compile Include="DAL\DAL_NhanVien.cs" />
     <Compile Include="DAL\DAL_PhieuDatCho.cs" />
     <Compile Include="DAL\DAL_SanBay.cs" />
@@ -191,6 +193,12 @@
     </Compile>
     <Compile Include="GUI\frmDinhDangExcel.Designer.cs">
       <DependentUpon>frmDinhDangExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmLogNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLogNguoiDung.Designer.cs">
+      <DependentUpon>frmLogNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmQuanLyDiaDiem.cs">
       <SubType>Form</SubType>
@@ -428,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDinhDangExcel.resx">
       <DependentUpon>frmDinhDangExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmLogNguoiDung.resx">
+      <DependentUpon>frmLogNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLyDiaDiem.resx">
       <DependentUpon>frmQuanLyDiaDiem.cs</DependentUpon>

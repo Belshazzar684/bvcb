@@ -78,6 +78,7 @@ namespace BanVeChuyenBay.GUI
                 BLL.BLL_SanBay.UpdateSanBayAt(cbMaSanBay.Text, txtTenSanBay.Text,MaDiaDiem);
 
                 MessageBox.Show("Sửa thông tin thành công", "Thông báo");
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Sửa sân bay " + cbMaSanBay.Text);
             }
             catch
             {

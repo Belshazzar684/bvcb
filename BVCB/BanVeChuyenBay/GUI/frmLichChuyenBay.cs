@@ -388,6 +388,7 @@ namespace BanVeChuyenBay.GUI
                 BLL_BaoCaoDoanhThuChuyenBay.InsertBaoCaoDoanhThuChuyenBay(thang, nam, lcb.MaChuyenBay, 0, 0, 0.0f);
 
                 MessageBox.Show("Nhập thông tin thành công.");
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Tạo lịch chuyến bay mới");
 
                 buttonX4_Click(sender, e);
             }

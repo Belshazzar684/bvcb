@@ -54,6 +54,7 @@ namespace BanVeChuyenBay.GUI
                 BLL.BLL_HangVe.InsertHangVe(txtMaHangVe.Text, txtTenHangVe.Text, x);
 
                 MessageBox.Show("Thêm thành công", "Thông báo");
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm hạng vé " + txtMaHangVe.Text);
                 buttonX1_Click(sender, e);
             }
             catch

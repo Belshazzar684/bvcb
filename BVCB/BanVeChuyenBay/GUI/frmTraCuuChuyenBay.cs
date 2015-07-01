@@ -126,6 +126,7 @@ namespace BanVeChuyenBay.GUI
                             row["SanBayDen"].ToString(), row["KhoiHanh"].ToString(), row["ThoiGianBay"].ToString(),
                             row["SoGheTrong"].ToString(), row["GiaVe"].ToString());
                     }
+                    BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Tra cứu chuyến bay " + maChuyenBay);
                 }
             }
             catch (Exception ex)

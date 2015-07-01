@@ -105,6 +105,7 @@ namespace BanVeChuyenBay.GUI
             frmMain.TienTe = cbCurrency.Text.Substring(0,3);
             frmMain.TiGia = rate;
             MessageBox.Show("Thay đổi thành công", "Thông báo");
+            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thay đổi tỉ giá tiền tệ");
         }
     }
 }

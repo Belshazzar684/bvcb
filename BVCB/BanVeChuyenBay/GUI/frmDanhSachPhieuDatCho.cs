@@ -122,6 +122,8 @@ namespace BanVeChuyenBay.GUI
                 }
 
                 MessageBox.Show("Cập nhật thành công", "Thông báo");
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thay đổi danh sách phiếu đặt chổ " );
+
                 cbDanhSachChuyenBay_SelectedIndexChanged(sender, e);
             }
         }

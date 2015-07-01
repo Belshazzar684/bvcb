@@ -69,6 +69,8 @@ namespace BanVeChuyenBay.GUI
                     rp.SetDataSource(dt);
                     crvBCDoanhThuThang.ReportSource = rp;
                     crvBCDoanhThuThang.Refresh();
+                    BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Tạo báo cáo doanh thu tháng");
+
                 }
                 catch { }
                

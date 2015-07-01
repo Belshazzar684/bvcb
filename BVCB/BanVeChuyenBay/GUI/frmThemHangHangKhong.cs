@@ -24,6 +24,7 @@ namespace BanVeChuyenBay.GUI
                 BLL.BLL_HangHangKhong.InsertHangHangKhong(txtMaHang.Text, txtTenHang.Text);
                 MessageBox.Show("Thêm thành công", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadMaHang();
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm hãng hàng không " + txtMaHang.Text.Trim());
             }
             else
             {

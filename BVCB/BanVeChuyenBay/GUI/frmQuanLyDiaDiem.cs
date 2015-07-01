@@ -35,6 +35,8 @@ namespace BanVeChuyenBay.GUI
         private void btThem_Click(object sender, EventArgs e)
         {
             BLL.BLL_DiaDiem.InsertDiaDiem(txtQuocGia.Text, txtThanhPho.Text);
+            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm địa điểm mới" + dgwDsDiaDiem.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString());
+
             LoadDanhSachDiaDiem();
         }
 
@@ -43,6 +45,8 @@ namespace BanVeChuyenBay.GUI
             if (dgwDsDiaDiem.SelectedRows.Count > 0)
             {
                 BLL.BLL_DiaDiem.DeleteDiaDiem(dgwDsDiaDiem.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString());
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Xóa địa điểm" + dgwDsDiaDiem.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString());
+
                 LoadDanhSachDiaDiem();
             }
             else
@@ -56,6 +60,8 @@ namespace BanVeChuyenBay.GUI
             if (dgwDsDiaDiem.SelectedRows.Count > 0)
             {
                 BLL.BLL_DiaDiem.UpdateDiaDiem(dgwDsDiaDiem.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString(), txtQuocGia.Text, txtThanhPho.Text);
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Sửa địa điểm" + dgwDsDiaDiem.SelectedRows[0].Cells["MaDiaDiem"].Value.ToString());
+
                 LoadDanhSachDiaDiem();
             }
             else
@@ -135,6 +141,7 @@ namespace BanVeChuyenBay.GUI
                         {
                             LoadDanhSachDiaDiem();
                             MessageBox.Show("Có " + count.ToString() + " địa điểm được thêm vào.");
+                            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thêm địa điểm từ File");
                         }
                     }
                 }

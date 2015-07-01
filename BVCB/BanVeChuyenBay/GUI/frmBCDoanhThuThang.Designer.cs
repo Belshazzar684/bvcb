@@ -75,7 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.crvBCDoanhThuThang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crvBCDoanhThuThang.CachedPageNumberPerDoc = 10;
+           this.crvBCDoanhThuThang.CachedPageNumberPerDoc = 10;
             this.crvBCDoanhThuThang.Cursor = System.Windows.Forms.Cursors.Default;
             this.crvBCDoanhThuThang.Location = new System.Drawing.Point(3, 73);
             this.crvBCDoanhThuThang.Name = "crvBCDoanhThuThang";

@@ -49,6 +49,7 @@ namespace BanVeChuyenBay.GUI
 
             BLL.BLL_ThamSo.UpdateThamSo(tgbaytoithieu, sosbtgtoida, tgdungtoithieu, tgdungtoida);
             MessageBox.Show("Nhập thành công", "Thông báo");
+            BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Thay đổi quy định về một chuyến bay");
         }
     }
 }

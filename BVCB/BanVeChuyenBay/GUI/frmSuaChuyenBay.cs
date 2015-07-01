@@ -529,6 +529,8 @@ namespace BanVeChuyenBay.GUI
                 thang = dtpNgayGio.Value.Month;
                 nam = dtpNgayGio.Value.Year;
                 BLL.BLL_BaoCaoDoanhThuChuyenBay.UpdateBaoCaoDoanhThuChuyenBay(thang, nam, lcb.MaChuyenBay, 0, 0, 0.0f);
+                BLL.BLL_LogNguoiDung.InsertLogNguoiDung(frmMain.TenDangNhap, DateTime.Now, "Tiến hành sửa chuyến bay " + cbMaChuyenBay.Text);
+
 
                 MessageBox.Show("Nhập thông tin thành công.");
             }
