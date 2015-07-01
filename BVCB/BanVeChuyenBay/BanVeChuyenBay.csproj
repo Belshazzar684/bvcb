@@ -571,6 +571,7 @@
     <None Include="Resources\ChinaFlag.png" />
     <None Include="DataBase\script.sql" />
     <None Include="DataBase\CheckTable.sql" />
+    <None Include="Resources\currency-icon.png" />
     <Content Include="Resources\currency.jpg" />
     <None Include="Resources\EUFlag.jpg" />
     <None Include="Resources\JapanFlag.png" />
@@ -581,6 +582,9 @@
     <None Include="Resources\dinh-dang-dia-diem.png" />
     <None Include="Resources\dinh-dang-san-bay.png" />
     <None Include="Resources\dinh-dang-tuyen-bay.png" />
+    <None Include="Resources\database-icon.png" />
+    <None Include="Resources\excel-icon.png" />
+    <None Include="Resources\dinh-dang-hhk.png" />
     <Content Include="Resources\saigon-nhatrang-danang-hoian-hue-hanoi-319984314.jpg" />
     <None Include="Resources\SingleView.jpg" />
     <Content Include="Resources\thiet_ke_web_ve_may_bay_1.jpg" />

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.lblMatKhau = new DevComponents.DotNetBar.LabelX();
             this.chkPass = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.txtMatKhau = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -42,7 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtDienThoai = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btThemMoi = new DevComponents.DotNetBar.ButtonX();
+            this.btThietLapLai = new DevComponents.DotNetBar.ButtonX();
             this.lbTongLoaiThuoc = new DevComponents.DotNetBar.LabelX();
             this.bar2 = new DevComponents.DotNetBar.Bar();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
@@ -95,19 +95,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelX6
+            // lblMatKhau
             // 
-            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            this.lblMatKhau.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
-            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.labelX6.Location = new System.Drawing.Point(10, 221);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(111, 17);
-            this.labelX6.TabIndex = 19;
-            this.labelX6.Text = "Mật khẩu";
+            this.lblMatKhau.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblMatKhau.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.lblMatKhau.Location = new System.Drawing.Point(10, 221);
+            this.lblMatKhau.Name = "lblMatKhau";
+            this.lblMatKhau.Size = new System.Drawing.Size(111, 17);
+            this.lblMatKhau.TabIndex = 19;
+            this.lblMatKhau.Text = "Mật khẩu";
             // 
             // chkPass
             // 
@@ -271,19 +271,19 @@
             this.txtDienThoai.WatermarkText = "Nhập nhập điện thoại";
             this.txtDienThoai.Validating += new System.ComponentModel.CancelEventHandler(this.txtDienThoai_Validating);
             // 
-            // btThemMoi
+            // btThietLapLai
             // 
-            this.btThemMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btThemMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btThemMoi.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btThemMoi.Image = global::BanVeChuyenBay.Properties.Resources.recycle_icon;
-            this.btThemMoi.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btThemMoi.Location = new System.Drawing.Point(16, 416);
-            this.btThemMoi.Name = "btThemMoi";
-            this.btThemMoi.Size = new System.Drawing.Size(90, 29);
-            this.btThemMoi.TabIndex = 13;
-            this.btThemMoi.Text = "Thêm mới";
-            this.btThemMoi.Click += new System.EventHandler(this.btkhong_Click);
+            this.btThietLapLai.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btThietLapLai.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btThietLapLai.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btThietLapLai.Image = global::BanVeChuyenBay.Properties.Resources.recycle_icon;
+            this.btThietLapLai.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btThietLapLai.Location = new System.Drawing.Point(16, 416);
+            this.btThietLapLai.Name = "btThietLapLai";
+            this.btThietLapLai.Size = new System.Drawing.Size(98, 29);
+            this.btThietLapLai.TabIndex = 13;
+            this.btThietLapLai.Text = "Thiết lập lại";
+            this.btThietLapLai.Click += new System.EventHandler(this.btThietLapLai_Click);
             // 
             // lbTongLoaiThuoc
             // 
@@ -398,7 +398,7 @@
             this.btthem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btthem.Location = new System.Drawing.Point(15, 374);
             this.btthem.Name = "btthem";
-            this.btthem.Size = new System.Drawing.Size(91, 29);
+            this.btthem.Size = new System.Drawing.Size(99, 29);
             this.btthem.TabIndex = 6;
             this.btthem.Text = "Thêm";
             this.btthem.Click += new System.EventHandler(this.btthem_Click);
@@ -587,13 +587,13 @@
             this.panelDockContainer1.Controls.Add(this.chkPass);
             this.panelDockContainer1.Controls.Add(this.labelX7);
             this.panelDockContainer1.Controls.Add(this.txtMatKhau);
-            this.panelDockContainer1.Controls.Add(this.labelX6);
+            this.panelDockContainer1.Controls.Add(this.lblMatKhau);
             this.panelDockContainer1.Controls.Add(this.txtTenDangNhap);
             this.panelDockContainer1.Controls.Add(this.labelX5);
             this.panelDockContainer1.Controls.Add(this.txtDiaChi);
             this.panelDockContainer1.Controls.Add(this.labelX1);
             this.panelDockContainer1.Controls.Add(this.txtDienThoai);
-            this.panelDockContainer1.Controls.Add(this.btThemMoi);
+            this.panelDockContainer1.Controls.Add(this.btThietLapLai);
             this.panelDockContainer1.Controls.Add(this.lbTongLoaiThuoc);
             this.panelDockContainer1.Controls.Add(this.labelX4);
             this.panelDockContainer1.Controls.Add(this.btluu);
@@ -624,9 +624,9 @@
             this.btnChiTiet.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnChiTiet.Image = global::BanVeChuyenBay.Properties.Resources.Actions_help_about_icon;
             this.btnChiTiet.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnChiTiet.Location = new System.Drawing.Point(120, 416);
+            this.btnChiTiet.Location = new System.Drawing.Point(123, 416);
             this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(89, 29);
+            this.btnChiTiet.Size = new System.Drawing.Size(86, 29);
             this.btnChiTiet.TabIndex = 71;
             this.btnChiTiet.Text = "Chi tiết";
             this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
@@ -885,7 +885,7 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.LabelX labelX6;
+        private DevComponents.DotNetBar.LabelX lblMatKhau;
         private DevComponents.DotNetBar.Controls.CheckBoxX chkPass;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMatKhau;
@@ -897,7 +897,7 @@
         private System.Windows.Forms.Label label2;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtDienThoai;
-        private DevComponents.DotNetBar.ButtonX btThemMoi;
+        private DevComponents.DotNetBar.ButtonX btThietLapLai;
         private DevComponents.DotNetBar.LabelX lbTongLoaiThuoc;
         private DevComponents.DotNetBar.Bar bar2;
         private DevComponents.DotNetBar.LabelX labelX4;
