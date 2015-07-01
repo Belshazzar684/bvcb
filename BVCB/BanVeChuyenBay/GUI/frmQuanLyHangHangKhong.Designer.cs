@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyHangHangKhong));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaHang = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.TenHang = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.TongChuyenBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.SoChuyenHienTai = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -42,10 +46,6 @@
             this.btXoa = new DevComponents.DotNetBar.ButtonX();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MaHang = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.TenHang = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.TongChuyenBay = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.SoChuyenHienTai = new DevComponents.DotNetBar.Controls.DataGridViewLabelXColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -72,6 +72,40 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(596, 348);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // MaHang
+            // 
+            this.MaHang.DataPropertyName = "MaHang";
+            this.MaHang.HeaderText = "Mã hãng";
+            this.MaHang.Name = "MaHang";
+            this.MaHang.ReadOnly = true;
+            // 
+            // TenHang
+            // 
+            this.TenHang.DataPropertyName = "TenHang";
+            this.TenHang.FillWeight = 250F;
+            this.TenHang.HeaderText = "Tên hãng";
+            this.TenHang.Name = "TenHang";
+            this.TenHang.ReadOnly = true;
+            this.TenHang.Width = 180;
+            // 
+            // TongChuyenBay
+            // 
+            this.TongChuyenBay.HeaderText = "Tổng chuyến bay";
+            this.TongChuyenBay.Name = "TongChuyenBay";
+            this.TongChuyenBay.ReadOnly = true;
+            this.TongChuyenBay.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TongChuyenBay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TongChuyenBay.Width = 150;
+            // 
+            // SoChuyenHienTai
+            // 
+            this.SoChuyenHienTai.HeaderText = "Số chuyến hiện tại";
+            this.SoChuyenHienTai.Name = "SoChuyenHienTai";
+            this.SoChuyenHienTai.ReadOnly = true;
+            this.SoChuyenHienTai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SoChuyenHienTai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.SoChuyenHienTai.Width = 150;
             // 
             // panelEx1
             // 
@@ -212,6 +246,7 @@
             this.btnThemTuFile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnThemTuFile.TabIndex = 88;
             this.btnThemTuFile.Text = "Thêm\r\nTừ File";
+            this.btnThemTuFile.Click += new System.EventHandler(this.btnThemTuFile_Click);
             // 
             // btSua
             // 
@@ -311,40 +346,6 @@
             this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox1.TabIndex = 52;
             this.PictureBox1.TabStop = false;
-            // 
-            // MaHang
-            // 
-            this.MaHang.DataPropertyName = "MaHang";
-            this.MaHang.HeaderText = "Mã hãng";
-            this.MaHang.Name = "MaHang";
-            this.MaHang.ReadOnly = true;
-            // 
-            // TenHang
-            // 
-            this.TenHang.DataPropertyName = "TenHang";
-            this.TenHang.FillWeight = 250F;
-            this.TenHang.HeaderText = "Tên hãng";
-            this.TenHang.Name = "TenHang";
-            this.TenHang.ReadOnly = true;
-            this.TenHang.Width = 180;
-            // 
-            // TongChuyenBay
-            // 
-            this.TongChuyenBay.HeaderText = "Tổng chuyến bay";
-            this.TongChuyenBay.Name = "TongChuyenBay";
-            this.TongChuyenBay.ReadOnly = true;
-            this.TongChuyenBay.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TongChuyenBay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TongChuyenBay.Width = 150;
-            // 
-            // SoChuyenHienTai
-            // 
-            this.SoChuyenHienTai.HeaderText = "Số chuyến hiện tại";
-            this.SoChuyenHienTai.Name = "SoChuyenHienTai";
-            this.SoChuyenHienTai.ReadOnly = true;
-            this.SoChuyenHienTai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SoChuyenHienTai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.SoChuyenHienTai.Width = 150;
             // 
             // frmQuanLyHangHangKhong
             // 

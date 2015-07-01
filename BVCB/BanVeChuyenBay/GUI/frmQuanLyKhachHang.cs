@@ -69,13 +69,17 @@ namespace BanVeChuyenBay.GUI
             try
             {
                 if (this.dtKhachHang.SelectedRows.Count == 0)
+                {
+                    lblMatKhau.Text = "Mật Khẩu";
                     return;
+                }
                 DataGridViewRow r = this.dtKhachHang.SelectedRows[0];
 
                 GanDK(r);
             }
             catch (Exception ex)
             {
+                lblMatKhau.Text = "Mật Khẩu";
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
@@ -95,6 +99,7 @@ namespace BanVeChuyenBay.GUI
                     this.txtCMND.Text = r.Cells["CMND"].Value.ToString();
                     this.cbGioiTinh.SelectedItem = r.Cells["GioiTinh"].Value.ToString();
                     this.dtpNgaySinh.Value = DateTime.Parse(r.Cells["NgaySinh"].Value.ToString());
+                    lblMatKhau.Text = "Mật Khẩu Mới";
                     //MessageBox.Show(r.Cells["SoLuongVeDat"].Value.ToString());
                 }
                 else
@@ -106,10 +111,12 @@ namespace BanVeChuyenBay.GUI
                     this.txtTenDangNhap.Text = "";
                     this.txtMatKhau.Text = "";
                     this.txtCMND.Text = "";
+                    lblMatKhau.Text = "Mật Khẩu";
                 }
             }
             catch (Exception ex)
             {
+                lblMatKhau.Text = "Mật Khẩu";
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
@@ -221,7 +228,7 @@ namespace BanVeChuyenBay.GUI
             }
         }
 
-        private void btkhong_Click(object sender, EventArgs e)
+        private void btThietLapLai_Click(object sender, EventArgs e)
         {
             reset();
             Gan_click();
@@ -237,6 +244,7 @@ namespace BanVeChuyenBay.GUI
             this.txtTenDangNhap.Text = "";
             this.txtMatKhau.Text = "";
             this.txtCMND.Text = "";
+            lblMatKhau.Text = "Mật Khẩu";
             LoadDataGridView();
 
             dtKhachHang.Enabled = true;

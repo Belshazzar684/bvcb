@@ -63,8 +63,6 @@
             this.cboServerName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboServerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboServerName.FormattingEnabled = true;
-            this.cboServerName.Items.AddRange(new object[] {
-            "(localdb)\\HP"});
             this.cboServerName.Location = new System.Drawing.Point(15, 39);
             this.cboServerName.Name = "cboServerName";
             this.cboServerName.Size = new System.Drawing.Size(311, 24);

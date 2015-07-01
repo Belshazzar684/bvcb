@@ -34,6 +34,14 @@
             this.btnTroLai = new DevComponents.DotNetBar.ButtonX();
             this.btnDongY = new DevComponents.DotNetBar.ButtonX();
             this.tabMain = new DevComponents.DotNetBar.TabControl();
+            this.pnlHangHangKhong = new DevComponents.DotNetBar.TabControlPanel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.tabHangHangKhong = new DevComponents.DotNetBar.TabItem(this.components);
+            this.pnlQDChung = new DevComponents.DotNetBar.TabControlPanel();
+            this.txtQDChung = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
+            this.lblQDChung = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.tabQDChung = new DevComponents.DotNetBar.TabItem(this.components);
             this.pnlTuyenBay = new DevComponents.DotNetBar.TabControlPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
@@ -42,28 +50,22 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSanBay = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabSanBay = new DevComponents.DotNetBar.TabItem(this.components);
-            this.pnlQDChung = new DevComponents.DotNetBar.TabControlPanel();
-            this.txtQDChung = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
-            this.lblQDChung = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.tabQDChung = new DevComponents.DotNetBar.TabItem(this.components);
             this.pnlDiaDiem = new DevComponents.DotNetBar.TabControlPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDiaDiem = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabDiaDiem = new DevComponents.DotNetBar.TabItem(this.components);
-            this.pnlHangHangKhong = new DevComponents.DotNetBar.TabControlPanel();
-            this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.tabHangHangKhong = new DevComponents.DotNetBar.TabItem(this.components);
             this.pnlButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
+            this.pnlHangHangKhong.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pnlQDChung.SuspendLayout();
             this.pnlTuyenBay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pnlSanBay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.pnlQDChung.SuspendLayout();
             this.pnlDiaDiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlHangHangKhong.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlButton
@@ -125,8 +127,8 @@
             // 
             this.tabMain.CanReorderTabs = true;
             this.tabMain.Controls.Add(this.pnlHangHangKhong);
-            this.tabMain.Controls.Add(this.pnlTuyenBay);
             this.tabMain.Controls.Add(this.pnlQDChung);
+            this.tabMain.Controls.Add(this.pnlTuyenBay);
             this.tabMain.Controls.Add(this.pnlSanBay);
             this.tabMain.Controls.Add(this.pnlDiaDiem);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -142,6 +144,117 @@
             this.tabMain.Tabs.Add(this.tabSanBay);
             this.tabMain.Tabs.Add(this.tabTuyenBay);
             this.tabMain.Tabs.Add(this.tabHangHangKhong);
+            // 
+            // pnlHangHangKhong
+            // 
+            this.pnlHangHangKhong.Controls.Add(this.pictureBox4);
+            this.pnlHangHangKhong.Controls.Add(this.reflectionLabel2);
+            this.pnlHangHangKhong.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnlHangHangKhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlHangHangKhong.Location = new System.Drawing.Point(0, 26);
+            this.pnlHangHangKhong.Name = "pnlHangHangKhong";
+            this.pnlHangHangKhong.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlHangHangKhong.Size = new System.Drawing.Size(784, 435);
+            this.pnlHangHangKhong.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.pnlHangHangKhong.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.pnlHangHangKhong.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pnlHangHangKhong.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.pnlHangHangKhong.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.pnlHangHangKhong.Style.GradientAngle = 90;
+            this.pnlHangHangKhong.TabIndex = 5;
+            this.pnlHangHangKhong.TabItem = this.tabHangHangKhong;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox4.Image = global::BanVeChuyenBay.Properties.Resources.dinh_dang_hhk;
+            this.pictureBox4.Location = new System.Drawing.Point(1, 71);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(782, 363);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
+            // 
+            // reflectionLabel2
+            // 
+            this.reflectionLabel2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.reflectionLabel2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.reflectionLabel2.BackgroundStyle.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.reflectionLabel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.reflectionLabel2.Location = new System.Drawing.Point(1, 1);
+            this.reflectionLabel2.Name = "reflectionLabel2";
+            this.reflectionLabel2.Size = new System.Drawing.Size(782, 70);
+            this.reflectionLabel2.TabIndex = 3;
+            this.reflectionLabel2.Text = "<b><font size=\"+20\"><font color=\"#B02B2C\">Dữ Liệu File Hãng Hàng Không</font></fo" +
+    "nt></b>";
+            // 
+            // tabHangHangKhong
+            // 
+            this.tabHangHangKhong.AttachedControl = this.pnlHangHangKhong;
+            this.tabHangHangKhong.Name = "tabHangHangKhong";
+            this.tabHangHangKhong.Text = "Thêm Hãng Hàng Không";
+            // 
+            // pnlQDChung
+            // 
+            this.pnlQDChung.Controls.Add(this.txtQDChung);
+            this.pnlQDChung.Controls.Add(this.lblQDChung);
+            this.pnlQDChung.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pnlQDChung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlQDChung.Location = new System.Drawing.Point(0, 26);
+            this.pnlQDChung.Name = "pnlQDChung";
+            this.pnlQDChung.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlQDChung.Size = new System.Drawing.Size(784, 435);
+            this.pnlQDChung.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.pnlQDChung.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.pnlQDChung.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pnlQDChung.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.pnlQDChung.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.pnlQDChung.Style.GradientAngle = 90;
+            this.pnlQDChung.TabIndex = 1;
+            this.pnlQDChung.TabItem = this.tabQDChung;
+            // 
+            // txtQDChung
+            // 
+            // 
+            // 
+            // 
+            this.txtQDChung.BackgroundStyle.Class = "RichTextBoxBorder";
+            this.txtQDChung.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtQDChung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtQDChung.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQDChung.Location = new System.Drawing.Point(1, 71);
+            this.txtQDChung.Name = "txtQDChung";
+            this.txtQDChung.ReadOnly = true;
+            this.txtQDChung.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Microsoft S" +
+    "ans Serif;}}\r\n\\viewkind4\\uc1\\pard\\b\\f0\\fs41\\par\r\n}\r\n";
+            this.txtQDChung.Size = new System.Drawing.Size(782, 363);
+            this.txtQDChung.TabIndex = 1;
+            // 
+            // lblQDChung
+            // 
+            this.lblQDChung.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lblQDChung.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblQDChung.BackgroundStyle.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.lblQDChung.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblQDChung.Location = new System.Drawing.Point(1, 1);
+            this.lblQDChung.Name = "lblQDChung";
+            this.lblQDChung.Size = new System.Drawing.Size(782, 70);
+            this.lblQDChung.TabIndex = 0;
+            this.lblQDChung.Text = "<b><font size=\"+20\"><font color=\"#B02B2C\">Quy Định Chung</font></font></b>";
+            // 
+            // tabQDChung
+            // 
+            this.tabQDChung.AttachedControl = this.pnlQDChung;
+            this.tabQDChung.Name = "tabQDChung";
+            this.tabQDChung.Text = "Quy Định Chung";
             // 
             // pnlTuyenBay
             // 
@@ -248,64 +361,6 @@
             this.tabSanBay.Name = "tabSanBay";
             this.tabSanBay.Text = "Thêm Sân Bay";
             // 
-            // pnlQDChung
-            // 
-            this.pnlQDChung.Controls.Add(this.txtQDChung);
-            this.pnlQDChung.Controls.Add(this.lblQDChung);
-            this.pnlQDChung.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnlQDChung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlQDChung.Location = new System.Drawing.Point(0, 26);
-            this.pnlQDChung.Name = "pnlQDChung";
-            this.pnlQDChung.Padding = new System.Windows.Forms.Padding(1);
-            this.pnlQDChung.Size = new System.Drawing.Size(784, 435);
-            this.pnlQDChung.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.pnlQDChung.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.pnlQDChung.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pnlQDChung.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.pnlQDChung.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.pnlQDChung.Style.GradientAngle = 90;
-            this.pnlQDChung.TabIndex = 1;
-            this.pnlQDChung.TabItem = this.tabQDChung;
-            // 
-            // txtQDChung
-            // 
-            // 
-            // 
-            // 
-            this.txtQDChung.BackgroundStyle.Class = "RichTextBoxBorder";
-            this.txtQDChung.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtQDChung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtQDChung.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQDChung.Location = new System.Drawing.Point(1, 71);
-            this.txtQDChung.Name = "txtQDChung";
-            this.txtQDChung.ReadOnly = true;
-            this.txtQDChung.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Microsoft S" +
-    "ans Serif;}}\r\n\\viewkind4\\uc1\\pard\\b\\f0\\fs41\\par\r\n}\r\n";
-            this.txtQDChung.Size = new System.Drawing.Size(782, 363);
-            this.txtQDChung.TabIndex = 1;
-            // 
-            // lblQDChung
-            // 
-            this.lblQDChung.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.lblQDChung.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblQDChung.BackgroundStyle.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.lblQDChung.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblQDChung.Location = new System.Drawing.Point(1, 1);
-            this.lblQDChung.Name = "lblQDChung";
-            this.lblQDChung.Size = new System.Drawing.Size(782, 70);
-            this.lblQDChung.TabIndex = 0;
-            this.lblQDChung.Text = "<b><font size=\"+20\"><font color=\"#B02B2C\">Quy Định Chung</font></font></b>";
-            // 
-            // tabQDChung
-            // 
-            this.tabQDChung.AttachedControl = this.pnlQDChung;
-            this.tabQDChung.Name = "tabQDChung";
-            this.tabQDChung.Text = "Quy Định Chung";
-            // 
             // pnlDiaDiem
             // 
             this.pnlDiaDiem.Controls.Add(this.pictureBox1);
@@ -359,48 +414,7 @@
             this.tabDiaDiem.Name = "tabDiaDiem";
             this.tabDiaDiem.Text = "Thêm Địa Điểm";
             // 
-            // pnlHangHangKhong
-            // 
-            this.pnlHangHangKhong.Controls.Add(this.reflectionLabel2);
-            this.pnlHangHangKhong.DisabledBackColor = System.Drawing.Color.Empty;
-            this.pnlHangHangKhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHangHangKhong.Location = new System.Drawing.Point(0, 26);
-            this.pnlHangHangKhong.Name = "pnlHangHangKhong";
-            this.pnlHangHangKhong.Padding = new System.Windows.Forms.Padding(1);
-            this.pnlHangHangKhong.Size = new System.Drawing.Size(784, 435);
-            this.pnlHangHangKhong.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.pnlHangHangKhong.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.pnlHangHangKhong.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.pnlHangHangKhong.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.pnlHangHangKhong.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.pnlHangHangKhong.Style.GradientAngle = 90;
-            this.pnlHangHangKhong.TabIndex = 5;
-            this.pnlHangHangKhong.TabItem = this.tabHangHangKhong;
-            // 
-            // reflectionLabel2
-            // 
-            this.reflectionLabel2.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.reflectionLabel2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.reflectionLabel2.BackgroundStyle.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.reflectionLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reflectionLabel2.Location = new System.Drawing.Point(1, 1);
-            this.reflectionLabel2.Name = "reflectionLabel2";
-            this.reflectionLabel2.Size = new System.Drawing.Size(782, 70);
-            this.reflectionLabel2.TabIndex = 3;
-            this.reflectionLabel2.Text = "<b><font size=\"+20\"><font color=\"#B02B2C\">Dữ Liệu File Hãng Hàng Không</font></fo" +
-    "nt></b>";
-            // 
-            // tabHangHangKhong
-            // 
-            this.tabHangHangKhong.AttachedControl = this.pnlHangHangKhong;
-            this.tabHangHangKhong.Name = "tabHangHangKhong";
-            this.tabHangHangKhong.Text = "Thêm Hãng Hàng Không";
-            // 
-            // frmDinhDangExcel
+            // frmDinhDangFileNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -408,21 +422,22 @@
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.pnlButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmDinhDangExcel";
+            this.Name = "frmDinhDangFileNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LƯU Ý KHI THÊM DỮ LIỆU TỪ FILE EXCEL";
             this.VisibleChanged += new System.EventHandler(this.frmDinhDangExcel_VisibleChanged);
             this.pnlButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
             this.tabMain.ResumeLayout(false);
+            this.pnlHangHangKhong.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.pnlQDChung.ResumeLayout(false);
             this.pnlTuyenBay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pnlSanBay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.pnlQDChung.ResumeLayout(false);
             this.pnlDiaDiem.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlHangHangKhong.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -453,6 +468,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
 
     }
 }

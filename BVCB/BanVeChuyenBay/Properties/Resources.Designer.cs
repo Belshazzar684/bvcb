@@ -231,7 +231,7 @@ namespace BanVeChuyenBay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to select * from sys.tables where        ///exists (select * from sys.tables where name = &apos;DIADIEM&apos;)         ///and exists (select * from sys.tables where name = &apos;HANGHANGKHONG&apos;)         ///and exists (select * from sys.tables where name = &apos;SANBAY&apos;)         ///and exists (select * from sys.tables where name = &apos;TUYENBAY&apos;)         ///and exists (select * from sys.tables where name = &apos;LICHCHUYENBAY&apos;)         ///and exists (select * from sys.tables where name = &apos;CT_LICHCHUYENBAY&apos;)         ///and exists (select * from sys.tables where name = &apos;HANGVE&apos;)         ///and exists (select * from sys.t [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to select * from sys.tables where        ///exists (select * from sys.tables where name = &apos;BAOCAODOANHTHUCHUYENBAY&apos;)         ///and exists (select * from sys.tables where name = &apos;BAOCAODOANHTHUNAM&apos;)         ///and exists (select * from sys.tables where name = &apos;BAOCAODOANHTHUTHANG&apos;)         ///and exists (select * from sys.tables where name = &apos;BODEM&apos;)         ///and exists (select * from sys.tables where name = &apos;CHITIETKHACHHANG&apos;)         ///and exists (select * from sys.tables where name = &apos;CT_LICHCHUYENBAY&apos;)         ///and exists (select * from sys.tables where name = &apos;CT_PHIEU [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CheckTable {
             get {
@@ -282,6 +282,16 @@ namespace BanVeChuyenBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap currency_icon {
+            get {
+                object obj = ResourceManager.GetObject("currency-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap customer {
             get {
                 object obj = ResourceManager.GetObject("customer", resourceCulture);
@@ -295,6 +305,16 @@ namespace BanVeChuyenBay.Properties {
         internal static System.Drawing.Bitmap customer1 {
             get {
                 object obj = ResourceManager.GetObject("customer1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap database_icon {
+            get {
+                object obj = ResourceManager.GetObject("database-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -362,6 +382,16 @@ namespace BanVeChuyenBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dinh_dang_hhk {
+            get {
+                object obj = ResourceManager.GetObject("dinh-dang-hhk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dinh_dang_san_bay {
             get {
                 object obj = ResourceManager.GetObject("dinh-dang-san-bay", resourceCulture);
@@ -405,6 +435,16 @@ namespace BanVeChuyenBay.Properties {
         internal static System.Drawing.Bitmap EUFlag {
             get {
                 object obj = ResourceManager.GetObject("EUFlag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap excel_icon {
+            get {
+                object obj = ResourceManager.GetObject("excel-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
