@@ -31,12 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemHangHangKhong));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
-            this.btnTaoMoi = new DevComponents.DotNetBar.ButtonX();
             this.btThoat = new DevComponents.DotNetBar.ButtonX();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtTenSanBay = new System.Windows.Forms.TextBox();
-            this.txtMaSanBay = new System.Windows.Forms.TextBox();
+            this.txtTenHang = new System.Windows.Forms.TextBox();
+            this.txtMaHang = new System.Windows.Forms.TextBox();
             this.Label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.panelEx1.SuspendLayout();
@@ -48,12 +47,11 @@
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelEx1.Controls.Add(this.btnThem);
-            this.panelEx1.Controls.Add(this.btnTaoMoi);
             this.panelEx1.Controls.Add(this.btThoat);
             this.panelEx1.Controls.Add(this.reflectionLabel1);
             this.panelEx1.Controls.Add(this.PictureBox1);
-            this.panelEx1.Controls.Add(this.txtTenSanBay);
-            this.panelEx1.Controls.Add(this.txtMaSanBay);
+            this.panelEx1.Controls.Add(this.txtTenHang);
+            this.panelEx1.Controls.Add(this.txtMaHang);
             this.panelEx1.Controls.Add(this.Label3);
             this.panelEx1.Controls.Add(this.Label2);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
@@ -77,27 +75,13 @@
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThem.Image = global::BanVeChuyenBay.Properties.Resources.Actions_list_add_icon;
             this.btnThem.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btnThem.Location = new System.Drawing.Point(74, 203);
+            this.btnThem.Location = new System.Drawing.Point(120, 203);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(96, 37);
             this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnThem.TabIndex = 91;
             this.btnThem.Text = "Thêm";
-            // 
-            // btnTaoMoi
-            // 
-            this.btnTaoMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnTaoMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnTaoMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTaoMoi.Image = global::BanVeChuyenBay.Properties.Resources.create_icon;
-            this.btnTaoMoi.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btnTaoMoi.Location = new System.Drawing.Point(217, 203);
-            this.btnTaoMoi.Name = "btnTaoMoi";
-            this.btnTaoMoi.Size = new System.Drawing.Size(110, 37);
-            this.btnTaoMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnTaoMoi.TabIndex = 90;
-            this.btnTaoMoi.Text = "Tạo mới";
-            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btThoat
             // 
@@ -106,12 +90,13 @@
             this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btThoat.Image = global::BanVeChuyenBay.Properties.Resources.Windows_Close_Program_icon;
             this.btThoat.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btThoat.Location = new System.Drawing.Point(371, 203);
+            this.btThoat.Location = new System.Drawing.Point(312, 203);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(99, 37);
             this.btThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btThoat.TabIndex = 89;
             this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // reflectionLabel1
             // 
@@ -137,24 +122,24 @@
             this.PictureBox1.TabIndex = 42;
             this.PictureBox1.TabStop = false;
             // 
-            // txtTenSanBay
+            // txtTenHang
             // 
-            this.txtTenSanBay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenSanBay.ForeColor = System.Drawing.Color.Blue;
-            this.txtTenSanBay.Location = new System.Drawing.Point(217, 154);
-            this.txtTenSanBay.Name = "txtTenSanBay";
-            this.txtTenSanBay.Size = new System.Drawing.Size(216, 26);
-            this.txtTenSanBay.TabIndex = 38;
+            this.txtTenHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenHang.ForeColor = System.Drawing.Color.Blue;
+            this.txtTenHang.Location = new System.Drawing.Point(217, 154);
+            this.txtTenHang.Name = "txtTenHang";
+            this.txtTenHang.Size = new System.Drawing.Size(216, 26);
+            this.txtTenHang.TabIndex = 38;
             // 
-            // txtMaSanBay
+            // txtMaHang
             // 
-            this.txtMaSanBay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaSanBay.ForeColor = System.Drawing.Color.Blue;
-            this.txtMaSanBay.Location = new System.Drawing.Point(217, 114);
-            this.txtMaSanBay.Name = "txtMaSanBay";
-            this.txtMaSanBay.ReadOnly = true;
-            this.txtMaSanBay.Size = new System.Drawing.Size(216, 26);
-            this.txtMaSanBay.TabIndex = 37;
+            this.txtMaHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaHang.ForeColor = System.Drawing.Color.Blue;
+            this.txtMaHang.Location = new System.Drawing.Point(217, 114);
+            this.txtMaHang.Name = "txtMaHang";
+            this.txtMaHang.ReadOnly = true;
+            this.txtMaHang.Size = new System.Drawing.Size(216, 26);
+            this.txtMaHang.TabIndex = 37;
             // 
             // Label3
             // 
@@ -182,6 +167,7 @@
             this.Controls.Add(this.panelEx1);
             this.Name = "frmThemHangHangKhong";
             this.Text = "THÊM HÃNG HÀNG KHÔNG";
+            this.Load += new System.EventHandler(this.frmThemHangHangKhong_Load);
             this.panelEx1.ResumeLayout(false);
             this.panelEx1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
@@ -193,12 +179,11 @@
 
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.ButtonX btnThem;
-        private DevComponents.DotNetBar.ButtonX btnTaoMoi;
         private DevComponents.DotNetBar.ButtonX btThoat;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
         internal System.Windows.Forms.PictureBox PictureBox1;
-        internal System.Windows.Forms.TextBox txtTenSanBay;
-        internal System.Windows.Forms.TextBox txtMaSanBay;
+        internal System.Windows.Forms.TextBox txtTenHang;
+        internal System.Windows.Forms.TextBox txtMaHang;
         internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label Label2;
     }

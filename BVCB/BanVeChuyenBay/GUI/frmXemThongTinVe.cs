@@ -67,12 +67,12 @@ namespace BanVeChuyenBay.GUI
                         BLL.BLL_PhieuDatCho.DeletePhieuDatCho(dataGridView1.Rows[i].Cells["MaPhieuDat"].Value.ToString());
 
                         //Update DoanhThuChuyenBay
-                        //DataTable updateDoanhThuChuyenBay = BLL.BLL_BaoCaoDoanhThuChuyenBay.SelectAllDoanhThuChuyenBay(dataGridView1.Rows[i].Cells["MaChuyenBay"].Value.ToString());
+                        DataTable updateDoanhThuChuyenBay = BLL.BLL_BaoCaoDoanhThuChuyenBay.SelectAllDoanhThuChuyenBay(dataGridView1.Rows[i].Cells["MaChuyenBay"].Value.ToString());
 
-                        //foreach (DataRow temp in updateDoanhThuChuyenBay.Rows)
-                        //{
-                        //    BLL.BLL_BaoCaoDoanhThuChuyenBay.UpdateBaoCaoDoanhThuChuyenBay(int.Parse(temp.ItemArray[1].ToString()), int.Parse(temp.ItemArray[2].ToString()), dataGridView1.Rows[i].Cells["MaChuyenBay"].Value.ToString(), Convert.ToInt32(temp.ItemArray[3].ToString()), Convert.ToInt32(temp.ItemArray[4].ToString()), 0.0f);
-                        //}
+                        foreach (DataRow temp in updateDoanhThuChuyenBay.Rows)
+                        {
+                            BLL.BLL_BaoCaoDoanhThuChuyenBay.UpdateBaoCaoDoanhThuChuyenBay(int.Parse(temp.ItemArray[1].ToString()), int.Parse(temp.ItemArray[2].ToString()), dataGridView1.Rows[i].Cells["MaChuyenBay"].Value.ToString(), Convert.ToInt32(temp.ItemArray[3].ToString()), Convert.ToInt32(temp.ItemArray[4].ToString()), 0.0f);
+                        }
 
                         LoadDataGridView();
                     }

@@ -121,6 +121,7 @@
     <Compile Include="BLL\BLL_CT_LichChuyenBay.cs" />
     <Compile Include="BLL\BLL_CT_PhieuDatCho.cs" />
     <Compile Include="BLL\BLL_DiaDiem.cs" />
+    <Compile Include="BLL\BLL_HangHangKhong.cs" />
     <Compile Include="BLL\BLL_HangVe.cs" />
     <Compile Include="BLL\BLL_KhachHang.cs" />
     <Compile Include="BLL\BLL_LichChuyenBay.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="DAL\DAL_CT_LichChuyenBay.cs" />
     <Compile Include="DAL\DAL_CT_PhieuDatCho.cs" />
     <Compile Include="DAL\DAL_DiaDiem.cs" />
+    <Compile Include="DAL\DAL_HangHangKhong.cs" />
     <Compile Include="DAL\DAL_HangVe.cs" />
     <Compile Include="DAL\DAL_KetNoi.cs" />
     <Compile Include="DAL\DAL_LichChuyenBay.cs" />

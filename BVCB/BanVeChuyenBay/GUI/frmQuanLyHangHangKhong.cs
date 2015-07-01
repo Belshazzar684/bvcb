@@ -17,6 +17,7 @@ namespace BanVeChuyenBay.GUI
         public frmQuanLyHangHangKhong()
         {
             InitializeComponent();
+            LoadDSHangHangKhong();
         }
 
         ///sự kiện click btThem
@@ -73,9 +74,9 @@ namespace BanVeChuyenBay.GUI
                                     {
                                         try
                                         {
-                                            //if (BLL.BLL_HangHangKhong.KiemTraHang(table.Rows[i][0].ToString()) == 0)
+                                            if (BLL.BLL_HangHangKhong.KiemTraHang(table.Rows[i][0].ToString()))
                                             {
-                                                //BLL.BLL_HangHangKhong.InsertHangHangKhong(table.Rows[i][0].ToString());
+                                                BLL.BLL_HangHangKhong.InsertHangHangKhong("HHK" + (BLL.BLL_BoDem.SelectBoDem("HANGHANGKHONG") + 1) ,table.Rows[i][0].ToString());
                                                 count++;
                                             }
                                         }
@@ -91,7 +92,7 @@ namespace BanVeChuyenBay.GUI
                             MessageBox.Show("Không thêm được hãng hàng không nào.");
                         else
                         {
-                            //LoadDSHangHangKhong();
+                            LoadDSHangHangKhong();
                             MessageBox.Show("Có " + count.ToString() + " hãng hàng không được thêm vào.");
                         }
                     }
@@ -101,6 +102,49 @@ namespace BanVeChuyenBay.GUI
             {
                 Debug.WriteLine(ex.Message);
                 MessageBox.Show("Có lỗi trong quá trình thêm dữ liệu");
+            }
+        }
+
+        private void LoadDSHangHangKhong()
+        {
+            dataGridView1.DataSource = BLL.BLL_HangHangKhong.SelectAllHangHangKhong();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells["TongChuyenBay"].Value = BLL.BLL_LichChuyenBay.SelectLichChuyenBayByMaHang(dataGridView1.Rows[i].Cells["MaHang"].Value.ToString()).Rows.Count;
+                dataGridView1.Rows[i].Cells["SoChuyenHienTai"].Value = BLL.BLL_LichChuyenBay.SelectLichChuyenBayHienTaiByMaHang(dataGridView1.Rows[i].Cells["MaHang"].Value.ToString()).Rows.Count;
+            }
+        }
+
+        private void frmQuanLyHangHangKhong_Load(object sender, EventArgs e)
+        {
+            LoadDSHangHangKhong();
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            LoadDSHangHangKhong();
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            DevComponents.DotNetBar.TabControl TAB = frmMain.m_Tab;
+            TAB.Tabs.Remove(TAB.SelectedTab);
+            Close();
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dataGridView1.CurrentRow != null)
+                {
+                    BLL.BLL_HangHangKhong.DeleteHangHangKhong(dataGridView1.CurrentRow.Cells["MaHang"].Value.ToString());
+                    LoadDSHangHangKhong();
+                }
+            }
+            catch
+            { 
+            
             }
         }
     }

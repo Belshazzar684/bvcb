@@ -82,8 +82,8 @@ namespace BanVeChuyenBay.GUI
 
             //Khachhang
             LaKhachHang = true;
-            DataTable dt2 = BLL.BLL_NhanVien.Select_MaNhanVien(MaKhachHang);
-            DataTable dt3 = BLL.BLL_KhachHang.Select_ThongTinKhachHang(MaKhachHang);
+            DataTable dt2 = BLL.BLL_NhanVien.Select_MaNhanVien(_MaKhachHang);
+            DataTable dt3 = BLL.BLL_KhachHang.Select_ThongTinKhachHang(_MaKhachHang);
             if (dt2.Rows.Count > 0)
             {
                 DataRow tr1 = dt2.Rows[0];

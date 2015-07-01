@@ -14,6 +14,12 @@ namespace BanVeChuyenBay.GUI
 {
     public partial class frmLichChuyenBay : Form
     {
+        public class Data
+        {
+            public string Name { get; set; }
+            public string ID { get; set; }
+        }
+
         int MaxRowHangVe;
         int MaxSBTrungGian;
         int MinTGDung, MaxTGDung, MinTGBay;
@@ -45,7 +51,7 @@ namespace BanVeChuyenBay.GUI
         {
             InitializeComponent();
             loadSoHangVe();
-
+            LoadHangHangKhong();
 
             DSThamSo = BLL_LichChuyenBay.SelectAllThamSo();
             DataRow row = DSThamSo.Rows[0];
@@ -356,7 +362,7 @@ namespace BanVeChuyenBay.GUI
 
 
                 /// nhap du lieu vao bll
-                BLL_LichChuyenBay.InsertLichChuyenBay(lcb.MaChuyenBay, lcb.MaTuyenBay, lcb.KhoiHanh, lcb.ThoiGianBay, lcb.DonGia, "HHK1");
+                BLL_LichChuyenBay.InsertLichChuyenBay(lcb.MaChuyenBay, lcb.MaTuyenBay, lcb.KhoiHanh, lcb.ThoiGianBay, lcb.DonGia, cbHangHangKhong.SelectedValue.ToString());
 
                 for (int i = 0; i < ct_lcb.Count; i++)
                 {
@@ -457,6 +463,7 @@ namespace BanVeChuyenBay.GUI
                 row.Cells[1].Value = null;
                 row.Cells[2].Value = null;
             }
+            LoadHangHangKhong();
         }
 
         private void btnSanBayDi_Click(object sender, EventArgs e)
@@ -505,10 +512,13 @@ namespace BanVeChuyenBay.GUI
                         {
                             if (i != e.RowIndex)
                             {
-                                if (cell.Value.ToString() == dataGridView2.Rows[i].Cells[0].Value.ToString())
+                                if (!String.IsNullOrEmpty(dataGridView2.Rows[i].Cells[0].Value.ToString()))
                                 {
-                                    MessageBox.Show("Sân bay trung gian không được trùng", "Error");
-                                    cell.Value = null;
+                                    if (cell.Value.ToString() == dataGridView2.Rows[i].Cells[0].Value.ToString())
+                                    {
+                                        MessageBox.Show("Sân bay trung gian không được trùng", "Error");
+                                        cell.Value = null;
+                                    }
                                 }
                             }
                         }
@@ -530,6 +540,27 @@ namespace BanVeChuyenBay.GUI
         private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
+        }
+
+        //Load combobox Hang Hang Khong
+        private void LoadHangHangKhong()
+        {
+            BindingList<Data> _comboItems = new BindingList<Data>();
+            foreach (DataRow hhk in BLL.BLL_HangHangKhong.SelectAllHangHangKhong().Rows)
+            {
+                _comboItems.Add(new Data { Name = hhk["TenHang"].ToString(), ID = hhk["MaHang"].ToString() });
+            }
+            cbHangHangKhong.DisplayMember = "Name";
+            cbHangHangKhong.ValueMember = "ID";
+            cbHangHangKhong.DataSource = _comboItems;
+            if (cbHangHangKhong.Items.Count > 0)
+                cbHangHangKhong.SelectedIndex = 0;
+        }
+
+        private void btnHangHangKhong_Click(object sender, EventArgs e)
+        {
+            frmThemHangHangKhong form = new frmThemHangHangKhong();
+            form.ShowDialog();
         }
     }
 }
