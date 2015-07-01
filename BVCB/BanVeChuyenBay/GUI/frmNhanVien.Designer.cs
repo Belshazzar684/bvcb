@@ -650,6 +650,8 @@
             // 
             this.dtNhanVien.AllowUserToAddRows = false;
             this.dtNhanVien.AllowUserToDeleteRows = false;
+            this.dtNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtNhanVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtNhanVien.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -672,7 +674,6 @@
             this.TenDangNhap,
             this.MatKhau,
             this.QuyenHan});
-            this.dtNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtNhanVien.GridColor = System.Drawing.SystemColors.Control;
             this.dtNhanVien.ImeMode = System.Windows.Forms.ImeMode.On;
             this.dtNhanVien.Location = new System.Drawing.Point(0, 65);

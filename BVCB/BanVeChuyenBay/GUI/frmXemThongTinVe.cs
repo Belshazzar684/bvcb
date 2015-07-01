@@ -86,5 +86,10 @@ namespace BanVeChuyenBay.GUI
             TAB.Tabs.Remove(TAB.SelectedTab);
             Close();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadDataGridView();
+        }
     }
 }
