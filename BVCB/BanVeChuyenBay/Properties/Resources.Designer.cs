@@ -532,6 +532,16 @@ namespace BanVeChuyenBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap log {
+            get {
+                object obj = ResourceManager.GetObject("log", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Login_out_icon {
             get {
                 object obj = ResourceManager.GetObject("Login-out-icon", resourceCulture);
@@ -632,6 +642,16 @@ namespace BanVeChuyenBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rule {
+            get {
+                object obj = ResourceManager.GetObject("rule", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RussianFlag {
             get {
                 object obj = ResourceManager.GetObject("RussianFlag", resourceCulture);
@@ -668,7 +688,12 @@ namespace BanVeChuyenBay.Properties {
         ///
         ///---- NOI DUNG BM1
         ///SET DATEFORMAT dmy;
-        ///
+        ///CREATE TABLE LOGNGUOIDUNG
+        ///(
+        ///	TenDangNhap nvarchar(50),
+        ///	ThoiGian DateTime primary key,
+        ///	HanhDong nvarchar(50)
+        ///)
         ///CREATE TABLE DIADIEM
         ///(
         ///	MaDiaDiem varchar(10) primary key not null,
@@ -684,9 +709,7 @@ namespace BanVeChuyenBay.Properties {
         ///
         ///CREATE TABLE SANBAY
         ///(
-        ///	MaSanBay VARCHAR(10) PRIMARY KEY NOT NULL,
-        ///	TenSanBay NVARCHAR(100),
-        ///	MaDiaDiem varchar(10) FOREIGN KEY REFERENCES DIADIEM [rest of string was truncated]&quot;;.
+        ///	MaSanBay [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string script {
             get {

@@ -597,6 +597,8 @@
     <None Include="Resources\database-icon.png" />
     <None Include="Resources\excel-icon.png" />
     <None Include="Resources\dinh-dang-hhk.png" />
+    <None Include="Resources\log.png" />
+    <None Include="Resources\rule.png" />
     <Content Include="Resources\saigon-nhatrang-danang-hoian-hue-hanoi-319984314.jpg" />
     <None Include="Resources\SingleView.jpg" />
     <Content Include="Resources\thiet_ke_web_ve_may_bay_1.jpg" />
