@@ -298,6 +298,12 @@ namespace BanVeChuyenBay.GUI
                         MessageBox.Show("Vui lòng nhập đúng số ghế");
                         return;
                     }
+
+                    if (cbHangHangKhong.SelectedValue == null)
+                    {
+                        MessageBox.Show("Vui lòng nhập hãng hàng không");
+                        return;
+                    }
                 }
 
 
