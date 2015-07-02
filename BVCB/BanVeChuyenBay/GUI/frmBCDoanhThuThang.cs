@@ -47,12 +47,18 @@ namespace BanVeChuyenBay.GUI
                 {
                     DoanhThu += (int)Convert.ToDecimal(row.ItemArray[2]);
                 }
+                try
+                {
+                    if (dt.Rows.Count > 1)      //thêm điều kiện có chuyến bay mới cần insert vào CSDL-> ảnh hưởng báo cáo năm
+                    {
+                        if (BLL_BCDoanhThuThang.SelectBCDoanhThuThang(int.Parse(cbThang.Text), int.Parse(cbNam.Text.ToString())).Rows.Count == 0)
+                            BLL.BLL_BCDoanhThuThang.InsertBaoCaoDoanhThuThang(int.Parse(cbThang.Text.ToString()), int.Parse(cbNam.Text.ToString()), dt.Rows.Count, DoanhThu, 0.0f);
+                        else
+                            BLL.BLL_BCDoanhThuThang.UpdateBaoCaoDoanhThuThang(int.Parse(cbThang.Text.ToString()), int.Parse(cbNam.Text.ToString()), dt.Rows.Count, DoanhThu, 0.0f);
+                    }
+                }
+                catch { }
 
-                if (BLL_BCDoanhThuThang.SelectBCDoanhThuThang( int.Parse(cbThang.Text), int.Parse(cbNam.Text.ToString())).Rows.Count == 0)
-                    BLL.BLL_BCDoanhThuThang.InsertBaoCaoDoanhThuThang(int.Parse(cbThang.Text.ToString()), int.Parse(cbNam.Text.ToString()), dt.Rows.Count, DoanhThu, 0.0f);
-                else
-                    BLL.BLL_BCDoanhThuThang.UpdateBaoCaoDoanhThuThang(int.Parse(cbThang.Text.ToString()), int.Parse(cbNam.Text.ToString()), dt.Rows.Count, DoanhThu, 0.0f);
-                
                 rptBCDoanhThuThang rp = new rptBCDoanhThuThang();
                 rp.SetDataSource(dt);
                 crvBCDoanhThuThang.ReportSource = rp;
