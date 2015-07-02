@@ -49,6 +49,16 @@ namespace BanVeChuyenBay.BLL
             return lcb.SelectAllLichChuyenBay_By_QD3();
         }
 
+        public static DataTable SelectLichChuyenBayByMaHang(string MaHang)
+        {
+            return lcb.SelectLichChuyenBayByMaHang(MaHang);
+        }
+
+        public static DataTable SelectLichChuyenBayHienTaiByMaHang(string MaHang)
+        {
+            return lcb.SelectLichChuyenBayHienTaiByMaHang(MaHang);
+        }
+
         public static DataTable SelectAtLichChuyenBay(String MaChuyenBay)
         {
             return lcb.SelectAtLichChuyenBay(MaChuyenBay);

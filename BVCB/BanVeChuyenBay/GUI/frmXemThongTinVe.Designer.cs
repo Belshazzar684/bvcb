@@ -46,6 +46,7 @@
             this.CMNDHanhKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoaiHanhKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HuyVe = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnRefresh = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,7 +59,7 @@
             this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLuu.Image = global::BanVeChuyenBay.Properties.Resources.Save_icon;
             this.btnLuu.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btnLuu.Location = new System.Drawing.Point(352, 377);
+            this.btnLuu.Location = new System.Drawing.Point(232, 377);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(106, 53);
             this.btnLuu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -97,7 +98,7 @@
             this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btThoat.Image = global::BanVeChuyenBay.Properties.Resources.Windows_Close_Program_icon;
             this.btThoat.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btThoat.Location = new System.Drawing.Point(582, 377);
+            this.btThoat.Location = new System.Drawing.Point(684, 377);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(106, 53);
             this.btThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -109,6 +110,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.btnRefresh);
             this.panelEx1.Controls.Add(this.dataGridView1);
             this.panelEx1.Controls.Add(this.btnLuu);
             this.panelEx1.Controls.Add(this.reflectionLabel1);
@@ -236,6 +238,21 @@
             this.HuyVe.Name = "HuyVe";
             this.HuyVe.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnRefresh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnRefresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnRefresh.Image = global::BanVeChuyenBay.Properties.Resources.recycle_icon;
+            this.btnRefresh.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.btnRefresh.Location = new System.Drawing.Point(449, 377);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(106, 53);
+            this.btnRefresh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnRefresh.TabIndex = 91;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmXemThongTinVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,5 +288,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CMNDHanhKhach;
         private System.Windows.Forms.DataGridViewTextBoxColumn DienThoaiHanhKhach;
         private System.Windows.Forms.DataGridViewCheckBoxColumn HuyVe;
+        private DevComponents.DotNetBar.ButtonX btnRefresh;
     }
 }

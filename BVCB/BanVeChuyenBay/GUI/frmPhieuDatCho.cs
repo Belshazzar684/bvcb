@@ -82,8 +82,8 @@ namespace BanVeChuyenBay.GUI
 
             //Khachhang
             LaKhachHang = true;
-            DataTable dt2 = BLL.BLL_NhanVien.Select_MaNhanVien(MaKhachHang);
-            DataTable dt3 = BLL.BLL_KhachHang.Select_ThongTinKhachHang(MaKhachHang);
+            DataTable dt2 = BLL.BLL_NhanVien.Select_MaNhanVien(_MaKhachHang);
+            DataTable dt3 = BLL.BLL_KhachHang.Select_ThongTinKhachHang(_MaKhachHang);
             if (dt2.Rows.Count > 0)
             {
                 DataRow tr1 = dt2.Rows[0];
@@ -182,11 +182,14 @@ namespace BanVeChuyenBay.GUI
             foreach (DataRow row in DSHangVe.Rows)
             {
                 DataRow[] temp = DSCTGhe.Select("MaHangVe='" + row.ItemArray[(int)Support.BLL.Support.IDHangVe.MaHangVe] + "'");
+                //Fix bug 1.3.2
+                if (temp.Count() > 0)
+                {
+                    int soghetrong = Convert.ToInt32(temp[0].ItemArray[(int)Support.BLL.Support.IDCTGhe.SoGheTrong]);
 
-                int soghetrong = Convert.ToInt32(temp[0].ItemArray[(int)Support.BLL.Support.IDCTGhe.SoGheTrong]);
-                
-                if(soghetrong > 0)
-                    cbHangVe.Items.Add(row.ItemArray[(int)Support.BLL.Support.IDHangVe.MaHangVe]);
+                    if (soghetrong > 0)
+                        cbHangVe.Items.Add(row.ItemArray[(int)Support.BLL.Support.IDHangVe.MaHangVe]);
+                }
             }
         }
 

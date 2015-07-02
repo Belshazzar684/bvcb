@@ -29,7 +29,6 @@ namespace BanVeChuyenBay.GUI
             DSLichChuyenBay = BLL.BLL_LichChuyenBay.SelectAllLichChuyenBay();
             MaxRows = DSLichChuyenBay.Rows.Count;
 
-            //Nhat - fix bug 1.3.1 - thêm row trước khi gán
             foreach (DataRow row in DSLichChuyenBay.Rows)
             {
                 dtgvLichChuyenBay.Rows.Add(row.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.MaChuyenBay], row.ItemArray[(int)Support.BLL.Support.IDLichChuyenBay.MaTuyenBay],

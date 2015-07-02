@@ -140,11 +140,14 @@ namespace BanVeChuyenBay.GUI
             foreach (DataRow row in DSHangVe.Rows)
             {
                 DataRow[] temp = DSCTGhe.Select("MaHangVe='" + row.ItemArray[(int)Support.BLL.Support.IDHangVe.MaHangVe] + "'");
+                //Fix bug 1.3.2
+                if (temp.Count() > 0)
+                {
+                    int soghetrong = Convert.ToInt32(temp[0].ItemArray[(int)Support.BLL.Support.IDCTGhe.SoGheTrong]);
 
-                int soghetrong = Convert.ToInt32(temp[0].ItemArray[(int)Support.BLL.Support.IDCTGhe.SoGheTrong]);
-                
-                if(soghetrong > 0)
-                    cbHangVe.Items.Add(row.ItemArray[(int)Support.BLL.Support.IDHangVe.MaHangVe]);
+                    if (soghetrong > 0)
+                        cbHangVe.Items.Add(row.ItemArray[(int)Support.BLL.Support.IDHangVe.MaHangVe]);
+                }
             }
         }
 

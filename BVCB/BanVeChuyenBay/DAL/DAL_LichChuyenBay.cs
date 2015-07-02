@@ -126,6 +126,34 @@ namespace BanVeChuyenBay.DAL
 
             return dt;
         }
+
+        public DataTable SelectLichChuyenBayByMaHang(string MaHang)
+        {
+            SqlCommand cm = new SqlCommand("SELECT_LICHCHUYENBAY_BY_MAHANG", connect());
+            cm.CommandType = CommandType.StoredProcedure;
+
+            cm.Parameters.AddWithValue("@MaHang", MaHang);
+
+            SqlDataAdapter data = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            data.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable SelectLichChuyenBayHienTaiByMaHang(string MaHang)
+        {
+            SqlCommand cm = new SqlCommand("SELECT_LICHCHUYENBAYHIENTAI_BY_MAHANG", connect());
+            cm.CommandType = CommandType.StoredProcedure;
+
+            cm.Parameters.AddWithValue("@MaHang", MaHang);
+
+            SqlDataAdapter data = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            data.Fill(dt);
+
+            return dt;
+        }
         
         public int UpdateLichChuyenBay(string MaChuyenBay, string MaTuyenBay, DateTime KhoiHanh, int ThoiGianBay, int DonGia,string MaHang)
         {

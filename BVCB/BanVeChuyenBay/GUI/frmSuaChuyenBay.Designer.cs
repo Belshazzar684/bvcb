@@ -48,16 +48,18 @@
             this.ThoiGianDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.btThoat = new DevComponents.DotNetBar.ButtonX();
             this.label7 = new System.Windows.Forms.Label();
+            this.btSua = new DevComponents.DotNetBar.ButtonX();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtThoiGianBay = new System.Windows.Forms.TextBox();
             this.dtpNgayGio = new System.Windows.Forms.DateTimePicker();
-            this.btThoat = new DevComponents.DotNetBar.ButtonX();
-            this.btSua = new DevComponents.DotNetBar.ButtonX();
-            this.PictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbHangHangKhong = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelEx1.SuspendLayout();
             this.panelEx3.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -110,6 +112,8 @@
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.cbHangHangKhong);
+            this.panelEx2.Controls.Add(this.label1);
             this.panelEx2.Controls.Add(this.txtGiaVe);
             this.panelEx2.Controls.Add(this.label3);
             this.panelEx2.Controls.Add(this.cbSanBayDi);
@@ -295,6 +299,21 @@
             this.reflectionLabel1.Text = "<b><font size=\"+6\"><i></i><font color=\"#B02B2C\">SỬA THÔNG TIN CHUYẾN BAY</font></" +
     "font></b>";
             // 
+            // btThoat
+            // 
+            this.btThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btThoat.Image = global::BanVeChuyenBay.Properties.Resources.Windows_Close_Program_icon;
+            this.btThoat.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.btThoat.Location = new System.Drawing.Point(511, 468);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(102, 37);
+            this.btThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btThoat.TabIndex = 71;
+            this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -304,6 +323,21 @@
             this.label7.Size = new System.Drawing.Size(102, 19);
             this.label7.TabIndex = 0;
             this.label7.Text = "Sân Bay Đến:";
+            // 
+            // btSua
+            // 
+            this.btSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btSua.Image = global::BanVeChuyenBay.Properties.Resources.Pencil_icon;
+            this.btSua.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.btSua.Location = new System.Drawing.Point(320, 468);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(92, 37);
+            this.btSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btSua.TabIndex = 72;
+            this.btSua.Text = "Sửa";
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // label6
             // 
@@ -345,6 +379,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Chuyến Bay:";
             // 
+            // PictureBox1
+            // 
+            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
+            this.PictureBox1.Location = new System.Drawing.Point(97, 12);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(88, 56);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBox1.TabIndex = 30;
+            this.PictureBox1.TabStop = false;
+            // 
             // txtThoiGianBay
             // 
             this.txtThoiGianBay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -365,45 +409,24 @@
             this.dtpNgayGio.Size = new System.Drawing.Size(189, 26);
             this.dtpNgayGio.TabIndex = 64;
             // 
-            // btThoat
+            // cbHangHangKhong
             // 
-            this.btThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btThoat.Image = global::BanVeChuyenBay.Properties.Resources.Windows_Close_Program_icon;
-            this.btThoat.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btThoat.Location = new System.Drawing.Point(511, 468);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(102, 37);
-            this.btThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btThoat.TabIndex = 71;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            this.cbHangHangKhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHangHangKhong.FormattingEnabled = true;
+            this.cbHangHangKhong.Location = new System.Drawing.Point(204, 230);
+            this.cbHangHangKhong.Name = "cbHangHangKhong";
+            this.cbHangHangKhong.Size = new System.Drawing.Size(253, 21);
+            this.cbHangHangKhong.TabIndex = 83;
             // 
-            // btSua
+            // label1
             // 
-            this.btSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btSua.Image = global::BanVeChuyenBay.Properties.Resources.Pencil_icon;
-            this.btSua.ImageFixedSize = new System.Drawing.Size(32, 32);
-            this.btSua.Location = new System.Drawing.Point(320, 468);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(92, 37);
-            this.btSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btSua.TabIndex = 72;
-            this.btSua.Text = "Sửa";
-            this.btSua.Click += new System.EventHandler(this.btSua_Click);
-            // 
-            // PictureBox1
-            // 
-            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
-            this.PictureBox1.Location = new System.Drawing.Point(97, 12);
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(88, 56);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBox1.TabIndex = 30;
-            this.PictureBox1.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(55, 229);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 19);
+            this.label1.TabIndex = 82;
+            this.label1.Text = "Hãng hàng không";
             // 
             // frmSuaChuyenBay
             // 
@@ -459,5 +482,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn SanBayTrungGian;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
+        private System.Windows.Forms.ComboBox cbHangHangKhong;
+        private System.Windows.Forms.Label label1;
     }
 }

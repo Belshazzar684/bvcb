@@ -12,6 +12,11 @@ namespace BanVeChuyenBay.GUI
 {
     public partial class frmSuaChuyenBay : Form
     {
+        public class Data
+        {
+            public string Name { get; set; }
+            public string ID { get; set; }
+        }
 
         DataTable DSSanBay, DSSanBayDen, DSSanBayDi, DSTuyenBay, DSThamSo, DSLichChuyenBay, DSCT_Ghe, DSCT_LichChuyenBay;
         int MaxSBTrungGian, MaxTGDung, MinTGDung, MinTGBay;
@@ -24,6 +29,7 @@ namespace BanVeChuyenBay.GUI
             MaxTGDung = Convert.ToInt16(DSThamSo.Rows[0].ItemArray[(int)Support.BLL.Support.IDThamSo.MaxTGDung]);
             MinTGDung = Convert.ToInt16(DSThamSo.Rows[0].ItemArray[(int)Support.BLL.Support.IDThamSo.MinTGDung]);
             MinTGBay = Convert.ToInt16(DSThamSo.Rows[0].ItemArray[(int)Support.BLL.Support.IDThamSo.MinTGBay]);
+            LoadHangHangKhong();
         }
 
         private void loadSoHangVe()
@@ -206,8 +212,15 @@ namespace BanVeChuyenBay.GUI
                 
                 dataGridView1.Rows.Clear();
                 int temp = 0;
+                DSThamSo = BLL.BLL_LichChuyenBay.SelectAllThamSo();
+
+                MaxSBTrungGian = Convert.ToInt16(DSThamSo.Rows[0].ItemArray[0]);
                 foreach (DataRow row in DSCT_LichChuyenBay.Rows)
                 {
+                    //Nhat - Fix bug 1.3.1 - add row truoc
+                    if(dataGridView1.Rows.Count < MaxSBTrungGian)
+                        dataGridView1.Rows.Add();
+
                     rows = DSSanBay.Select("MaSanBay='" + row.ItemArray[(int)Support.BLL.Support.IDCTLichChuyenBay.MaSanBayTrungGian] + "'");
 
                     DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)dataGridView1.Rows[temp].Cells[0];
@@ -419,6 +432,12 @@ namespace BanVeChuyenBay.GUI
                         MessageBox.Show("Vui lòng nhập đúng số ghế");
                         return;
                     }
+
+                    if (cbHangHangKhong.SelectedValue == null)
+                    {
+                        MessageBox.Show("Vui lòng nhập hãng hàng không");
+                        return;
+                    }
                 }
 
 
@@ -490,7 +509,7 @@ namespace BanVeChuyenBay.GUI
                 List<CT_Ghe> ct_ghe = solveDataInputCT_Ghe();
 
 
-                BLL.BLL_LichChuyenBay.UpdateLichChuyenBay(lcb.MaChuyenBay, lcb.MaTuyenBay, lcb.KhoiHanh, lcb.ThoiGianBay, lcb.DonGia, "HHK1");
+                BLL.BLL_LichChuyenBay.UpdateLichChuyenBay(lcb.MaChuyenBay, lcb.MaTuyenBay, lcb.KhoiHanh, lcb.ThoiGianBay, lcb.DonGia, cbHangHangKhong.SelectedValue.ToString());
                 BLL.BLL_CT_LichChuyenBay.DeleteCT_LichChuyenBay(lcb.MaChuyenBay);
 
                 for (int i = 0; i < ct_lcb.Count; i++)
@@ -515,6 +534,21 @@ namespace BanVeChuyenBay.GUI
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        //Load combobox Hang Hang Khong
+        private void LoadHangHangKhong()
+        {
+            BindingList<Data> _comboItems = new BindingList<Data>();
+            foreach (DataRow hhk in BLL.BLL_HangHangKhong.SelectAllHangHangKhong().Rows)
+            {
+                _comboItems.Add(new Data { Name = hhk["TenHang"].ToString(), ID = hhk["MaHang"].ToString() });
+            }
+            cbHangHangKhong.DisplayMember = "Name";
+            cbHangHangKhong.ValueMember = "ID";
+            cbHangHangKhong.DataSource = _comboItems;
+            if (cbHangHangKhong.Items.Count > 0)
+                cbHangHangKhong.SelectedIndex = 0;
         }
     }
 }
